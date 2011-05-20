@@ -1,1 +1,0 @@
-This is a Statis ReadMe file.

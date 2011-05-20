@@ -6,14 +6,14 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{980E2F9F-DDE4-4F31-B8C6-03F4D0AA5139}</ProjectGuid>
+    <ProjectGuid>{CB0FAEE8-B773-488B-8127-7E801B12C993}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Statis.Web</RootNamespace>
     <AssemblyName>Statis.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <SilverlightApplicationList>{069CEC51-B1D2-4841-B903-3AEE0B383B6F}|..\Statis\Statis.csproj|ClientBin|False</SilverlightApplicationList>
+    <SilverlightApplicationList>{1E760F8B-F15B-44DC-8C17-75054259ECEB}|..\Statis\Statis.csproj|ClientBin|False</SilverlightApplicationList>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -76,7 +76,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51488</DevelopmentServerPort>
+          <DevelopmentServerPort>52532</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

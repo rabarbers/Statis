@@ -21,7 +21,7 @@
           <EnableENC>False</EnableENC>
           <AlwaysStartWebServerOnDebug>True</AlwaysStartWebServerOnDebug>
           <ProjectOutputReferences>
-            <Ref Project="{069CEC51-B1D2-4841-B903-3AEE0B383B6F}" Folder="ClientBin">Statis.xap</Ref>
+            <Ref Project="{1E760F8B-F15B-44DC-8C17-75054259ECEB}" Folder="ClientBin">Statis.xap</Ref>
           </ProjectOutputReferences>
         </WebProjectProperties>
       </FlavorProperties>
