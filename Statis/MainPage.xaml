@@ -44,6 +44,8 @@
 					
                     <HyperlinkButton x:Name="Link2" Style="{StaticResource LinkStyle}" 
                                      NavigateUri="/About" TargetName="ContentFrame" Content="about"/>
+                    <HyperlinkButton x:Name="Link3" Style="{StaticResource LinkStyle}" 
+                                     NavigateUri="/Create" TargetName="ContentFrame" Content="create"/>
 
                 </StackPanel>
             </Border>
