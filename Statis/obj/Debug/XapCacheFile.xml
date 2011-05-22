@@ -1,9 +1,12 @@
-﻿<xapCache source="D:\GitStatisLast\Statis\Bin\Debug\Statis.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="5/22/2011 11:14:47 AM">
-  <file source="D:\GitStatisLast\Statis\obj\Debug\Statis.dll" archivePath="Statis.dll" lastWriteTime="5/22/2011 11:14:43 AM" />
+﻿<xapCache source="D:\GitStatisLast\Statis\Bin\Debug\Statis.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="5/22/2011 3:56:41 PM">
+  <file source="D:\GitStatisLast\Statis\obj\Debug\Statis.dll" archivePath="Statis.dll" lastWriteTime="5/22/2011 3:56:40 PM" />
+  <file source="D:\New folder (4)\Bin\Silverlight\Microsoft.Practices.Prism.dll" archivePath="Microsoft.Practices.Prism.dll" lastWriteTime="11/10/2010 8:03:36 AM" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.ComponentModel.Composition.dll" archivePath="System.ComponentModel.Composition.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Controls.Data.Input.dll" archivePath="System.Windows.Controls.Data.Input.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Controls.dll" archivePath="System.Windows.Controls.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Controls.Navigation.dll" archivePath="System.Windows.Controls.Navigation.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="D:\New folder (4)\Bin\Silverlight\Microsoft.Practices.ServiceLocation.dll" archivePath="Microsoft.Practices.ServiceLocation.dll" lastWriteTime="11/9/2010 8:22:08 PM" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.ComponentModel.DataAnnotations.dll" archivePath="System.ComponentModel.DataAnnotations.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
-  <file source="D:\GitStatisLast\Statis\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="5/22/2011 11:14:47 AM" />
+  <file source="D:\GitStatisLast\Statis\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="5/22/2011 3:56:39 PM" />
+  <file source="D:\GitStatisLast\Statis\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="5/22/2011 3:21:06 PM" />
 </xapCache>

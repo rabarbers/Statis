@@ -5,7 +5,22 @@
     xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" 
     xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:VW="clr-namespace:Statis.Views" xmlns:ViewModels="clr-namespace:Statis.ViewModels">
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <!--<DataTemplate DataType="{x:Type ViewModels:NewQuestionnaireViewModel}">
+                <VW:NewQuestionnaireView/>
+            </DataTemplate>-->
+            <!--<DataTemplate>
+                <TextBlock Text="{Binding Name}"
+                  Foreground="Green"
+                  FontWeight="Bold"
+                  VerticalAlignment="Center"/>
+            </DataTemplate>-->
+        </ResourceDictionary>
+    </UserControl.Resources>
     
     <Grid x:Name="LayoutRoot" Style="{StaticResource LayoutRootGridStyle}">
 
@@ -35,7 +50,7 @@
                 <Rectangle x:Name="Divider1" Style="{StaticResource DividerStyle}" />
                 <HyperlinkButton x:Name="mainLink2" Style="{StaticResource LinkStyle}" NavigateUri="/About" TargetName="ContentFrame" Content="Lasīt" FontSize="16" FontWeight="ExtraBold" />
                 <Rectangle x:Name="Divider2" Style="{StaticResource DividerStyle}" />
-                <HyperlinkButton x:Name="mainLink3" Style="{StaticResource LinkStyle}" NavigateUri="/Create" TargetName="ContentFrame" Content="Veidot" FontSize="16" FontWeight="ExtraBold" />
+                <HyperlinkButton x:Name="mainLink3" Style="{StaticResource LinkStyle}" NavigateUri="/CreateQuestionnaireView" TargetName="ContentFrame" Content="Veidot" FontSize="16" FontWeight="ExtraBold" />
                 <Rectangle x:Name="Divider3" Style="{StaticResource DividerStyle}" />
                 <HyperlinkButton x:Name="mainLink4" Style="{StaticResource LinkStyle}" NavigateUri="/Review" TargetName="ContentFrame" Content="Skatīt" FontSize="16" FontWeight="ExtraBold" />
             </StackPanel>

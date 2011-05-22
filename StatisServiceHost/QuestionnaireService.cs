@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel.Activation;
 using System.Text;
 using StatisServiceContracts;
 
 namespace StatisServiceHost
 {
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class QuestionnaireService: IQuestionnaireAdministrativeService
     {
         public Questionnaire GetQuestionnaire(string questionnaireName)
@@ -20,7 +22,7 @@ namespace StatisServiceHost
 
         public void DeleteQuestionnaire(string questionnaireName)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

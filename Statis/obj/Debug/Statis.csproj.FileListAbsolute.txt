@@ -333,8 +333,6 @@ D:\GitStatisLast\Statis\Bin\Debug\zh-Hans\System.ComponentModel.DataAnnotations.
 D:\GitStatisLast\Statis\Bin\Debug\zh-Hant\System.ComponentModel.DataAnnotations.resources.dll
 D:\GitStatisLast\Statis\obj\Debug\ResolveAssemblyReference.cache
 D:\GitStatisLast\Statis\obj\Debug\App.g.i.cs
-D:\GitStatisLast\Statis\obj\Debug\Views\Create.g.i.cs
-D:\GitStatisLast\Statis\obj\Debug\Views\NewQuestionnaire.g.i.cs
 D:\GitStatisLast\Statis\obj\Debug\Views\Review.g.i.cs
 D:\GitStatisLast\Statis\obj\Debug\Views\ErrorWindow.g.i.cs
 D:\GitStatisLast\Statis\obj\Debug\Views\About.g.i.cs
@@ -352,3 +350,10 @@ D:\GitStatisLast\Statis\obj\Debug\lv\Statis.resources.dll
 D:\GitStatisLast\Statis\obj\Debug\Statis.dll
 D:\GitStatisLast\Statis\obj\Debug\Statis.pdb
 D:\GitStatisLast\Statis\obj\Debug\XapCacheFile.xml
+D:\GitStatisLast\Statis\obj\Debug\Views\TextQuestionView.g.i.cs
+D:\GitStatisLast\Statis\Bin\Debug\Microsoft.Practices.Prism.dll
+D:\GitStatisLast\Statis\Bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\GitStatisLast\Statis\Bin\Debug\Microsoft.Practices.Prism.pdb
+D:\GitStatisLast\Statis\Bin\Debug\Microsoft.Practices.Prism.xml
+D:\GitStatisLast\Statis\Bin\Debug\Microsoft.Practices.ServiceLocation.xml
+D:\GitStatisLast\Statis\obj\Debug\Views\CreateQuestionnaireView.g.i.cs
