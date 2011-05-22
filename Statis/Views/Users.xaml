@@ -1,0 +1,30 @@
+﻿<navigation:Page x:Class="Statis.Views.Users" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="Lietotāji" Width="Auto" MaxWidth="640" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" MinWidth="620">
+   <Grid x:Name="LayoutRoot" >
+
+            <StackPanel Height="378" HorizontalAlignment="Right" Name="stackPanel3" VerticalAlignment="Top" Width="314">
+                <TextBlock Style="{StaticResource HeaderTextStyle}" Height="Auto" Width="Auto" Name="textUsers1" Text="Mani respondenti:" />
+                <TextBlock Height="Auto" Name="textBlock1" Text="Šīs ir tavu respondentu e-pasta adreses. Kad izsūtīsi anketas, vari tās izmantot visas reizē. Ja vēlies pievienot jaunu, ieraksti e-pasta adresi un klikšķini 'Pievienot jaunu'." Width="Auto" Margin="0,0,0,10" MaxWidth="272" TextWrapping="Wrap" />
+                <ListBox Height="100" Name="listBox1" Width="274" Margin="0,0,0,30" />
+                <TextBox Height="26" Name="textBox2" Width="273" Margin="0,0,0,10" Text="e-pasts" />
+                <Button Content="Pievienot jaunu" Height="23" Name="button2" Width="Auto" HorizontalAlignment="Right" Margin="0,0,20,0" />
+            </StackPanel>
+            <StackPanel Height="378" HorizontalAlignment="Left" Name="stackPanel2" VerticalAlignment="Top" Width="320">
+                <TextBlock Height="Auto" Name="textUsers2" Style="{StaticResource HeaderTextStyle}" Text="Mani analītiķi:" Width="Auto" />
+                <TextBlock Height="Auto" Name="textBlock2" Text="Šie ir visu tavu analītiķu lietotājvārdi. Ja vēlies pievienot jaunu, ieraksti vēlamo lietotājvārdu, sākotnējo paroli un e-pasta adresi, tad klikšķini 'Pievienot jaunu'." Width="Auto" TextWrapping="Wrap" MaxWidth="274" Margin="0,0,0,10" />
+                <ListBox Height="100" Name="listBox2" Width="276" Margin="0,0,0,30" />
+                <TextBox Height="26" Name="textBox1" Width="170" Margin="0,0,20,10" HorizontalAlignment="Right" Text="lietotājvārds" />
+                <TextBox Height="26" Name="textBox4" Width="170" Margin="0,0,20,10" HorizontalAlignment="Right" Text="parole" />
+                <TextBox Height="26" Name="textBox3" Width="170" Margin="0,0,20,10" HorizontalAlignment="Right" Text="e-pasts" />
+                <Button Content="Pievienot jaunu" Height="23" Name="button1" Width="Auto" HorizontalAlignment="Right" Margin="0,0,20,0" />
+            </StackPanel>
+        
+    </Grid>
+</navigation:Page>

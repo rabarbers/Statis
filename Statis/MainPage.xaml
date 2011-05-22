@@ -24,10 +24,10 @@
     
     <Grid x:Name="LayoutRoot" Style="{StaticResource LayoutRootGridStyle}" >
 
-        <Border x:Name="ContentBorder" Style="{StaticResource ContentBorderStyle}" Margin="0,115,0,0">
-
+        <Border x:Name="ContentBorder" Style="{StaticResource ContentBorderStyle}" Margin="0,115,0,0" VerticalAlignment="Top">
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
             <navigation:Frame x:Name="ContentFrame" Style="{StaticResource ContentFrameStyle}" 
-                              Source="/Home" Navigated="ContentFrame_Navigated" NavigationFailed="ContentFrame_NavigationFailed" MinWidth="500" Height="370" DataContext="{Binding}">
+                              Source="/Home" Navigated="ContentFrame_Navigated" NavigationFailed="ContentFrame_NavigationFailed" MinWidth="500" Height="Auto" DataContext="{Binding}" VerticalContentAlignment="Top">
                 <navigation:Frame.UriMapper>
                   <uriMapper:UriMapper>
                     <uriMapper:UriMapping Uri="" MappedUri="/Views/Home.xaml"/>
@@ -35,6 +35,7 @@
                   </uriMapper:UriMapper>
                 </navigation:Frame.UriMapper>
             </navigation:Frame>
+            </ScrollViewer>
         </Border>
 
         <Grid x:Name="NavigationGrid" Style="{StaticResource NavigationGridStyle}" MinWidth="600" Height="117">
@@ -53,6 +54,8 @@
                 <HyperlinkButton x:Name="mainLink3" Style="{StaticResource LinkStyle}" NavigateUri="/CreateQuestionnaireView" TargetName="ContentFrame" Content="Veidot" FontSize="16" FontWeight="ExtraBold" />
                 <Rectangle x:Name="Divider3" Style="{StaticResource DividerStyle}" />
                 <HyperlinkButton x:Name="mainLink4" Style="{StaticResource LinkStyle}" NavigateUri="/Review" TargetName="ContentFrame" Content="Skatīt" FontSize="16" FontWeight="ExtraBold" />
+                <Rectangle x:Name="Divider4" Style="{StaticResource DividerStyle}" />
+                <HyperlinkButton x:Name="mainLink5" Style="{StaticResource LinkStyle}" NavigateUri="/Users" TargetName="ContentFrame" Content="Biedroties" FontSize="16" FontWeight="ExtraBold" />
             </StackPanel>
             <Border x:Name="BrandingBorder" Style="{StaticResource BrandingBorderStyle}" Margin="37,54,0,0">
                 <StackPanel x:Name="BrandingStackPanel" Style="{StaticResource BrandingStackPanelStyle}">
