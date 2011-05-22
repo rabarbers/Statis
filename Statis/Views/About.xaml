@@ -8,9 +8,9 @@
     Style="{StaticResource PageStyle}">
 
     <Grid x:Name="LayoutRoot">
-        <ScrollViewer x:Name="PageScrollViewer" Style="{StaticResource PageScrollViewerStyle}">
+        <ScrollViewer x:Name="PageScrollViewer" Style="{StaticResource PageScrollViewerStyle}" Margin="-58,-15">
 
-            <StackPanel x:Name="ContentStackPanel" Height="465" Width="642" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="ContentStackPanel" Height="465" Width="640" ScrollViewer.VerticalScrollBarVisibility="Auto">
 
                 <TextBlock x:Name="AboutHeader1" Style="{StaticResource HeaderTextStyle}" 
                            Text="Kas ir Statis?"/>

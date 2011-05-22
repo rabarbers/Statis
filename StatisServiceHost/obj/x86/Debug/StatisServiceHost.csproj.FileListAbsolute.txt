@@ -26,4 +26,7 @@ D:\GitStatisLast\StatisServiceHost\bin\Debug\Db4objects.Db4o.CS.xml
 D:\GitStatisLast\StatisServiceHost\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\GitStatisLast\StatisServiceHost\obj\x86\Debug\StatisServiceHost.exe
 D:\GitStatisLast\StatisServiceHost\obj\x86\Debug\StatisServiceHost.pdb
+<<<<<<< HEAD
 D:\GitStatisLast\StatisServiceHost\bin\Debug\ClientAccessPolicy.xml
+=======
+>>>>>>> 7ebdf2b357af77d07fd0082d61335da987c196db
