@@ -164,3 +164,14 @@ C:\Users\anna\Desktop\StatisFinal\Statis\obj\Debug\Statis.Assets.Resources.Strin
 C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\lv\Statis.resources.dll
 C:\Users\anna\Desktop\StatisFinal\Statis\obj\Debug\lv\Statis.resources.dll
 C:\Users\anna\Desktop\StatisFinal\Statis\obj\Debug\Views\NewQuestionnaire.g.i.cs
+C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\System.ComponentModel.Composition.dll
+C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\System.ComponentModel.Composition.xml
+C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\de\System.ComponentModel.Composition.resources.dll
+C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\es\System.ComponentModel.Composition.resources.dll
+C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\fr\System.ComponentModel.Composition.resources.dll
+C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\it\System.ComponentModel.Composition.resources.dll
+C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\ja\System.ComponentModel.Composition.resources.dll
+C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\ko\System.ComponentModel.Composition.resources.dll
+C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\ru\System.ComponentModel.Composition.resources.dll
+C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\zh-Hans\System.ComponentModel.Composition.resources.dll
+C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\zh-Hant\System.ComponentModel.Composition.resources.dll

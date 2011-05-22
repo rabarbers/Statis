@@ -334,5 +334,11 @@
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="Orientation" Value="Horizontal"/>
     </Style>
-
+    
+    <!-- Creation Panel Style -->
+    <Style x:Key="CreationPanelStyle" TargetType="StackPanel">
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        
+    </Style>
 </ResourceDictionary>

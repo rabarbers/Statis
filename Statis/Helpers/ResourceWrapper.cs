@@ -8,11 +8,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.ComponentModel;
 
-namespace Statis.ViewModels
+namespace Statis.Helpers
 {
-    public class HomeModel
+    /*public class ResourceWrapper : INotifyPropertyChanged
     {
-
-    }
+        private static Statis.
+        public Assets.Resources.Strings 
+    }*/
 }

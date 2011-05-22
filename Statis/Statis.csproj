@@ -61,6 +61,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
+    <Reference Include="System.ComponentModel.Composition, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
@@ -81,7 +82,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.lv.resx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\HomeModel.cs" />
+    <Compile Include="Helpers\ResourceWrapper.cs" />
     <Compile Include="Views\ErrorWindow.xaml.cs">
       <DependentUpon>ErrorWindow.xaml</DependentUpon>
     </Compile>

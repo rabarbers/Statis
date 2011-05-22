@@ -123,4 +123,7 @@
   <data name="Home2" xml:space="preserve">
     <value>This is the home page of Statis.</value>
   </data>
+  <data name="MainTitle" xml:space="preserve">
+    <value>Esi mājās</value>
+  </data>
 </root>
