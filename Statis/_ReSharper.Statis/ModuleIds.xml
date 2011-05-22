@@ -1,8 +1,5 @@
 <Modules>
   <Module PersistentId="4981DC01-165C-414D-86F6-B41DF78AF2B8" ModuleId="StatisServiceContracts" />
   <Module PersistentId="2F258791-B7B3-4E7F-95C9-6B06AA98E566" ModuleId="StatisServiceHost" />
-<<<<<<< HEAD
   <Module PersistentId="1E760F8B-F15B-44DC-8C17-75054259ECEB" ModuleId="Statis" />
-=======
->>>>>>> 7ebdf2b357af77d07fd0082d61335da987c196db
 </Modules>

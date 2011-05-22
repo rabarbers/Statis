@@ -7,14 +7,7 @@ using System.Web;
 namespace StatisServiceContracts
 {
     [DataContract]
-<<<<<<< HEAD
-    public class Answer
-    {
-        string answerText { get; set; }
-        bool choiceList = false;
-=======
     [KnownType(typeof(Answer))]
-
     public abstract class Answer
     {
         [DataMember]
@@ -37,6 +30,5 @@ namespace StatisServiceContracts
         {
             answerText = text;
         }
->>>>>>> 7ebdf2b357af77d07fd0082d61335da987c196db
     }
 }
