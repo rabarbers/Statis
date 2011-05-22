@@ -8,7 +8,6 @@ namespace StatisServiceContracts
 {
     [DataContract]
     [KnownType(typeof(Answer))]
-
     public abstract class Answer
     {
         [DataMember]

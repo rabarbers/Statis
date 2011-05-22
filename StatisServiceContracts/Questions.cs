@@ -6,6 +6,7 @@ namespace StatisServiceContracts
 {
     [DataContract]
     [KnownType(typeof(TextQuestion))]
+    [KnownType(typeof(ImgQuestion))]
     [KnownType(typeof(ImgChoiceQuestion))]
     [KnownType(typeof(ImgTextQuestion))]
     [KnownType(typeof(ChoiceQuestion))]
@@ -29,6 +30,12 @@ namespace StatisServiceContracts
         }
     }
 
+    [DataContract]
+    public class ImgQuestion : Question
+    {
+        [DataMember]
+        public object Image { get; set; }
+    }
  /*   [DataContract]
     public class ImgQuestion : Question
     {
@@ -49,6 +56,12 @@ namespace StatisServiceContracts
     {
         [DataMember]
         public List<Choice> _choiceList;
+        
+        public ChoiceQuestion(List<Choice> choiceList)
+        {
+            _choiceList = choiceList;
+        }
+
 
         public ChoiceQuestion()
         { 

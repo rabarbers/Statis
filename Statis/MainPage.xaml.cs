@@ -10,11 +10,14 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Statis.StatisServices;
 
 namespace Statis
 {
     public partial class MainPage : UserControl
     {
+        private QuestionnaireAdministrativeServiceClient _service;
+        
         public MainPage()
         {
             InitializeComponent();

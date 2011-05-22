@@ -1,0 +1,40 @@
+﻿<navigation:Page x:Class="Statis.Views.CreateQuestionnaireView" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" xmlns:prism="clr-namespace:Microsoft.Practices.Prism.ViewModel;assembly=Microsoft.Practices.Prism" xmlns:Views="clr-namespace:Statis.Views" xmlns:viewModel="clr-namespace:Statis.ViewModels" Title="Veido jaunas anketas" Height="480" Width="640">
+    
+    <navigation:Page.Resources>
+        <viewModel:CreateQuestionnaireViewModel x:Key="ViewModel" />
+    </navigation:Page.Resources>
+
+    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ViewModel}}">
+        <ItemsControl ItemsSource="{Binding Questions}" VerticalAlignment="Stretch" Height="262" HorizontalAlignment="Left" Margin="12,78,0,140" Width="466">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Style="{StaticResource CreationPanelStyle}">
+                    </StackPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <prism:DataTemplateSelector HorizontalContentAlignment="Stretch" IsTabStop="False">
+                        <prism:DataTemplateSelector.Resources>
+                            <DataTemplate x:Key="TextQuestionViewModel">
+                                <Views:TextQuestionView />
+                            </DataTemplate>
+                        </prism:DataTemplateSelector.Resources>
+                    </prism:DataTemplateSelector>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+
+        </ItemsControl>
+        <StackPanel Style="{StaticResource CreationPanelStyle}" Height="376" HorizontalAlignment="Left" Margin="488,12,0,0" Name="stackPanel2" Width="200"></StackPanel>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="175,49,0,0" VerticalAlignment="Top" Width="264" Text="{Binding Name, Mode=TwoWay}" />
+        <TextBlock Style="{StaticResource ContentTextStyle}" Height="23" HorizontalAlignment="Left" Margin="32,49,0,0" Text="Questionnaire name:" VerticalAlignment="Top" />
+        <Button Content="Izveidot jaunu anketu" Name="button1" Width="181" FontSize="12" Height="37" HorizontalContentAlignment="Center" Margin="30,8,428,435" />
+        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="255,15,0,0" Name="button2" VerticalAlignment="Top" Width="75" Click="button2_Click" />
+    </Grid>
+</navigation:Page>
