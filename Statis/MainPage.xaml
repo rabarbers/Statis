@@ -6,13 +6,14 @@
     xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    
 
     <Grid x:Name="LayoutRoot" Style="{StaticResource LayoutRootGridStyle}">
 
         <Border x:Name="ContentBorder" Style="{StaticResource ContentBorderStyle}">
 
             <navigation:Frame x:Name="ContentFrame" Style="{StaticResource ContentFrameStyle}" 
-                              Source="/Home" Navigated="ContentFrame_Navigated" NavigationFailed="ContentFrame_NavigationFailed">
+                              Source="/Home" Navigated="ContentFrame_Navigated" NavigationFailed="ContentFrame_NavigationFailed" MinWidth="500" Height="294" DataContext="{Binding}">
                 <navigation:Frame.UriMapper>
                   <uriMapper:UriMapper>
                     <uriMapper:UriMapping Uri="" MappedUri="/Views/Home.xaml"/>
@@ -22,9 +23,24 @@
             </navigation:Frame>
         </Border>
 
-        <Grid x:Name="NavigationGrid" Style="{StaticResource NavigationGridStyle}">
-
-            <Border x:Name="BrandingBorder" Style="{StaticResource BrandingBorderStyle}">
+        <Grid x:Name="NavigationGrid" Style="{StaticResource NavigationGridStyle}" MinWidth="600" Height="117">
+            <StackPanel x:Name="LoginStackPanel" Style="{StaticResource LoginPanelStyle}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="19,0,25,21" Width="Auto">
+                <sdk:Label Content="Lietotājvārds:" Foreground="White" Height="Auto" HorizontalAlignment="Right" Margin="2,23,0,0" Name="label3" VerticalAlignment="Top" Width="Auto" />
+                <TextBox Height="23" HorizontalAlignment="Right" Margin="2,19,0,0" Name="loginUsr" VerticalAlignment="Top" Width="95" />
+                <sdk:Label Height="Auto" HorizontalAlignment="Right" Margin="15,23,0,0" Name="label2" VerticalAlignment="Center" Width="Auto" Content="Parole:" Foreground="White" />
+                <TextBox Height="23" HorizontalAlignment="Right" Margin="2,19,0,0" Name="loginPsw" Width="95" VerticalAlignment="Top" />
+            </StackPanel>
+            <StackPanel x:Name="LinksStackPanel" Style="{StaticResource LinksStackPanelStyle}" VerticalAlignment="Bottom" Margin="19,0,25,21" Height="42" HorizontalAlignment="Right">
+                <sdk:Label Height="28" HorizontalAlignment="Left" Margin="221,7,0,7" Name="label1" VerticalAlignment="Center" Width="48" FontSize="13" Foreground="#FFFF4B71" FontWeight="Bold" Content="Gribu:" FlowDirection="LeftToRight"></sdk:Label>
+                <HyperlinkButton x:Name="mainLink1" Style="{StaticResource LinkStyle}" NavigateUri="/Home" TargetName="ContentFrame" Content="Mājup" FontSize="16" FontWeight="ExtraBold" />
+                <Rectangle x:Name="Divider1" Style="{StaticResource DividerStyle}" />
+                <HyperlinkButton x:Name="mainLink2" Style="{StaticResource LinkStyle}" NavigateUri="/About" TargetName="ContentFrame" Content="Lasīt" FontSize="16" FontWeight="ExtraBold" />
+                <Rectangle x:Name="Divider2" Style="{StaticResource DividerStyle}" />
+                <HyperlinkButton x:Name="mainLink3" Style="{StaticResource LinkStyle}" NavigateUri="/Create" TargetName="ContentFrame" Content="Veidot" FontSize="16" FontWeight="ExtraBold" />
+                <Rectangle x:Name="Divider3" Style="{StaticResource DividerStyle}" />
+                <HyperlinkButton x:Name="mainLink4" Style="{StaticResource LinkStyle}" NavigateUri="/Review" TargetName="ContentFrame" Content="Skatīt" FontSize="16" FontWeight="ExtraBold" />
+            </StackPanel>
+            <Border x:Name="BrandingBorder" Style="{StaticResource BrandingBorderStyle}" Margin="37,54,0,0">
                 <StackPanel x:Name="BrandingStackPanel" Style="{StaticResource BrandingStackPanelStyle}">
 
                     <ContentControl Style="{StaticResource LogoIcon}"/>
@@ -33,25 +49,8 @@
 
                 </StackPanel>
             </Border>
-
-            <Border x:Name="LinksBorder" Style="{StaticResource LinksBorderStyle}">
-                <StackPanel x:Name="LinksStackPanel" Style="{StaticResource LinksStackPanelStyle}">
-
-                    <HyperlinkButton x:Name="Link1" Style="{StaticResource LinkStyle}" 
-                                     NavigateUri="/Home" TargetName="ContentFrame" Content="home"/>
-									 
-                    <Rectangle x:Name="Divider1" Style="{StaticResource DividerStyle}"/>
-					
-                    <HyperlinkButton x:Name="Link2" Style="{StaticResource LinkStyle}" 
-                                     NavigateUri="/About" TargetName="ContentFrame" Content="about"/>
-                    <HyperlinkButton x:Name="Link3" Style="{StaticResource LinkStyle}" 
-                                     NavigateUri="/Create" TargetName="ContentFrame" Content="create"/>
-
-                </StackPanel>
-            </Border>
-
         </Grid>
-        <sdk:Label Height="48" HorizontalAlignment="Left" Margin="60,87,0,0" Name="label1" VerticalAlignment="Top" Width="322" Content="Esi sveicināts Statis galvenajā lapā!" FontSize="14" FontWeight="Bold" />
+        
     </Grid>
 
 </UserControl>

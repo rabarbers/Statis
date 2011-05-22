@@ -4,19 +4,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
     mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480"
-    Title="Home"
+    Title="Esi mājās"
     Style="{StaticResource PageStyle}">
 
     <Grid x:Name="LayoutRoot">
         <ScrollViewer x:Name="PageScrollViewer" Style="{StaticResource PageScrollViewerStyle}">
 
-            <StackPanel x:Name="ContentStackPanel">
+            <StackPanel x:Name="ContentStackPanel" Margin="0" MinWidth="0" Width="642">
 
                 <TextBlock x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}" 
-                                   Text="Home"/>
+                                   Text="Esi sveicināts!"/>
                 <TextBlock x:Name="ContentText" Style="{StaticResource ContentTextStyle}" 
-                                   Text="Home page content"/>
-
+                                   Text="Tu atrodies Statis mājaslapā." Width="614" />
+                <TextBlock Name="textBlock1" Style="{StaticResource ContentTextStyle}" Text="Īsumā - Statis ir aptauju veidošanas un statistiskas analīzes lietojumprogramma, bet vairāk par to vari uzzināt sadaļā 'Lasīt'." DataContext="{Binding}" AllowDrop="False" Height="Auto" TextWrapping="Wrap" Width="614" />
+                <TextBlock Name="textBlock2" Style="{StaticResource ContentTextStyle}" Text="Ja esi administrators vai kāda administratora uzaicināts analītiķis, nāc iekšā." Width="614" />
+                <TextBlock Name="textBlock3" Style="{StaticResource ContentTextStyle}" Text="Ja gribi kļūt par administratoru, piereģistrējies." Width="Auto" />
             </StackPanel>
 
         </ScrollViewer>

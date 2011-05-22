@@ -1,0 +1,17 @@
+﻿<navigation:Page x:Class="Statis.Views.Read" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" Title="Veido jaunas anketas" Height="480" Width="640">
+    <Grid x:Name="LayoutRoot">
+        <StackPanel>
+            <TextBlock x:Name="CreateContent1" Style="{StaticResource ContentTextStyle}" Text="Jaunajai anketai būs nepieciešams nosaukums. Ievadi to lauciņā un klikšķini 'Izveidot'." HorizontalAlignment="Center" />
+        
+            <TextBlock x:Name="CreateContent2" Style="{StaticResource ContentTextStyle}" Text="Atceries, ka anketas nosaukums ir tās identifikators - esi oriģināls, lai vēlāk būtu vieglāk strādāt." HorizontalAlignment="Center" />
+            <TextBox Height="32" HorizontalAlignment="Center" Margin="0,34,0,0" Name="newQName" VerticalAlignment="Top" Width="453" FontSize="12" />
+            <Button Content="Izveidot jaunu anketu" Margin="227,13,232,0" Name="button1" Width="181" FontSize="12" Height="37" HorizontalContentAlignment="Center" />
+        </StackPanel>
+    </Grid>
+</navigation:Page>

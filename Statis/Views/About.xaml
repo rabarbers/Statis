@@ -4,19 +4,33 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
     mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480"
-    Title="About" 
+    Title="Lasi par Statis" 
     Style="{StaticResource PageStyle}">
 
     <Grid x:Name="LayoutRoot">
         <ScrollViewer x:Name="PageScrollViewer" Style="{StaticResource PageScrollViewerStyle}">
 
-            <StackPanel x:Name="ContentStackPanel">
+            <StackPanel x:Name="ContentStackPanel" Height="465" Width="642" ScrollViewer.VerticalScrollBarVisibility="Auto">
 
-                <TextBlock x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}" 
-                           Text="About"/>
-                <TextBlock x:Name="ContentText" Style="{StaticResource ContentTextStyle}" 
-                           Text="About page content"/>
-
+                <TextBlock x:Name="AboutHeader1" Style="{StaticResource HeaderTextStyle}" 
+                           Text="Kas ir Statis?"/>
+                <TextBlock x:Name="AboutContent1" Style="{StaticResource ContentTextStyle}" 
+                           Text="Tā ir tīmekļa lietojumprogramma, kas palīdzēs Tev veikt savu aptauju internetā un apkopot saņemtos datus." Width="Auto" MaxWidth="Infinity" />
+                <TextBlock x:Name="AboutHeader2" Style="{StaticResource HeaderTextStyle}" 
+                           Text="Kā lietot Statis?"/>
+                <TextBlock x:Name="AboutContent2" Style="{StaticResource ContentTextStyle}"
+                           Text="Lai veidotu anketas vai piedalītos to rezultātu aplūkošanā un/vai interpretēšanā, Tev jābūt reģistrētam lietotājam."/>
+                <TextBlock x:Name="AboutContent3" Style="{StaticResource ContentTextStyle}"
+                           Text="Reģistrēti lietotāji ir administratori un analītiķi. Administrators pats veido anketas un nosūta tās iecerētajiem respondentiem. Analītiķis tikai palīdz administratoram izdarīt secinājumus par rezultātiem."/>
+                <TextBlock x:Name="AboutContent4" Style="{StaticResource ContentTextStyle}"
+                           Text="Ja vēlies kļūt par administratoru, dodies Mājup un reģistrējies - tev tiks izveidots jauns lietotāja konts, un varēsi pats/pati veidot anketas, izvēlēties respondentus un analītiķus."/>
+                <TextBlock x:Name="AboutContent5" Style="{StaticResource ContentTextStyle}"
+                           Text="Ja esi uzaicināts par analītiķi, ienāc sistēmā ar savu administratora norādīto lietotājvārdu un paroli, un varēsi piekļūt administratora anketām un to rezultātiem."/>
+                <TextBlock x:Name="AboutHeader3" Style="{StaticResource HeaderTextStyle}" 
+                           Text="Gribi uzzināt vairāk par Statis?"/>
+                <TextBlock x:Name="AboutContent6" Style="{StaticResource ContentTextStyle}"
+                           Text="Tev palīdzēs lietotāja dokumentācija, kas satur ne tikai sīkāku aprakstu par Statis piedāvātajām iespējām un uzbūvi, bet arī instrukcijas, kā izmantot konkrētas Statis funkcijas."/>
+                <HyperlinkButton x:Name="AboutHyper1" Style="{StaticResource LinkStyle}" NavigateUri="/Statis.docx" TargetName="ContentFrame" Content="Lietotāja dokumentācija" FontSize="14" FontWeight="ExtraBlack" Foreground="Azure"  />
             </StackPanel>
 
         </ScrollViewer>

@@ -315,6 +315,7 @@
     <Setter Property="TextWrapping" Value="Wrap"/>
     <Setter Property="Margin" Value="0,2,0,2"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
+    <Setter Property="MaxWidth" Value="620" />
   </Style>
 
   <!-- Page HyperlinkButton Style -->
@@ -323,5 +324,15 @@
     <Setter Property="FontSize" Value="12"/>
     <Setter Property="VerticalAlignment" Value="Center"/>
   </Style>
+    
+    
+<!-- APP SPECIFIC STYLES -->
+    
+    <!-- Login Panel Style -->
+    <Style x:Key="LoginPanelStyle" TargetType="StackPanel">
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+    </Style>
 
 </ResourceDictionary>
