@@ -3,3 +3,8 @@ C:\Users\anna\Desktop\StatisFinal\Statis.Web\bin\Statis.Web.pdb
 C:\Users\anna\Desktop\StatisFinal\Statis.Web\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\anna\Desktop\StatisFinal\Statis.Web\obj\Debug\Statis.Web.dll
 C:\Users\anna\Desktop\StatisFinal\Statis.Web\obj\Debug\Statis.Web.pdb
+D:\GitStatisLast\Statis.Web\bin\Statis.Web.dll
+D:\GitStatisLast\Statis.Web\bin\Statis.Web.pdb
+D:\GitStatisLast\Statis.Web\obj\Debug\ResolveAssemblyReference.cache
+D:\GitStatisLast\Statis.Web\obj\Debug\Statis.Web.dll
+D:\GitStatisLast\Statis.Web\obj\Debug\Statis.Web.pdb
