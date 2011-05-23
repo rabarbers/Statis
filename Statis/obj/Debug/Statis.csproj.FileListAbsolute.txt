@@ -404,3 +404,4 @@ C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\uk\System.Windows.Controls.In
 C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\vi\System.Windows.Controls.Input.resources.dll
 C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\zh-Hans\System.Windows.Controls.Input.resources.dll
 C:\Users\anna\Desktop\StatisFinal\Statis\Bin\Debug\zh-Hant\System.Windows.Controls.Input.resources.dll
+C:\Users\anna\Desktop\StatisFinal\Statis\obj\Debug\Views\Page1.g.i.cs
