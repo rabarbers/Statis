@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/StatisServiceContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/StatisServiceContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8000/StatisServices?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="Questionnaire">
     <xs:sequence>
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
@@ -17,9 +18,48 @@
   <xs:complexType name="Question">
     <xs:sequence>
       <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="questionId" type="ser:guid" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Question" nillable="true" type="tns:Question" />
+  <xs:complexType name="ImgQuestion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Question">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Image" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImgQuestion" nillable="true" type="tns:ImgQuestion" />
+  <xs:complexType name="TextQuestion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Question">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TextQuestion" nillable="true" type="tns:TextQuestion" />
+  <xs:complexType name="ImgTextQuestion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TextQuestion">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Img" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImgTextQuestion" nillable="true" type="tns:ImgTextQuestion" />
+  <xs:complexType name="ImgChoiceQuestion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ChoiceQuestion">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Img" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImgChoiceQuestion" nillable="true" type="tns:ImgChoiceQuestion" />
   <xs:complexType name="ChoiceQuestion">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Question">
@@ -43,7 +83,9 @@
   <xs:complexType name="ImgChoice">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Choice">
-        <xs:sequence />
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -51,7 +93,9 @@
   <xs:complexType name="NumberChoice">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Choice">
-        <xs:sequence />
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Option" type="xs:double" />
+        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -59,27 +103,11 @@
   <xs:complexType name="TextChoice">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Choice">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="TextChoice" nillable="true" type="tns:TextChoice" />
-  <xs:complexType name="TextQuestion">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Question">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="TextQuestion" nillable="true" type="tns:TextQuestion" />
-  <xs:complexType name="ImgQuestion">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Question">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Image" nillable="true" type="xs:anyType" />
+          <xs:element minOccurs="0" name="Option" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="ImgQuestion" nillable="true" type="tns:ImgQuestion" />
+  <xs:element name="TextChoice" nillable="true" type="tns:TextChoice" />
 </xs:schema>

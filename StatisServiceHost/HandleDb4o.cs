@@ -16,7 +16,9 @@ namespace StatisServiceHost
 
         private static IObjectContainer GetDb()
         {
-            return Db4oEmbedded.OpenFile(Db4oEmbedded.NewConfiguration(), StoreYapFileName);
+            var config = Db4oEmbedded.NewConfiguration();
+            config.Common.ObjectClass(typeof(Questionnaire)).CascadeOnDelete(true);
+            return Db4oEmbedded.OpenFile(config, StoreYapFileName);
         }
 
 
@@ -37,7 +39,7 @@ namespace StatisServiceHost
                 (from Questionnaire q in db
                  where q.Name == questionnaireName
                  select q).FirstOrDefault();
-
+                
                 return questionnaire;
             }
             finally
@@ -55,14 +57,15 @@ namespace StatisServiceHost
                 (from Questionnaire q in db
                  where q.Name == questionnaireToStore.Name
                  select q).FirstOrDefault();
-
+                
                 if(questionnaire != null)
                 {
-                    questionnaire.Description = questionnaireToStore.Description;
-                    questionnaire.Name = questionnaireToStore.Name;
-                    questionnaire.Questions.Clear();
-                    questionnaire.Questions.AddRange(questionnaireToStore.Questions);
-                    db.Store(questionnaire);
+                    db.Delete(questionnaire);
+                    //questionnaire.Description = questionnaireToStore.Description;
+                    //questionnaire.Name = questionnaireToStore.Name;
+                    //questionnaire.Questions.Clear();
+                    //questionnaire.Questions.AddRange(questionnaireToStore.Questions);
+                    db.Store(questionnaireToStore);
                 }
                 else
                 {
@@ -90,6 +93,7 @@ namespace StatisServiceHost
             choiceList1.Add(choiceOpt3);
 
             var question1 = new ChoiceQuestion("Is this a test?", choiceList1);
+            question1.questionId = Guid.NewGuid();
             
             questionnaire1.Questions.Add(question1);
 
@@ -103,13 +107,17 @@ namespace StatisServiceHost
             choiceList2.Add(choiceOpt6);
 
             var question2 = new ChoiceQuestion("How many tests are there in this application?", choiceList2);
+            question2.questionId = Guid.NewGuid();
+            questionnaire1.Questions.Add(question2);
 
             var questionnaire2 = new Questionnaire("Q2", "Public opinion on Statis testing");
 
             var question3 = new TextQuestion("What do you think about testing?");
+            question3.questionId = Guid.NewGuid();
             questionnaire2.Questions.Add(question3);
 
             var question4 = new TextQuestion("Do you think Statis should have a logo?");
+            question4.questionId = Guid.NewGuid();
             questionnaire2.Questions.Add(question4);
 
             var img = new object();
@@ -125,6 +133,7 @@ namespace StatisServiceHost
             choiceList3.Add(choiceOpt9);
 
             var question5 = new ImgChoiceQuestion("Should it be this logo?", img, choiceList3);
+            question5.questionId = Guid.NewGuid();
 
             questionnaire2.Questions.Add(question5);
 

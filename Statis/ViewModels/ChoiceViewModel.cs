@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,13 +13,17 @@ using Statis.StatisServices;
 
 namespace Statis.ViewModels
 {
-    public class TextQuestionViewModel : QuestionViewModel
+    public class ChoiceViewModel : ViewModelBase
     {
-        private TextQuestion _model;
+        private Choice _model;
 
-        public TextQuestionViewModel(TextQuestion model): base(model)
+        
+
+        public ChoiceViewModel(Choice model)
         {
             _model = model;
         }
+
+
     }
 }
