@@ -339,6 +339,14 @@
     <Style x:Key="CreationPanelStyle" TargetType="StackPanel">
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-        
+    </Style>
+
+    <!-- Question Template Textblock Style -->
+    <Style x:Key="QuestionTemplateTextStyle" TargetType="TextBlock">
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="MaxWidth" Value="200" />
+        <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
 </ResourceDictionary>
