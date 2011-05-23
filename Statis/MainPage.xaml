@@ -24,10 +24,10 @@
     
     <Grid x:Name="LayoutRoot" Style="{StaticResource LayoutRootGridStyle}" >
 
-        <Border x:Name="ContentBorder" Style="{StaticResource ContentBorderStyle}" Margin="0,115,0,0">
-
+        <Border x:Name="ContentBorder" Style="{StaticResource ContentBorderStyle}" Margin="0,115,0,0" VerticalAlignment="Top">
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
             <navigation:Frame x:Name="ContentFrame" Style="{StaticResource ContentFrameStyle}" 
-                              Source="/Home" Navigated="ContentFrame_Navigated" NavigationFailed="ContentFrame_NavigationFailed" MinWidth="500" Height="370" DataContext="{Binding}">
+                              Source="/Home" Navigated="ContentFrame_Navigated" NavigationFailed="ContentFrame_NavigationFailed" MinWidth="500" Height="Auto" DataContext="{Binding}" VerticalContentAlignment="Top">
                 <navigation:Frame.UriMapper>
                   <uriMapper:UriMapper>
                     <uriMapper:UriMapping Uri="" MappedUri="/Views/Home.xaml"/>
@@ -35,6 +35,7 @@
                   </uriMapper:UriMapper>
                 </navigation:Frame.UriMapper>
             </navigation:Frame>
+            </ScrollViewer>
         </Border>
 
         <Grid x:Name="NavigationGrid" Style="{StaticResource NavigationGridStyle}" MinWidth="600" Height="117">
@@ -42,7 +43,7 @@
                 <sdk:Label Content="Lietotājvārds:" Foreground="White" Height="Auto" HorizontalAlignment="Right" Margin="2,23,0,0" Name="label3" VerticalAlignment="Top" Width="Auto" />
                 <TextBox Height="23" HorizontalAlignment="Right" Margin="2,19,0,0" Name="loginUsr" VerticalAlignment="Top" Width="95" />
                 <sdk:Label Height="Auto" HorizontalAlignment="Right" Margin="15,23,0,0" Name="label2" VerticalAlignment="Center" Width="Auto" Content="Parole:" Foreground="White" />
-                <TextBox Height="23" HorizontalAlignment="Right" Margin="2,19,0,0" Name="loginPsw" Width="95" VerticalAlignment="Top" />
+                <PasswordBox Height="23" HorizontalAlignment="Right" Margin="2,19,0,0" Name="loginPsw" Width="95" VerticalAlignment="Top" />
             </StackPanel>
             <StackPanel x:Name="LinksStackPanel" Style="{StaticResource LinksStackPanelStyle}" VerticalAlignment="Bottom" Margin="19,0,25,21" Height="42" HorizontalAlignment="Right">
                 <sdk:Label Height="28" HorizontalAlignment="Left" Margin="221,7,0,7" Name="label1" VerticalAlignment="Center" Width="48" FontSize="13" Foreground="#FFFF4B71" FontWeight="Bold" Content="Gribu:" FlowDirection="LeftToRight"></sdk:Label>
@@ -53,6 +54,8 @@
                 <HyperlinkButton x:Name="mainLink3" Style="{StaticResource LinkStyle}" NavigateUri="/CreateQuestionnaireView" TargetName="ContentFrame" Content="Veidot" FontSize="16" FontWeight="ExtraBold" />
                 <Rectangle x:Name="Divider3" Style="{StaticResource DividerStyle}" />
                 <HyperlinkButton x:Name="mainLink4" Style="{StaticResource LinkStyle}" NavigateUri="/Review" TargetName="ContentFrame" Content="Skatīt" FontSize="16" FontWeight="ExtraBold" />
+                <Rectangle x:Name="Divider4" Style="{StaticResource DividerStyle}" />
+                <HyperlinkButton x:Name="mainLink5" Style="{StaticResource LinkStyle}" NavigateUri="/Users" TargetName="ContentFrame" Content="Biedroties" FontSize="16" FontWeight="ExtraBold" />
             </StackPanel>
             <Border x:Name="BrandingBorder" Style="{StaticResource BrandingBorderStyle}" Margin="37,54,0,0">
                 <StackPanel x:Name="BrandingStackPanel" Style="{StaticResource BrandingStackPanelStyle}">
