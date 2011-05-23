@@ -8,23 +8,16 @@
            d:DesignWidth="640" d:DesignHeight="480"
            Title="Page1 Page">
     <Grid x:Name="LayoutRoot">
-        <Grid.RowDefinitions>
-            <RowDefinition>
-                
-            </RowDefinition>
-            <RowDefinition>
-                
-            </RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Border BorderBrush="Silver" BorderThickness="1" Name="border1" Height="161" Width="155" Grid.Column="1" Margin="28,55,31,24">
-            <ContentControl Grid.Column="1" HorizontalAlignment="Left" Margin="38,66,0,0" Name="contentControl1" VerticalAlignment="Top" >
-                <Button Content="something some"></Button>
-            </ContentControl>
-        </Border>
+        
+            <StackPanel HorizontalAlignment="Stretch" >
+            <ScrollViewer Height="200" Width="200">
+                <StackPanel>
+                <Button x:Name="la">heijaa too</Button>
+                <TextBlock x:Name="li">dag</TextBlock>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+        
+
     </Grid>
 </navigation:Page>

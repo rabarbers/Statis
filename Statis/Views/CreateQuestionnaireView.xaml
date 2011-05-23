@@ -4,15 +4,20 @@
            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            mc:Ignorable="d"
-           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" xmlns:prism="clr-namespace:Microsoft.Practices.Prism.ViewModel;assembly=Microsoft.Practices.Prism" xmlns:Views="clr-namespace:Statis.Views" xmlns:viewModel="clr-namespace:Statis.ViewModels" Title="Veido jaunas anketas" Height="480" Width="Auto" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" MaxWidth="800">
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" xmlns:prism="clr-namespace:Microsoft.Practices.Prism.ViewModel;assembly=Microsoft.Practices.Prism" xmlns:Views="clr-namespace:Statis.Views" xmlns:viewModel="clr-namespace:Statis.ViewModels" Title="Veido jaunas anketas" Height="574" Width="Auto" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" MaxWidth="Infinity" d:DesignWidth="772">
     
     <navigation:Page.Resources>
         <viewModel:CreateQuestionnaireViewModel x:Key="ViewModel" />
     </navigation:Page.Resources>
 
-    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ViewModel}}" Height="504" Width="Auto" HorizontalAlignment="Left">
+    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ViewModel}}" Height="604" HorizontalAlignment="Left" Width="772">
         
-        <ItemsControl ItemsSource="{Binding Questions}" BorderBrush="Azure" BorderThickness="-4" VerticalAlignment="Stretch" Height="266" HorizontalAlignment="Left" Margin="0,114,0,104" Width="427" Background="#FF001900">
+        <ItemsControl ItemsSource="{Binding Questions}" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="0,107,0,104" Width="516" MinWidth="500">
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <Border BorderBrush="#FF0097FC" BorderThickness="4" CornerRadius="15" />
+                </ControlTemplate>
+            </ItemsControl.Template>
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Style="{StaticResource CreationPanelStyle}" >
@@ -32,35 +37,43 @@
             </ItemsControl.ItemTemplate>
 
         </ItemsControl>
-        <Border>
-            
-        <StackPanel Style="{StaticResource CreationPanelStyle}" Height="Auto" HorizontalAlignment="Right" Margin="440,22,0,0" Name="stackPanel2" Width="250" Background="#FFD4FFFF" Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Auto" MaxHeight="367">
-                <TextBlock Name="questionTemplate1" Text="Brīvās atbildes jautājums" Style="{StaticResource QuestionTemplateTextStyle}" Margin="0,10,0,0" />
-                <Button Content="Pievienot" Height="23" Name="button2" Width="75" HorizontalAlignment="Right" Margin="0,0,10,10" />
-                <!--<Rectangle Height="4" Name="rectangle1" Stroke="Black" StrokeThickness="1" Width="227" />
+        <StackPanel Background="#FFE5E8EF" HorizontalAlignment="Right" MaxHeight="560" Name="stackPanel2" Style="{StaticResource CreationPanelStyle}" Width="250" Height="560">
+            <ScrollViewer Margin="0,2,0,27" Height="551">
+                <StackPanel>
+                <TextBlock Name="questionTemplate1" Style="{StaticResource QuestionTemplateTextStyle}" Text="Brīvās atbildes jautājums" />
+                <Button Content="Pievienot jautājumu" Name="button2" Style="{StaticResource QuestionTemplateAddButtonStyle}" />
+                <Rectangle x:Name="Div1" Style="{StaticResource TemplateDividerStyle}" />
                 
                 <TextBlock Name="questionTemplate2" Style="{StaticResource QuestionTemplateTextStyle}" Text="Jautājums ar atbilžu variantiem (viena atbilde)" Margin="0,10,0,0" />
-                <ComboBox Height="23" Name="comboBox1" Width="74" HorizontalAlignment="Right" Margin="0,0,10,10">
-                    <ComboBoxItem Content="2" />
-                    <ComboBoxItem Content="3" IsSelected="True" />
-                    <ComboBoxItem Content="4" />
-                    <ComboBoxItem Content="5" />
-                    <ComboBoxItem Content="6" />
-                    <ComboBoxItem Content="7" />
-                    <ComboBoxItem Content="8" />
-                    <ComboBoxItem Content="9" />
-                    <ComboBoxItem Content="10" />
-                    <ComboBoxItem Content="11" />
-                    <ComboBoxItem Content="12" />
-                    <ComboBoxItem Content="13" />
-                    <ComboBoxItem Content="14" />
-                    <ComboBoxItem Content="15" />
-                </ComboBox>
-                <Button Content="Pievienot" Height="23" Name="button3" Width="75" HorizontalAlignment="Right" Margin="0,0,10,10" />
-                <Rectangle Height="4" Name="rectangle2" Stroke="Black" StrokeThickness="1" Width="227" />
+                <StackPanel Height="34" Name="stackPanel1" Width="200" Margin="0,0,0,10" Orientation="Horizontal">
+                        <sdk:Label Name="label1" Content="(bildes datne)" Height="28" Width="120" HorizontalContentAlignment="Right" />
+                        <Button Content="Izvēlies datni" Name="button6" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <ComboBox Name="comboBox1" Style="{StaticResource QuestionTemplateAddComboStyle}" >
+                        <ComboBoxItem Content="2" />
+                        <ComboBoxItem Content="3" IsSelected="True" />
+                        <ComboBoxItem Content="4" />
+                        <ComboBoxItem Content="5" />
+                        <ComboBoxItem Content="6" />
+                        <ComboBoxItem Content="7" />
+                        <ComboBoxItem Content="8" />
+                        <ComboBoxItem Content="9" />
+                        <ComboBoxItem Content="10" />
+                        <ComboBoxItem Content="11" />
+                        <ComboBoxItem Content="12" />
+                        <ComboBoxItem Content="13" />
+                        <ComboBoxItem Content="14" />
+                        <ComboBoxItem Content="15" />
+                    </ComboBox>
+                    <Button Style="{StaticResource QuestionTemplateAddButtonStyle}" Name="button3" Content="Pievienot jautājumu"/>
+                    <Rectangle x:Name="Div2" Style="{StaticResource TemplateDividerStyle}" />
                 
                 <TextBlock Name="questionTemplate3" Style="{StaticResource QuestionTemplateTextStyle}" Text="Jautājums ar atbilžu variantiem (vairākas atbildes)" Margin="0,10,0,0" />
-                <ComboBox Height="23" Name="comboBox2" Width="74" HorizontalAlignment="Right" Margin="0,0,10,10">
+                    <StackPanel Height="34" Name="stackPanel3" Width="200" Orientation="Horizontal">
+                        <sdk:Label Content="(bildes datne)" Height="28" HorizontalContentAlignment="Right" Name="label2" Width="120" />
+                        <Button Content="Izvēlies datni" Name="button7" VerticalAlignment="Center" />
+                    </StackPanel>
+                <ComboBox Style="{StaticResource QuestionTemplateAddComboStyle}" Name="comboBox2" >
                     <ComboBoxItem Content="2" />
                     <ComboBoxItem Content="3" IsSelected="True" />
                     <ComboBoxItem Content="4" />
@@ -76,54 +89,38 @@
                     <ComboBoxItem Content="14" />
                     <ComboBoxItem Content="15" />
                 </ComboBox>
-                <Button Content="Pievienot" Height="23" Name="button4" Width="75" HorizontalAlignment="Right" Margin="0,0,10,10" />
-                <Rectangle Height="4" Name="rectangle3" Stroke="Black" StrokeThickness="1" Width="227" />
-                
-                <TextBlock Name="questionTemplate5" Style="{StaticResource QuestionTemplateTextStyle}" Text="Jautājums ar attēlu un atbilžu variantiem (viena atbilde)" Margin="0,10,0,0" />
-                
-                <ComboBox Height="23" Name="comboBox3" Width="74" HorizontalAlignment="Right" Margin="0,0,10,10">
-                    <ComboBoxItem Content="2" />
-                    <ComboBoxItem Content="3" IsSelected="True" />
-                    <ComboBoxItem Content="4" />
-                    <ComboBoxItem Content="5" />
-                    <ComboBoxItem Content="6" />
-                    <ComboBoxItem Content="7" />
-                    <ComboBoxItem Content="8" />
-                    <ComboBoxItem Content="9" />
-                    <ComboBoxItem Content="10" />
-                    <ComboBoxItem Content="11" />
-                    <ComboBoxItem Content="12" />
-                    <ComboBoxItem Content="13" />
-                    <ComboBoxItem Content="14" />
-                    <ComboBoxItem Content="15" />
-                </ComboBox>
-                <Button Content="Pievienot" Height="23" Name="button5" Width="75" HorizontalAlignment="Right" Margin="0,0,10,10" />
-                <Rectangle Height="4" Name="rectangle4" Stroke="Black" StrokeThickness="1" Width="227" />
-                <TextBlock Name="questionTemplate4" Style="{StaticResource QuestionTemplateTextStyle}" Text="Jautājums ar atbilžu variantiem (vairākas atbildes)" Margin="0,10,0,0" />
-                <ComboBox Height="23" Name="comboBox4" Width="74" HorizontalAlignment="Right" Margin="0,0,10,10">
-                    <ComboBoxItem Content="2" />
-                    <ComboBoxItem Content="3" IsSelected="True" />
-                    <ComboBoxItem Content="4" />
-                    <ComboBoxItem Content="5" />
-                    <ComboBoxItem Content="6" />
-                    <ComboBoxItem Content="7" />
-                    <ComboBoxItem Content="8" />
-                    <ComboBoxItem Content="9" />
-                    <ComboBoxItem Content="10" />
-                    <ComboBoxItem Content="11" />
-                    <ComboBoxItem Content="12" />
-                    <ComboBoxItem Content="13" />
-                    <ComboBoxItem Content="14" />
-                    <ComboBoxItem Content="15" />
-                </ComboBox>
-                <Button Content="Pievienot" Height="23" Name="button6" Width="75" HorizontalAlignment="Right" Margin="0,0,10,10" />
-                <Rectangle Height="4" Name="rectangle5" Stroke="Black" StrokeThickness="1" Width="190" />
-            -->
+                <Button Style="{StaticResource QuestionTemplateAddButtonStyle}" Name="button4" Content="Pievienot jautājumu" />
+                <Rectangle x:Name="Div3" Style="{StaticResource TemplateDividerStyle}" />
+
+                <TextBlock Name="questionTemplate4" Style="{StaticResource QuestionTemplateTextStyle}" Text="Jautājums ar bildēm kā atbilžu variantiem (viena atbilde)" Margin="0,10,0,0" />
+                    <StackPanel Name="stackPanel4" Width="200" Orientation="Horizontal">
+                        <sdk:Label Content="(bildes datne)" Height="28" HorizontalContentAlignment="Right" Name="label3" Width="120" />
+                        <Button Content="Izvēlies datni" Name="button8" Style="{StaticResource FileUploadButtonStyle}" />
+                    </StackPanel>
+                    <StackPanel Name="stackPanel7" Orientation="Horizontal" Width="200">
+                        <sdk:Label Content="(bildes datne)" Height="28" HorizontalContentAlignment="Right" Name="label6" Width="120" />
+                        <Button Content="Izvēlies datni" Name="button11" Style="{StaticResource FileUploadButtonStyle}" />
+                    </StackPanel>
+                    <StackPanel Name="stackPanel6" Orientation="Horizontal" Width="200">
+                        <sdk:Label Content="(bildes datne)" Height="28" HorizontalContentAlignment="Right" Name="label5" Width="120" />
+                        <Button Content="Izvēlies datni" Name="button10" Style="{StaticResource FileUploadButtonStyle}" />
+                    </StackPanel>
+                    <StackPanel Name="stackPanel5" Orientation="Horizontal" Width="200">
+                        <sdk:Label Content="(bildes datne)" Height="28" HorizontalContentAlignment="Right" Name="label4" Width="120" />
+                        <Button Content="Izvēlies datni" Name="button9" Style="{StaticResource FileUploadButtonStyle}" />
+                    </StackPanel>
+                    <!--<ComboBox Style="{StaticResource QuestionTemplateAddComboStyle}" Name="comboBox3" >
+                     <ComboBoxItem Content="2"/>
+                     <ComboBoxItem Content="3" IsSelected="True" />
+                     <ComboBoxItem Content="4" />
+                </ComboBox>-->
+                <Button Style="{StaticResource QuestionTemplateAddButtonStyle}" Content="Pievienot jautājumu" Name="button5" />
             </StackPanel>
-        </Border>
+            </ScrollViewer>
+        </StackPanel>
         <TextBox Height="23" HorizontalAlignment="Left" Margin="146,69,0,0" VerticalAlignment="Top" Width="259" Text="{Binding Name, Mode=TwoWay}" />
-        <TextBlock Style="{StaticResource ContentTextStyle}" Height="23" HorizontalAlignment="Left" Margin="3,69,0,0" Text="Anketas nosaukums:" VerticalAlignment="Top" FontWeight="Bold" />
-        <Button Content="Izveidot jaunu anketu" Name="button1" FontSize="12" Height="37" HorizontalContentAlignment="Center" Margin="12,400,12,61" HorizontalAlignment="Center" MinWidth="400" />
-        <TextBlock Style="{StaticResource ContentTextStyle}" Height="Auto" HorizontalAlignment="Left" Text="Šeit vari izveidot jaunu anketu - noteikti ieraksti anketas nosaukumu, lai varētu vēlāk to ērti atrast. Pievieno jautājumus no saraksta labajā pusē un aizpildi to veidnes, kas parādīsies anketas panelī." VerticalAlignment="Top" MaxWidth="470" Margin="0,2,0,0" Width="427" />
+        <TextBlock Style="{StaticResource ContentTextStyle}" Height="23" Margin="3,69,0,0" Text="Anketas nosaukums:" VerticalAlignment="Top" FontWeight="Bold" />
+        <Button Content="Saglabāt anketu" Name="button1" FontSize="12" Height="37" HorizontalContentAlignment="Center" Margin="55,516,0,51" HorizontalAlignment="Left" MinWidth="400" />
+        <TextBlock Style="{StaticResource ContentTextStyle}" Text="Šeit vari izveidot jaunu anketu - noteikti ieraksti anketas nosaukumu, lai varētu vēlāk to ērti atrast. Pievieno jautājumus no saraksta labajā pusē un aizpildi to veidnes, kas parādīsies anketas panelī." VerticalAlignment="Top" MaxWidth="470" Margin="0,2,0,0" Width="427" />
     </Grid>
 </navigation:Page>
