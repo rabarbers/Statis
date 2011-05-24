@@ -10,6 +10,8 @@ namespace StatisServiceContracts
     [KnownType(typeof(Question))]
     public class Questionnaire
     {
+        [DataMember]
+        public Guid Id { get; set; }
         /// <summary></summary>
         [DataMember]
         public string Name { get; set; }
@@ -25,6 +27,7 @@ namespace StatisServiceContracts
         /// <param name="description"></param>
         public Questionnaire(string name, string description)
         {
+            Id = Guid.NewGuid();
             Name = name;
             Description = description;
             Questions = new List<Question>();

@@ -97,6 +97,7 @@
     <Compile Include="ViewModels\CreateQuestionnaireViewModel.cs" />
     <Compile Include="ViewModels\ImgChoiceQuestionViewModel.cs" />
     <Compile Include="ViewModels\QuestionViewModel.cs" />
+    <Compile Include="ViewModels\ReviewViewModel.cs" />
     <Compile Include="ViewModels\TextChoiceViewModel.cs" />
     <Compile Include="ViewModels\TextQuestionViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />

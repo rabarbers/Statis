@@ -13,10 +13,10 @@
     <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ViewModel}}" Height="604" HorizontalAlignment="Left" Width="772">
 
         <ScrollViewer Height="266" Width="427" Margin="54,122,290,216" BorderBrush="Azure">
-            <ItemsControl ItemsSource="{Binding Questions}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <ItemsControl ItemsSource="{Binding Questions}" VerticalAlignment="Stretch">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Style="{StaticResource CreationPanelStyle}" >
+                        <StackPanel Style="{StaticResource CreationPanelStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                         </StackPanel>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>

@@ -19,7 +19,7 @@
         <ItemsControl Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Choices}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel Style="{StaticResource CreationPanelStyle}" >
+                    <StackPanel Style="{StaticResource CreationPanelStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"> 
                     </StackPanel>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
