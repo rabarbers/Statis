@@ -39,6 +39,7 @@ namespace StatisServiceContracts
 
         public void CalcMedian()
         {
+
         }
 
         public void CalcMode()

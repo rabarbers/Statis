@@ -4,12 +4,40 @@
            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            mc:Ignorable="d"
-           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" Title="Skati savas anketas" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" Style="{StaticResource PageStyle}" Height="480" Width="640">
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" Title="Skati savas anketas" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" Style="{StaticResource PageStyle}" Height="480" Width="1200">
     <Grid x:Name="LayoutRoot">
-        <sdk:Label Height="Auto" HorizontalAlignment="Left" Margin="12,12,0,0" Name="label1" VerticalAlignment="Top" Width="Auto" Content="Tev jau ir šādas anketas:" MaxWidth="500" FontSize="12" />
-        <ComboBox Height="23" HorizontalAlignment="Left" Margin="36,58,0,0" Name="comboBox1" VerticalAlignment="Top" Width="320" AllowDrop="False"></ComboBox>
-        <Button Content="Labot" Height="23" HorizontalAlignment="Left" Margin="153,102,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
-        <Button Content="Likvidēt" Height="23" HorizontalAlignment="Left" Margin="268,102,0,0" Name="button2" VerticalAlignment="Top" Width="75" />
-        <Button Content="Izsūtīt" Height="23" HorizontalAlignment="Left" Margin="383,102,0,0" Name="button3" VerticalAlignment="Top" Width="75" />
+        <TextBlock FontSize="12" FontWeight="Bold" Height="Auto" HorizontalAlignment="Left" Margin="12,12,0,0" MaxWidth="200" Name="label1" Text="Tev jau ir šādas anketas:" TextWrapping="Wrap" VerticalAlignment="Top" Width="Auto" />
+        <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,9,662,0" Name="comboBox1" VerticalAlignment="Top" Width="320" AllowDrop="False"></ComboBox>
+        <Button Content="Apskatīt" Height="23" HorizontalAlignment="Left" Margin="224,47,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
+        <Button Content="Likvidēt" Height="23" HorizontalAlignment="Left" Margin="339,47,0,0" Name="button2" VerticalAlignment="Top" Width="75" />
+        <Button Content="Izsūtīt" Height="23" HorizontalAlignment="Left" Margin="454,47,0,0" Name="button3" VerticalAlignment="Top" Width="75" />
+        <ItemsControl Margin="12,80,0,0" HorizontalAlignment="Left" Width="516" MinWidth="500">
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <Border BorderBrush="#FF0097FC" BorderThickness="4" CornerRadius="15" />
+                </ControlTemplate>
+            </ItemsControl.Template>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel>
+                        
+                    </StackPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" BorderThickness="0">
+                <ItemsControl HorizontalAlignment="Right" Width="634" Margin="0,0,10,0">
+                    <ItemsControl.Template>
+                        <ControlTemplate>
+                            <Border BorderBrush="#FF0097FC" BorderThickness="4" CornerRadius="15" />
+                        </ControlTemplate>
+                    </ItemsControl.Template>
+                    <StackPanel ScrollViewer.HorizontalScrollBarVisibility="Visible">
+                        
+                    </StackPanel>
+                </ItemsControl>
+            </ScrollViewer>
+        </StackPanel>
     </Grid>
 </navigation:Page>
