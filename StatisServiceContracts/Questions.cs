@@ -13,7 +13,7 @@ namespace StatisServiceContracts
     public class Question
     {
         [DataMember]
-        public Guid questionId;
+        public Guid QuestionId;
         [DataMember]
         public string Text { get; set; }
     }
@@ -52,25 +52,26 @@ namespace StatisServiceContracts
 
     [DataContract]
     [KnownType(typeof(Choice))]
+    [KnownType(typeof(ImgChoiceQuestion))]
     public class ChoiceQuestion : Question
     {
         [DataMember]
-        public List<Choice> _choiceList;
+        public List<Choice> ChoiceList;
         
         public ChoiceQuestion(List<Choice> choiceList)
         {
-            _choiceList = choiceList;
+            ChoiceList = choiceList;
         }
 
 
         public ChoiceQuestion()
         { 
-            _choiceList = new List<Choice>();
+            ChoiceList = new List<Choice>();
         }
         public ChoiceQuestion(string text, List<Choice> choiceList)
         {
             Text = text;
-            _choiceList = new List<Choice>(choiceList);
+            ChoiceList = new List<Choice>(choiceList);
         }
     }
 
@@ -83,7 +84,7 @@ namespace StatisServiceContracts
         {
             Text = text;
             Img = img;
-            _choiceList = new List<Choice>(choiceList);
+            ChoiceList = new List<Choice>(choiceList);
         }
     }
 

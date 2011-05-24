@@ -23,7 +23,7 @@ namespace Statis.ViewModels
         {
             _model = model;
 
-            foreach (var choice in _model._choiceList)
+            foreach (var choice in _model.ChoiceList)
             {
                 if(choice is TextChoice)
                 {

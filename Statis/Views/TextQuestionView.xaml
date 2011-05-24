@@ -11,7 +11,7 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0" Text="Jautājums:" VerticalAlignment="Center"></TextBlock>
-        <TextBox Grid.Column="1" Text="{Binding Question, Mode=TwoWay}"></TextBox>
+        <TextBlock Grid.Column="0" Text="Jautājums:" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+        <TextBox Grid.Column="1" Text="{Binding Question, Mode=TwoWay}" HorizontalAlignment="Left"></TextBox>
     </Grid>
 </UserControl>
