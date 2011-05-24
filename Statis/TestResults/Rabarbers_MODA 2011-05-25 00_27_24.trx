@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="8180153c-e6d7-4ac9-b664-ae5cfdee8e6a" name="Rabarbers@MODA 2011-05-25 00:27:24" runUser="Moda\Rabarbers" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="bdf382ca-5bce-47e3-bbdb-dbd78b5c73b9">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Rabarbers_MODA 2011-05-25 00_27_24">
+      <DeploymentItem filename="D:\GitStatisLast\StatisServiceContracts\bin\Debug\StatisServiceContracts.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\db4o\db4o-8.1\bin\net-4.0\Db4objects.Db4o.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\db4o\db4o-8.1\bin\net-4.0\Db4objects.Db4o.Linq.dll" />
+      <DeploymentItem filename="D:\GitStatisLast\StatisServiceHost\bin\Debug\StatisServiceHost.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-05-25T00:27:24.5613775+03:00" queuing="2011-05-25T00:27:26.3704810+03:00" start="2011-05-25T00:27:26.6754984+03:00" finish="2011-05-25T00:28:33.8543408+03:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="MODA" outcome="Error" timestamp="2011-05-25T00:28:33.8523407+03:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestStatisServiceMethodGetQuestionnaire" storage="d:\gitstatislast\statisservicetests\bin\debug\statisservicetests.dll" id="b79cb0fc-e2d7-7180-07f8-36d4935e8fcf">
+      <Execution id="0f15c94d-31f8-4590-9919-4505bbc8831d" />
+      <TestMethod codeBase="D:/GitStatisLast/StatisServiceTests/bin/Debug/StatisServiceTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="StatisServiceTests.UnitTest1, StatisServiceTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestStatisServiceMethodGetQuestionnaire" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="b79cb0fc-e2d7-7180-07f8-36d4935e8fcf" executionId="0f15c94d-31f8-4590-9919-4505bbc8831d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="0f15c94d-31f8-4590-9919-4505bbc8831d" testId="b79cb0fc-e2d7-7180-07f8-36d4935e8fcf" testName="TestStatisServiceMethodGetQuestionnaire" computerName="MODA" duration="00:01:06.8788252" startTime="2011-05-25T00:27:26.9755156+03:00" endTime="2011-05-25T00:28:33.8543408+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0f15c94d-31f8-4590-9919-4505bbc8831d">
+    </UnitTestResult>
+  </Results>
+</TestRun>

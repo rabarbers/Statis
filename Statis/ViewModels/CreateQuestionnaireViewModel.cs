@@ -31,7 +31,7 @@ namespace Statis.ViewModels
         
         public CreateQuestionnaireViewModel()
         {
-            _model = new Questionnaire {Questions = new ObservableCollection<Question>(), Id = Guid.NewGuid()};
+            _model = new Questionnaire {Questions = new ObservableCollection<Question>()};
 
             _service = new QuestionnaireAdministrativeServiceClient();
             _service.OpenCompleted += delegate

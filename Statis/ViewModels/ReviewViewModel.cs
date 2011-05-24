@@ -13,6 +13,6 @@ namespace Statis.ViewModels
 {
     public class ReviewViewModel
     {
-
+        
     }
 }

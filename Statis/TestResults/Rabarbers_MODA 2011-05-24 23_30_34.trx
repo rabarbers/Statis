@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="29ce34ff-584c-4cee-9b34-e699e315b146" name="Rabarbers@MODA 2011-05-24 23:30:34" runUser="Moda\Rabarbers" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="bdf382ca-5bce-47e3-bbdb-dbd78b5c73b9">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Rabarbers_MODA 2011-05-24 23_30_34">
+      <DeploymentItem filename="D:\GitStatisLast\StatisServiceHost\bin\Debug\StatisServiceHost.exe" />
+      <DeploymentItem filename="D:\GitStatisLast\StatisServiceContracts\bin\Debug\StatisServiceContracts.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-05-24T23:30:34.4433299+03:00" queuing="2011-05-24T23:30:34.4613309+03:00" start="2011-05-24T23:30:34.4673313+03:00" finish="2011-05-24T23:32:34.8902191+03:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="d:\gitstatislast\statisservicetests\bin\debug\statisservicetests.dll" id="dfcc728d-1b57-0fd6-501d-97a7fcf22134">
+      <Execution id="930d17f2-f8d5-46bd-abbe-146690f972ee" />
+      <TestMethod codeBase="D:/GitStatisLast/StatisServiceTests/bin/Debug/StatisServiceTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="StatisServiceTests.UnitTest1, StatisServiceTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="dfcc728d-1b57-0fd6-501d-97a7fcf22134" executionId="930d17f2-f8d5-46bd-abbe-146690f972ee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="930d17f2-f8d5-46bd-abbe-146690f972ee" testId="dfcc728d-1b57-0fd6-501d-97a7fcf22134" testName="TestMethod1" computerName="MODA" duration="00:00:00.0311217" startTime="2011-05-24T23:30:34.4703314+03:00" endTime="2011-05-24T23:32:34.8452165+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="930d17f2-f8d5-46bd-abbe-146690f972ee">
+    </UnitTestResult>
+  </Results>
+</TestRun>

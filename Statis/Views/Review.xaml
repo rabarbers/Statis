@@ -4,12 +4,19 @@
            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            mc:Ignorable="d"
-           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" Title="Skati savas anketas" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" Style="{StaticResource PageStyle}" Height="480" Width="640">
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" Title="Skati savas anketas" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:viewModel="clr-namespace:Statis.ViewModels" Style="{StaticResource PageStyle}" Height="480" Width="640">
+
+    <navigation:Page.Resources>
+        <viewModel:ReviewViewModel x:Key="ViewModel" />
+    </navigation:Page.Resources>
+    
     <Grid x:Name="LayoutRoot">
         <sdk:Label Height="Auto" HorizontalAlignment="Left" Margin="12,12,0,0" Name="label1" VerticalAlignment="Top" Width="Auto" Content="Tev jau ir šādas anketas:" MaxWidth="500" FontSize="12" />
-        <ComboBox Height="23" HorizontalAlignment="Left" Margin="36,58,0,0" Name="comboBox1" VerticalAlignment="Top" Width="320" AllowDrop="False"></ComboBox>
-        <Button Content="Labot" Height="23" HorizontalAlignment="Left" Margin="153,102,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
-        <Button Content="Likvidēt" Height="23" HorizontalAlignment="Left" Margin="268,102,0,0" Name="button2" VerticalAlignment="Top" Width="75" />
-        <Button Content="Izsūtīt" Height="23" HorizontalAlignment="Left" Margin="383,102,0,0" Name="button3" VerticalAlignment="Top" Width="75" />
+        <ListBox Margin="35,48,159,136" ItemsSource="">
+            
+        </ListBox>
+        <Button Content="Labot" Height="23" HorizontalAlignment="Left" Margin="528,51,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
+        <Button Content="Likvidēt" Height="23" HorizontalAlignment="Left" Margin="528,91,0,0" Name="button2" VerticalAlignment="Top" Width="75" />
+        <Button Content="Izsūtīt" Height="23" HorizontalAlignment="Left" Margin="528,148,0,0" Name="button3" VerticalAlignment="Top" Width="75" />
     </Grid>
 </navigation:Page>

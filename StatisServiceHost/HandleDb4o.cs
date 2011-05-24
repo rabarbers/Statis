@@ -16,9 +16,14 @@ namespace StatisServiceHost
 
         private static IObjectContainer GetDb()
         {
+            return GetDb(StoreYapFileName);
+        }
+        
+        private static IObjectContainer GetDb(string dbFileName)
+        {
             var config = Db4oEmbedded.NewConfiguration();
             config.Common.ObjectClass(typeof(Questionnaire)).CascadeOnDelete(true);
-            return Db4oEmbedded.OpenFile(config, StoreYapFileName);
+            return Db4oEmbedded.OpenFile(config, dbFileName);
         }
 
 
@@ -76,7 +81,7 @@ namespace StatisServiceHost
             }
         }
 
-        public static void LoadTestData()
+        public static void LoadTestData(string dbFileName)
         {
             var questionnaire1 = new Questionnaire("Q1", "Test questionnaire");
             
@@ -148,7 +153,7 @@ namespace StatisServiceHost
             filledQuestionnaire2.AddAnswer(answer4);
             filledQuestionnaire2.AddAnswer(answer5);
 
-            IObjectContainer db = GetDb();
+            IObjectContainer db = GetDb(dbFileName);
             db.Store(questionnaire1);
             db.Store(questionnaire2);
             db.Store(filledQuestionnaire1);
