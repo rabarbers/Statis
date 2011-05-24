@@ -338,7 +338,7 @@
     <!-- Creation Panel Style -->
     <Style x:Key="CreationPanelStyle" TargetType="StackPanel">
         <Setter Property="VerticalAlignment" Value="Top" />
-        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
     </Style>
 
     <!-- Question Template Textblock Style -->
@@ -348,5 +348,31 @@
         <Setter Property="FontSize" Value="12" />
         <Setter Property="MaxWidth" Value="200" />
         <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Margin" Value="0,10,0,0" />
+    </Style>
+    
+    <!-- Style for Question Template Buttons -->
+    <Style x:Name="QuestionTemplateAddButtonStyle" TargetType="Button">
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Margin" Value="0,0,10,10" />
+        <Setter Property="MinWidth" Value="75" />
+    </Style>
+    <Style x:Name="QuestionTemplateAddComboStyle" TargetType="ComboBox">
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Margin" Value="0,0,10,10" />
+        <Setter Property="MinWidth" Value="75" />
+    </Style>
+
+    <!-- TemplateDividerStyle -->
+    <Style x:Key="TemplateDividerStyle" TargetType="Rectangle">
+        <Setter Property="Height" Value="4" />
+        <Setter Property="Stroke" Value="Black" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="Width" Value="227" />
+    </Style>
+
+    <!-- File Upload Button Style -->
+    <Style x:Key="FileUploadButtonStyle" TargetType="Button">
+        <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 </ResourceDictionary>
