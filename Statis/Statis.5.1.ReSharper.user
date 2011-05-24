@@ -20,54 +20,54 @@
       <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:QuestionnaireService.cs" caret="516" fromTop="14" />
       <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Answer.cs" caret="442" fromTop="15" />
       <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:ClientAccessPolicy.xml" caret="166" fromTop="5" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:CreateQuestionnaireView.xaml.cs" caret="394" fromTop="5" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Service References/d:StatisServices/f:Reference.cs" caret="4916" fromTop="0" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:ChoiceViewModel.cs" caret="478" fromTop="15" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:TextChoiceViewModel.cs" caret="601" fromTop="24" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:TextChoiceView.xaml" caret="448" fromTop="8" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:ImgChoiceQuestionView.xaml" caret="1187" fromTop="4" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:ImgChoiceQuestionViewModel.cs" caret="873" fromTop="15" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:CreateQuestionnaireView.xaml" caret="367" fromTop="4" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:TextQuestionViewModel.cs" caret="391" fromTop="14" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="994" fromTop="5" />
       <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Choice.cs" caret="405" fromTop="18" />
       <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Questions.cs" caret="437" fromTop="0" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:TextQuestionView.xaml" caret="738" fromTop="7" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:QuestionViewModel.cs" caret="591" fromTop="18" />
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="1894" fromTop="19" />
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:Program.cs" caret="427" fromTop="16" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="259" fromTop="12" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:CreateQuestionnaireView.xaml.cs" caret="552" fromTop="18" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:Program.cs" caret="239" fromTop="12" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="1873" fromTop="23" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:CreateQuestionnaireView.xaml" caret="953" fromTop="9" />
     </RecentFiles>
     <RecentEdits>
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:ImgChoiceQuestionViewModel.cs" caret="1471" fromTop="32" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:ImgChoiceQuestionViewModel.cs" caret="497" fromTop="7" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:TextQuestionViewModel.cs" caret="567" fromTop="21" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:ImgChoiceQuestionView.xaml" caret="510" fromTop="2" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:ImgChoiceQuestionView.xaml" caret="2340" fromTop="10" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:ImgChoiceQuestionView.xaml" caret="2187" fromTop="8" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:ImgChoiceQuestionView.xaml" caret="2122" fromTop="7" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:TextChoiceView.xaml" caret="369" fromTop="5" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="2500" fromTop="14" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="3045" fromTop="10" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="2293" fromTop="25" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="2837" fromTop="14" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="3402" fromTop="10" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:TextChoiceView.xaml" caret="734" fromTop="7" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:ImgChoiceQuestionView.xaml" caret="974" fromTop="5" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="920" fromTop="19" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="670" fromTop="13" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:CreateQuestionnaireView.xaml" caret="8904" fromTop="9" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:CreateQuestionnaireView.xaml" caret="953" fromTop="9" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="1612" fromTop="26" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="1404" fromTop="19" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:CreateQuestionnaireView.xaml" caret="8936" fromTop="9" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:TextQuestionView.xaml" caret="803" fromTop="8" />
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="2427" fromTop="32" />
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="3223" fromTop="19" />
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="3844" fromTop="22" />
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="4249" fromTop="22" />
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="4902" fromTop="23" />
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="1958" fromTop="23" />
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="1851" fromTop="19" />
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="1341" fromTop="15" />
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="2261" fromTop="25" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="2546" fromTop="32" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="3342" fromTop="19" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="3963" fromTop="22" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="4368" fromTop="22" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="5021" fromTop="23" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="2077" fromTop="23" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="1970" fromTop="19" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="1460" fromTop="15" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="2380" fromTop="25" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="704" fromTop="21" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="669" fromTop="20" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="758" fromTop="8" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="2675" fromTop="31" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="2072" fromTop="7" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="2544" fromTop="17" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="2858" fromTop="27" />
       <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:Program.cs" caret="200" fromTop="11" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="1001" fromTop="5" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:CreateQuestionnaireView.xaml" caret="3125" fromTop="9" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="1873" fromTop="23" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:CreateQuestionnaireView.xaml" caret="953" fromTop="9" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -84,10 +84,10 @@
   <CompletionStatisticsManager>
     <ItemStatistics item="Default">
       <Item value="var" priority="4" />
-      <Item value="new" priority="10" />
-      <Item value="Questionnaire`0" priority="0" />
+      <Item value="new" priority="14" />
+      <Item value="Questionnaire`0" priority="1" />
       <Item value="Question`0" priority="0" />
-      <Item value="TextQuestion`0" priority="1" />
+      <Item value="TextQuestion`0" priority="2" />
       <Item value="question1" priority="2" />
       <Item value="GetDb`0" priority="0" />
       <Item value="db" priority="4" />
@@ -99,12 +99,12 @@
       <Item value="QuestionnaireAdministrativeServiceClient`0" priority="1" />
       <Item value="_service" priority="5" />
       <Item value="service" priority="1" />
-      <Item value="private" priority="4" />
+      <Item value="private" priority="5" />
       <Item value="if" priority="4" />
       <Item value="e" priority="0" />
-      <Item value="_model" priority="10" />
+      <Item value="_model" priority="13" />
       <Item value="_questions" priority="2" />
-      <Item value="ObservableCollection&lt;Question&gt;" priority="0" />
+      <Item value="ObservableCollection&lt;Question&gt;" priority="1" />
       <Item value="TextQuestionViewModel`0" priority="0" />
       <Item value="model" priority="3" />
       <Item value="ViewModelBase`0" priority="1" />
@@ -120,7 +120,7 @@
       <Item value="view" priority="0" />
       <Item value="try" priority="0" />
       <Item value="catch" priority="0" />
-      <Item value="Questionnaire" priority="0" />
+      <Item value="Questionnaire" priority="1" />
       <Item value="string" priority="2" />
       <Item value="DataContext" priority="0" />
       <Item value="LoadTestData`0" priority="0" />
@@ -140,10 +140,13 @@
       <Item value="choice" priority="0" />
       <Item value="SaveQuestionnaire" priority="0" />
       <Item value="object" priority="0" />
-      <Item value="void" priority="0" />
+      <Item value="void" priority="1" />
       <Item value="int" priority="0" />
       <Item value="Guid`0" priority="0" />
       <Item value="questionnaire" priority="0" />
+      <Item value="config" priority="0" />
+      <Item value="DelegateCommand" priority="0" />
+      <Item value="Update`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:StatisServiceContracts.Questionnaire">
       <Item value="Questions" priority="0" />
@@ -163,13 +166,13 @@
       <Item value="BeginGetQuestionnaire`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Statis.StatisServices.Questionnaire">
-      <Item value="Questions" priority="2" />
+      <Item value="Questions" priority="4" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Statis.StatisServices.TextQuestion">
       <Item value="Text" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.ObjectModel.ObservableCollection`1">
-      <Item value="Add`0" priority="1" />
+      <Item value="Add`0" priority="2" />
       <Item value="Clear`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Statis.StatisServices.QuestionnaireAdministrativeServiceClient">
@@ -205,6 +208,9 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Guid">
       <Item value="NewGuid`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Db4objects.Db4o.Config.IEmbeddedConfiguration">
+      <Item value="AddConfigurationItem`0" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>
