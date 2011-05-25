@@ -451,3 +451,4 @@ D:\GitStatisLast\Statis\Bin\Debug\zh-Hans\System.Windows.Controls.Input.resource
 D:\GitStatisLast\Statis\Bin\Debug\zh-Hant\System.Windows.Controls.Input.resources.dll
 D:\GitStatisLast\Statis\obj\Debug\Views\ImgChoiceQuestionView.g.i.cs
 D:\GitStatisLast\Statis\obj\Debug\Views\TextChoiceView.g.i.cs
+D:\GitStatisLast\Statis\obj\Debug\Views\AnalystViewModel.g.i.cs

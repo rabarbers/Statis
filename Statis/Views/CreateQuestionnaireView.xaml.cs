@@ -21,5 +21,19 @@ namespace Statis.Views
         {
             InitializeComponent();
         }
+
+        
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            var s = e.Uri.OriginalString;
+            s = s.Remove(0, "/CreateQuestionnaireView".Length);
+            if (s.Length > 0)
+            {
+                s = s.Remove(0, 1);
+                ((CreateQuestionnaireViewModel)LayoutRoot.DataContext).EditQuestionnaire(s);
+            }
+        }
     }
 }

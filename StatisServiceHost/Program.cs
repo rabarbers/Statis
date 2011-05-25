@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.ServiceModel;
 
@@ -9,7 +10,7 @@ namespace StatisServiceHost
     {
         static void Main()
         {
-            //HandleDb4o.LoadTestData();
+            //HandleDb4o.LoadTestData(Path.Combine(@"D:\", "store.yap"));
             
             Console.WriteLine("Starting...");
             var crossDomainserviceHost = new ServiceHost(typeof(CrossDomainService));
@@ -25,6 +26,12 @@ namespace StatisServiceHost
             serviceHost.Close();
             crossDomainserviceHost.Close();
             Console.WriteLine("Closed.");
+
+            var db = HandleDb4o.Database;
+            if(db != null)
+            {
+                db.Close();
+            }
 
         }
     }

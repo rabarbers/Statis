@@ -12,13 +12,14 @@ namespace StatisServiceHost
     public class HandleDb4o
     {
         readonly static string StoreYapFileName = Path.Combine(@"D:\", "store.yap");
+        private static IObjectContainer _database;
             //Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "store.yap");
 
-        private static IObjectContainer GetDb()
+        public static IObjectContainer Database
         {
-            return GetDb(StoreYapFileName);
+            get { return _database ?? (_database = GetDb(StoreYapFileName)); }
         }
-        
+
         private static IObjectContainer GetDb(string dbFileName)
         {
             var config = Db4oEmbedded.NewConfiguration();
@@ -37,65 +38,70 @@ namespace StatisServiceHost
         /// <returns></returns>
         public static Questionnaire GetQuestionnaire(string questionnaireName)
         {
-            var db = GetDb();
-            try
-            {
-                var questionnaire =
-                (from Questionnaire q in db
-                 where q.Name == questionnaireName
-                 select q).FirstOrDefault();
-                
-                return questionnaire;
-            }
-            finally
-            {
-                db.Close();
-            }
+            var questionnaire =
+                 (from Questionnaire q in Database
+                  where q.Name == questionnaireName
+                  select q).FirstOrDefault();
+
+            return questionnaire;
         }
 
         public static IEnumerable<string> GetUserQuestionnaireList(string userName)
         {
-            var db = GetDb();
-            try
-            {
-                var questionnaires =
-                (from Questionnaire q in db
+            var loggedInUser =
+                (from Analyst user in Database
+                 where user.UserName == userName
+                 select user).FirstOrDefault();
+
+            var questionnaires =
+                (from Questionnaire q in loggedInUser.Questionnaires
                  select q.Name).ToList();
 
-                return questionnaires;
-            }
-            finally
-            {
-                db.Close();
-            }
+            return questionnaires;
         }
 
         public static void StoreQuestionnaire(Questionnaire questionnaireToStore)
         {
-            var db = GetDb();
-            try
-            {
-                var questionnaire =
+            var db = Database;
+            DeleteQuestionnaire(db, questionnaireToStore.Name);
+            db.Store(questionnaireToStore);
+            db.Commit();
+        }
+
+        public static void DeleteQuestionnaire(IObjectContainer db, string questionnaireName)
+        {
+            var questionnaires =
                 (from Questionnaire q in db
-                 where q.Name == questionnaireToStore.Name
-                 select q).FirstOrDefault();
-                
-                if(questionnaire != null)
-                {
-                    db.Delete(questionnaire);
-                    db.Store(questionnaireToStore);
-                }
-                else
-                {
-                    db.Store(questionnaireToStore);
-                }
-                db.Commit();
-                
-            }
-            finally
+                 where q.Name == questionnaireName
+                 select q).ToList();
+
+            foreach (var questionnaire in questionnaires)
             {
-                db.Close();
+                db.Delete(questionnaire);
             }
+        }
+        public static void DeleteQuestionnaire(string questionnaireName)
+        {
+            var db = Database;
+            DeleteQuestionnaire(db, questionnaireName);
+            db.Commit();
+        }
+
+        public static IEnumerable<string> GetUserAnalysts(string userName)
+        {
+            var loggedInUser =
+                (from Analyst user in Database
+                 where user.UserName == userName
+                 select user).FirstOrDefault();
+
+            if (loggedInUser != null)
+            {
+                var questionnaires =
+                    (from Analyst analyst in loggedInUser.TrustedAnalysts
+                     select analyst.UserName).ToList();
+                return questionnaires;
+            }
+            return new List<string>();
         }
 
         public static void LoadTestData(string dbFileName)
@@ -170,11 +176,24 @@ namespace StatisServiceHost
             filledQuestionnaire2.AddAnswer(answer4);
             filledQuestionnaire2.AddAnswer(answer5);
 
+            var admin = new Administrator("jb", "Jānis", "Bērziņš", "mentor@delfi.lv");
+            var questionnaires = new List<Questionnaire>();
+            questionnaires.Add(questionnaire1);
+            questionnaires.Add(questionnaire2);
+            admin.Questionnaires = questionnaires;
+
+
+            var user2 = new Analyst("SysAnal", "A", "B", "test@test.lv");
+
+            admin.TrustedAnalysts = new List<Analyst>();
+            admin.TrustedAnalysts.Add(user2);
+            
             IObjectContainer db = GetDb(dbFileName);
-            db.Store(questionnaire1);
-            db.Store(questionnaire2);
-            db.Store(filledQuestionnaire1);
-            db.Store(filledQuestionnaire2);
+            db.Store(admin);
+            //db.Store(questionnaire1);
+            //db.Store(questionnaire2);
+            //db.Store(filledQuestionnaire1);
+            //db.Store(filledQuestionnaire2);
             db.Close();
         }
     }

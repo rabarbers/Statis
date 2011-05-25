@@ -32,6 +32,18 @@
   <wsdl:message name="IQuestionnaireService_GetUserQuestionnaireList_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUserQuestionnaireListResponse" />
   </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_GetUserAnalysts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAnalysts" />
+  </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_GetUserAnalysts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAnalystsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_GetUserRespondents_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRespondents" />
+  </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_GetUserRespondents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRespondentsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IQuestionnaireService">
     <wsdl:operation name="GetQuestionnaire">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetQuestionnaire" message="tns:IQuestionnaireService_GetQuestionnaire_InputMessage" />
@@ -48,6 +60,14 @@
     <wsdl:operation name="GetUserQuestionnaireList">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireList" message="tns:IQuestionnaireService_GetUserQuestionnaireList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireListResponse" message="tns:IQuestionnaireService_GetUserQuestionnaireList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAnalysts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserAnalysts" message="tns:IQuestionnaireService_GetUserAnalysts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserAnalystsResponse" message="tns:IQuestionnaireService_GetUserAnalysts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRespondents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserRespondents" message="tns:IQuestionnaireService_GetUserRespondents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserRespondentsResponse" message="tns:IQuestionnaireService_GetUserRespondents_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IQuestionnaireAdministrativeService">
@@ -66,6 +86,14 @@
     <wsdl:operation name="GetUserQuestionnaireList">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireList" message="tns:IQuestionnaireService_GetUserQuestionnaireList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireListResponse" message="tns:IQuestionnaireService_GetUserQuestionnaireList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAnalysts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserAnalysts" message="tns:IQuestionnaireService_GetUserAnalysts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserAnalystsResponse" message="tns:IQuestionnaireService_GetUserAnalysts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRespondents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserRespondents" message="tns:IQuestionnaireService_GetUserRespondents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserRespondentsResponse" message="tns:IQuestionnaireService_GetUserRespondents_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IQuestionnaireService" type="tns:IQuestionnaireService">
@@ -106,6 +134,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetUserAnalysts">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/GetUserAnalysts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRespondents">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/GetUserRespondents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_IQuestionnaireAdministrativeService" type="tns:IQuestionnaireAdministrativeService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -138,6 +184,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetUserQuestionnaireList">
       <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAnalysts">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/GetUserAnalysts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRespondents">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/GetUserRespondents" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

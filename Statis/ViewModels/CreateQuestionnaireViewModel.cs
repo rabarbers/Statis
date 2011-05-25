@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Net;
 using System.Windows;
+using System.Windows.Browser;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Ink;
@@ -20,6 +21,7 @@ namespace Statis.ViewModels
     {
         private readonly QuestionnaireAdministrativeServiceClient _service;
         private Questionnaire _model;
+        private string _questionnaireToEdit;
         private int _imgQuestionNumberOfSingleChoices = 3;
         private int _imgQuestionNumberOfManyChoices = 3;
         private readonly int[] _possibleChoiceNumbers = new [] {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
@@ -31,16 +33,15 @@ namespace Statis.ViewModels
         
         public CreateQuestionnaireViewModel()
         {
+
+            var x = HtmlPage.Document.QueryString;
+            
+            
             _model = new Questionnaire {Questions = new ObservableCollection<Question>()};
 
             _service = new QuestionnaireAdministrativeServiceClient();
-            _service.OpenCompleted += delegate
-                                          {
-                                              _service.GetQuestionnaireAsync("Q2");
-                                          };
             _service.GetQuestionnaireCompleted += ProxyGetQuestionnaireCompleted;
-
-            //_service.OpenAsync();
+            _service.OpenAsync();
 
             SaveQuestionnaire = new DelegateCommand(() =>_service.StoreQuestionnaireAsync(_model));
             AddTextQuestion = new DelegateCommand(() =>
@@ -106,6 +107,11 @@ namespace Statis.ViewModels
                     OnNotifyPropertyChanged("Name");
                 }
             }
+        }
+
+        public void EditQuestionnaire(string questionnaireName)
+        {
+            _service.GetQuestionnaireAsync(questionnaireName);
         }
 
         public int ImgQuestionNumberOfSingleChoices

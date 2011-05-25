@@ -22,13 +22,22 @@ namespace StatisServiceHost
 
         public void DeleteQuestionnaire(string questionnaireName)
         {
-            
+            HandleDb4o.DeleteQuestionnaire(questionnaireName);
         }
-
 
         public IEnumerable<string> GetUserQuestionnaireList(string userName)
         {
             return HandleDb4o.GetUserQuestionnaireList(userName);
+        }
+
+        public IEnumerable<string> GetUserAnalysts(string userName)
+        {
+            return HandleDb4o.GetUserAnalysts(userName);
+        }
+
+        public IEnumerable<string> GetUserRespondents(string userName)
+        {
+            throw new NotImplementedException();
         }
     }
 }
