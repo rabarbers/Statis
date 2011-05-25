@@ -24,5 +24,11 @@ namespace StatisServiceHost
         {
             
         }
+
+
+        public IEnumerable<string> GetUserQuestionnaireList(string userName)
+        {
+            return HandleDb4o.GetUserQuestionnaireList(userName);
+        }
     }
 }

@@ -53,6 +53,23 @@ namespace StatisServiceHost
             }
         }
 
+        public static IEnumerable<string> GetUserQuestionnaireList(string userName)
+        {
+            var db = GetDb();
+            try
+            {
+                var questionnaires =
+                (from Questionnaire q in db
+                 select q.Name).ToList();
+
+                return questionnaires;
+            }
+            finally
+            {
+                db.Close();
+            }
+        }
+
         public static void StoreQuestionnaire(Questionnaire questionnaireToStore)
         {
             var db = GetDb();

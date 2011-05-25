@@ -121,4 +121,4 @@
       <soap:address location="http://localhost:8001/StatisServices/adminstrative" />
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>
+</wsdl:definitions>                                                                                                                                                                   
