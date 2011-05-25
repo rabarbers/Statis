@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:8000/StatisServices?xsd=xsd2" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8000/StatisServices?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8000/StatisServices?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts" />
+      <xsd:import schemaLocation="http://localhost:8000/StatisServices?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IQuestionnaireService_GetQuestionnaire_InputMessage">
@@ -25,6 +26,12 @@
   <wsdl:message name="IQuestionnaireService_DeleteQuestionnaire_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteQuestionnaireResponse" />
   </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_GetUserQuestionnaireList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserQuestionnaireList" />
+  </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_GetUserQuestionnaireList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserQuestionnaireListResponse" />
+  </wsdl:message>
   <wsdl:portType name="IQuestionnaireService">
     <wsdl:operation name="GetQuestionnaire">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetQuestionnaire" message="tns:IQuestionnaireService_GetQuestionnaire_InputMessage" />
@@ -37,6 +44,10 @@
     <wsdl:operation name="DeleteQuestionnaire">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaire" message="tns:IQuestionnaireService_DeleteQuestionnaire_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaireResponse" message="tns:IQuestionnaireService_DeleteQuestionnaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserQuestionnaireList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireList" message="tns:IQuestionnaireService_GetUserQuestionnaireList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireListResponse" message="tns:IQuestionnaireService_GetUserQuestionnaireList_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IQuestionnaireAdministrativeService">
@@ -51,6 +62,10 @@
     <wsdl:operation name="DeleteQuestionnaire">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaire" message="tns:IQuestionnaireService_DeleteQuestionnaire_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaireResponse" message="tns:IQuestionnaireService_DeleteQuestionnaire_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserQuestionnaireList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireList" message="tns:IQuestionnaireService_GetUserQuestionnaireList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireListResponse" message="tns:IQuestionnaireService_GetUserQuestionnaireList_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IQuestionnaireService" type="tns:IQuestionnaireService">
@@ -82,6 +97,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetUserQuestionnaireList">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_IQuestionnaireAdministrativeService" type="tns:IQuestionnaireAdministrativeService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -105,6 +129,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteQuestionnaire">
       <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserQuestionnaireList">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

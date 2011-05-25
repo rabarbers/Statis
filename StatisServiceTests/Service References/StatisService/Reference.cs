@@ -23,6 +23,9 @@ namespace StatisServiceTests.StatisService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaire", ReplyAction="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaireResponse")]
         void DeleteQuestionnaire(string questionnaireName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireList", ReplyAction="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireListResponse")]
+        string[] GetUserQuestionnaireList(string userName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -63,6 +66,10 @@ namespace StatisServiceTests.StatisService {
         public void DeleteQuestionnaire(string questionnaireName) {
             base.Channel.DeleteQuestionnaire(questionnaireName);
         }
+        
+        public string[] GetUserQuestionnaireList(string userName) {
+            return base.Channel.GetUserQuestionnaireList(userName);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -77,6 +84,9 @@ namespace StatisServiceTests.StatisService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaire", ReplyAction="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaireResponse")]
         void DeleteQuestionnaire(string questionnaireName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireList", ReplyAction="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireListResponse")]
+        string[] GetUserQuestionnaireList(string userName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -116,6 +126,10 @@ namespace StatisServiceTests.StatisService {
         
         public void DeleteQuestionnaire(string questionnaireName) {
             base.Channel.DeleteQuestionnaire(questionnaireName);
+        }
+        
+        public string[] GetUserQuestionnaireList(string userName) {
+            return base.Channel.GetUserQuestionnaireList(userName);
         }
     }
 }

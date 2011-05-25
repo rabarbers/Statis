@@ -20,6 +20,8 @@ namespace StatisServiceContracts
         void StoreQuestionnaire(Questionnaire questionnaire);
         [OperationContract]
         void DeleteQuestionnaire(string questionnaireName);
+        [OperationContract]
+        IEnumerable<string> GetUserQuestionnaireList(string userName);
     }
 
     /// <summary></summary>
