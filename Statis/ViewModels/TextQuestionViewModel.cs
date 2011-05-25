@@ -12,30 +12,6 @@ using Statis.StatisServices;
 
 namespace Statis.ViewModels
 {
-    public class QuestionViewModel : ViewModelBase
-    {
-        private Question _model;
-
-        public QuestionViewModel(Question model)
-        {
-            _model = model;
-        }
-
-        public string Question
-        {
-            get { return _model.Text; }
-            set
-            {
-                if (_model.Text != value)
-                {
-                    _model.Text = value;
-                    OnNotifyPropertyChanged("Question");
-                }
-            }
-        }
-    }
-
-
     public class TextQuestionViewModel : QuestionViewModel
     {
         private TextQuestion _model;
@@ -44,7 +20,5 @@ namespace Statis.ViewModels
         {
             _model = model;
         }
-
-        
     }
 }

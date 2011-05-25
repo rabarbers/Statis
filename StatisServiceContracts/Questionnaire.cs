@@ -8,6 +8,7 @@ namespace StatisServiceContracts
     /// <summary></summary>
     [DataContract]
     [KnownType(typeof(Question))]
+    [KnownType(typeof(Guid))]
     public class Questionnaire
     {
         /// <summary></summary>

@@ -16,7 +16,7 @@ namespace StatisServiceContracts
     public class ChoiceAnswer : Answer
     {
         [DataMember]
-        public List<int> answerList;
+        public List<int> answerList = new List<int>();
         public ChoiceAnswer(int indexNo)
         {
             answerList.Add(indexNo);

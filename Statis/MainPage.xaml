@@ -44,6 +44,7 @@
                 <TextBox Height="23" HorizontalAlignment="Right" Margin="2,19,0,0" Name="loginUsr" VerticalAlignment="Top" Width="95" />
                 <sdk:Label Height="Auto" HorizontalAlignment="Right" Margin="15,23,0,0" Name="label2" VerticalAlignment="Center" Width="Auto" Content="Parole:" Foreground="White" />
                 <PasswordBox Height="23" HorizontalAlignment="Right" Margin="2,19,0,0" Name="loginPsw" Width="95" VerticalAlignment="Top" />
+                <Button Margin="10,19,0,0" Content="Ielogoties"></Button>
             </StackPanel>
             <StackPanel x:Name="LinksStackPanel" Style="{StaticResource LinksStackPanelStyle}" VerticalAlignment="Bottom" Margin="19,0,25,21" Height="42" HorizontalAlignment="Right">
                 <sdk:Label Height="28" HorizontalAlignment="Left" Margin="221,7,0,7" Name="label1" VerticalAlignment="Center" Width="48" FontSize="13" Foreground="#FFFF4B71" FontWeight="Bold" Content="Gribu:" FlowDirection="LeftToRight"></sdk:Label>

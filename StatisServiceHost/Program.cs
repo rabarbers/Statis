@@ -9,6 +9,8 @@ namespace StatisServiceHost
     {
         static void Main()
         {
+            //HandleDb4o.LoadTestData();
+            
             Console.WriteLine("Starting...");
             var crossDomainserviceHost = new ServiceHost(typeof(CrossDomainService));
             crossDomainserviceHost.Open();

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="8e91a6fd-634e-4f66-b21e-aaf4660df967" name="Rabarbers@MODA 2011-05-25 00:30:36" runUser="Moda\Rabarbers" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="bdf382ca-5bce-47e3-bbdb-dbd78b5c73b9">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Rabarbers_MODA 2011-05-25 00_30_36">
+      <DeploymentItem filename="D:\GitStatisLast\StatisServiceContracts\bin\Debug\StatisServiceContracts.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\db4o\db4o-8.1\bin\net-4.0\Db4objects.Db4o.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\db4o\db4o-8.1\bin\net-4.0\Db4objects.Db4o.Linq.dll" />
+      <DeploymentItem filename="D:\GitStatisLast\StatisServiceHost\bin\Debug\StatisServiceHost.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-05-25T00:30:36.9783831+03:00" queuing="2011-05-25T00:30:37.1323919+03:00" start="2011-05-25T00:30:37.1743943+03:00" finish="2011-05-25T00:30:39.3095164+03:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestStatisServiceMethodGetQuestionnaire" storage="d:\gitstatislast\statisservicetests\bin\debug\statisservicetests.dll" id="b79cb0fc-e2d7-7180-07f8-36d4935e8fcf">
+      <Execution id="31f98e78-c2f2-4077-b7a2-2143db219e85" />
+      <TestMethod codeBase="D:/GitStatisLast/StatisServiceTests/bin/Debug/StatisServiceTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="StatisServiceTests.UnitTest1, StatisServiceTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestStatisServiceMethodGetQuestionnaire" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="b79cb0fc-e2d7-7180-07f8-36d4935e8fcf" executionId="31f98e78-c2f2-4077-b7a2-2143db219e85" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="31f98e78-c2f2-4077-b7a2-2143db219e85" testId="b79cb0fc-e2d7-7180-07f8-36d4935e8fcf" testName="TestStatisServiceMethodGetQuestionnaire" computerName="MODA" duration="00:00:01.4448362" startTime="2011-05-25T00:30:37.1853949+03:00" endTime="2011-05-25T00:30:39.1925097+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="31f98e78-c2f2-4077-b7a2-2143db219e85">
+    </UnitTestResult>
+  </Results>
+</TestRun>

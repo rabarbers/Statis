@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="9df8204a-dbc4-4aec-be27-6efb19de0e0d" name="Rabarbers@MODA 2011-05-24 23:27:58" runUser="Moda\Rabarbers" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="bdf382ca-5bce-47e3-bbdb-dbd78b5c73b9">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Rabarbers_MODA 2011-05-24 23_27_58">
+      <DeploymentItem filename="D:\GitStatisLast\StatisServiceHost\bin\Debug\StatisServiceHost.exe" />
+      <DeploymentItem filename="D:\GitStatisLast\StatisServiceContracts\bin\Debug\StatisServiceContracts.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-05-24T23:27:58.5124111+03:00" queuing="2011-05-24T23:27:59.4824666+03:00" start="2011-05-24T23:27:59.5404699+03:00" finish="2011-05-24T23:28:02.1026165+03:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="d:\gitstatislast\statisservicetests\bin\debug\statisservicetests.dll" id="dfcc728d-1b57-0fd6-501d-97a7fcf22134">
+      <Execution id="65128a65-1cd1-433d-b5d3-3d23b27a9cfc" />
+      <TestMethod codeBase="D:/GitStatisLast/StatisServiceTests/bin/Debug/StatisServiceTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="StatisServiceTests.UnitTest1, StatisServiceTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="dfcc728d-1b57-0fd6-501d-97a7fcf22134" executionId="65128a65-1cd1-433d-b5d3-3d23b27a9cfc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="65128a65-1cd1-433d-b5d3-3d23b27a9cfc" testId="dfcc728d-1b57-0fd6-501d-97a7fcf22134" testName="TestMethod1" computerName="MODA" startTime="2011-05-24T23:27:59.5914729+03:00" endTime="2011-05-24T23:28:02.0546138+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="65128a65-1cd1-433d-b5d3-3d23b27a9cfc">
+      <Output>
+        <ErrorInfo>
+          <Message>Class Initialization method StatisServiceTests.UnitTest1.MyClassInitialize threw exception. System.InvalidOperationException: System.InvalidOperationException: In order to use one of the ServiceHost constructors that takes a service instance, the InstanceContextMode of the service must be set to InstanceContextMode.Single.  This can be configured via the ServiceBehaviorAttribute.  Otherwise, please consider using the ServiceHost constructors that take a Type argument..</Message>
+          <StackTrace>    at System.ServiceModel.ServiceBehaviorAttribute.ApplyInstancing(ServiceDescription description, ServiceHostBase serviceHostBase)
+   at System.ServiceModel.ServiceBehaviorAttribute.System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior(ServiceDescription description, ServiceHostBase serviceHostBase)
+   at System.ServiceModel.Description.DispatcherBuilder.InitializeServiceHost(ServiceDescription description, ServiceHostBase serviceHost)
+   at System.ServiceModel.ServiceHostBase.InitializeRuntime()
+   at System.ServiceModel.ServiceHostBase.OnBeginOpen()
+   at System.ServiceModel.ServiceHostBase.OnOpen(TimeSpan timeout)
+   at System.ServiceModel.Channels.CommunicationObject.Open(TimeSpan timeout)
+   at System.ServiceModel.Channels.CommunicationObject.Open()
+   at StatisServiceTests.UnitTest1.MyClassInitialize(TestContext testContext) in D:\GitStatisLast\StatisServiceTests\UnitTest1.cs:line 60
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

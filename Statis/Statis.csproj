@@ -93,7 +93,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\ChoiceViewModel.cs" />
     <Compile Include="ViewModels\CreateQuestionnaireViewModel.cs" />
+    <Compile Include="ViewModels\ImgChoiceQuestionViewModel.cs" />
+    <Compile Include="ViewModels\QuestionViewModel.cs" />
+    <Compile Include="ViewModels\ReviewViewModel.cs" />
+    <Compile Include="ViewModels\TextChoiceViewModel.cs" />
     <Compile Include="ViewModels\TextQuestionViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\ErrorWindow.xaml.cs">
@@ -112,11 +117,17 @@
     <Compile Include="Views\CreateQuestionnaireView.xaml.cs">
       <DependentUpon>CreateQuestionnaireView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ImgChoiceQuestionView.xaml.cs">
+      <DependentUpon>ImgChoiceQuestionView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Review.xaml.cs">
       <DependentUpon>Review.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TextChoiceView.xaml.cs">
+      <DependentUpon>TextChoiceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TextQuestionView.xaml.cs">
       <DependentUpon>TextQuestionView.xaml</DependentUpon>
@@ -134,11 +145,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ImgChoiceQuestionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Page1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Review.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TextChoiceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

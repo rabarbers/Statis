@@ -21,19 +21,5 @@ namespace Statis.Views
         {
             InitializeComponent();
         }
-
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            var context = (CreateQuestionnaireViewModel) ((Grid)Content).DataContext;
-
-            context._service = new QuestionnaireAdministrativeServiceClient();
-            context._service.OpenCompleted += delegate
-                                          {
-                                              context._service.GetQuestionnaireAsync("Test");
-                                          };
-            context._service.GetQuestionnaireCompleted += context.proxy_GetQuestionnaireCompleted;
-
-            context._service.OpenAsync();
-        }
     }
 }

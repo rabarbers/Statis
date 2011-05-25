@@ -7,11 +7,11 @@ using System.Text;
 
 namespace StatisServiceContracts
 {
-    #region Map interfaces
+    #region Statis service interfaces
 
     /// <summary></summary>
     [ServiceContract]
-    //[ServiceKnownType(typeof(Map))]
+    [ServiceKnownType(typeof(Questionnaire))]
     public interface IQuestionnaireService
     {
         [OperationContract]

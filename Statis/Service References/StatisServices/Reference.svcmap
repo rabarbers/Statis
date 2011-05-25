@@ -24,10 +24,10 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="StatisServices.disco" MetadataType="Disco" ID="7eade0e3-0334-4ce9-bccc-892bcd743be4" SourceId="1" SourceUrl="http://localhost:8000/StatisServices?disco" />
-    <MetadataFile FileName="StatisServices.xsd" MetadataType="Schema" ID="b2c8ea96-e90c-44d0-9c22-7a3a99747be2" SourceId="1" SourceUrl="http://localhost:8000/StatisServices?xsd=xsd0" />
+    <MetadataFile FileName="StatisServices2.xsd" MetadataType="Schema" ID="43df5eab-b5ff-487c-9afa-fae59856eb88" SourceId="1" SourceUrl="http://localhost:8000/StatisServices?xsd=xsd1" />
     <MetadataFile FileName="StatisServices1.xsd" MetadataType="Schema" ID="23bd77a5-56e3-4b48-a567-c36a5cba6eef" SourceId="1" SourceUrl="http://localhost:8000/StatisServices?xsd=xsd2" />
     <MetadataFile FileName="QuestionnaireService1.wsdl" MetadataType="Wsdl" ID="a817f024-99a2-459f-84a2-a34114ecb4fd" SourceId="1" SourceUrl="http://localhost:8000/StatisServices?wsdl" />
-    <MetadataFile FileName="StatisServices2.xsd" MetadataType="Schema" ID="43df5eab-b5ff-487c-9afa-fae59856eb88" SourceId="1" SourceUrl="http://localhost:8000/StatisServices?xsd=xsd1" />
+    <MetadataFile FileName="StatisServices.xsd" MetadataType="Schema" ID="b2c8ea96-e90c-44d0-9c22-7a3a99747be2" SourceId="1" SourceUrl="http://localhost:8000/StatisServices?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

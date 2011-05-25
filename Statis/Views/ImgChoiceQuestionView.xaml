@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Statis.Views.ImgChoiceQuestionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:prism="clr-namespace:Microsoft.Practices.Prism.ViewModel;assembly=Microsoft.Practices.Prism" xmlns:Views="clr-namespace:Statis.Views" mc:Ignorable="d"
+    d:DesignHeight="90" d:DesignWidth="400">
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Text="Jautājums:" VerticalAlignment="Center"></TextBlock>
+        <TextBox Grid.Column="1" Text="{Binding Question, Mode=TwoWay}"></TextBox>
+        <ItemsControl Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Choices}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Style="{StaticResource CreationPanelStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"> 
+                    </StackPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <prism:DataTemplateSelector Content="{Binding}" HorizontalContentAlignment="Stretch" IsTabStop="False">
+                        <prism:DataTemplateSelector.Resources>
+                            <DataTemplate x:Key="TextChoiceViewModel">
+                                <Views:TextChoiceView DataContext="{Binding}" />
+                            </DataTemplate>
+                            <!--<DataTemplate x:Key="ImgChoiceViewModel">
+                                <Views:ImgChoiceView DataContext="{Binding}" />
+                            </DataTemplate>-->
+                        </prism:DataTemplateSelector.Resources>
+                    </prism:DataTemplateSelector>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+
+        </ItemsControl>
+    </Grid>
+</UserControl>
