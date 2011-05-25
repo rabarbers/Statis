@@ -70,6 +70,9 @@ namespace StatisServiceContracts
             FirstName = firstName;
             LastName = lastName;
             Email = email;
+            Questionnaires = new List<Questionnaire>();
+            TrustedAnalysts = new List<Analyst>();
+            Respondents = new List<User>();
         }
     }
 

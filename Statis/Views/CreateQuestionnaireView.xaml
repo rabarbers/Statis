@@ -7,7 +7,7 @@
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" xmlns:prism="clr-namespace:Microsoft.Practices.Prism.ViewModel;assembly=Microsoft.Practices.Prism" xmlns:Views="clr-namespace:Statis.Views" xmlns:viewModel="clr-namespace:Statis.ViewModels" Title="Veido jaunas anketas" Height="574" Width="Auto" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" MaxWidth="Infinity" d:DesignWidth="772">
     
     <navigation:Page.Resources>
-        <!--<viewModel:CreateQuestionnaireViewModel x:Key="ViewModel" />-->
+        <viewModel:CreateQuestionnaireViewModel x:Key="ViewModel" />
     </navigation:Page.Resources>
 
     <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ViewModel}}" Height="604" HorizontalAlignment="Left" Width="772">

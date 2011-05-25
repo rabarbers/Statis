@@ -17,14 +17,8 @@
   <wsdl:message name="IQuestionnaireService_StoreQuestionnaire_InputMessage">
     <wsdl:part name="parameters" element="tns:StoreQuestionnaire" />
   </wsdl:message>
-  <wsdl:message name="IQuestionnaireService_StoreQuestionnaire_OutputMessage">
-    <wsdl:part name="parameters" element="tns:StoreQuestionnaireResponse" />
-  </wsdl:message>
   <wsdl:message name="IQuestionnaireService_DeleteQuestionnaire_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteQuestionnaire" />
-  </wsdl:message>
-  <wsdl:message name="IQuestionnaireService_DeleteQuestionnaire_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteQuestionnaireResponse" />
   </wsdl:message>
   <wsdl:message name="IQuestionnaireService_GetUserQuestionnaireList_InputMessage">
     <wsdl:part name="parameters" element="tns:GetUserQuestionnaireList" />
@@ -44,6 +38,24 @@
   <wsdl:message name="IQuestionnaireService_GetUserRespondents_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUserRespondentsResponse" />
   </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_AddAnalyst_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAnalyst" />
+  </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_AddAnalyst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAnalystResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_RemoveAnalyst_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAnalyst" />
+  </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_AddRespondent_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRespondent" />
+  </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_AddRespondent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRespondentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_RemoveRespondent_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveRespondent" />
+  </wsdl:message>
   <wsdl:portType name="IQuestionnaireService">
     <wsdl:operation name="GetQuestionnaire">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetQuestionnaire" message="tns:IQuestionnaireService_GetQuestionnaire_InputMessage" />
@@ -51,11 +63,9 @@
     </wsdl:operation>
     <wsdl:operation name="StoreQuestionnaire">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/StoreQuestionnaire" message="tns:IQuestionnaireService_StoreQuestionnaire_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/StoreQuestionnaireResponse" message="tns:IQuestionnaireService_StoreQuestionnaire_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteQuestionnaire">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaire" message="tns:IQuestionnaireService_DeleteQuestionnaire_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaireResponse" message="tns:IQuestionnaireService_DeleteQuestionnaire_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetUserQuestionnaireList">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireList" message="tns:IQuestionnaireService_GetUserQuestionnaireList_InputMessage" />
@@ -68,6 +78,20 @@
     <wsdl:operation name="GetUserRespondents">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserRespondents" message="tns:IQuestionnaireService_GetUserRespondents_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserRespondentsResponse" message="tns:IQuestionnaireService_GetUserRespondents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAnalyst">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/AddAnalyst" message="tns:IQuestionnaireService_AddAnalyst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/AddAnalystResponse" message="tns:IQuestionnaireService_AddAnalyst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAnalyst">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/RemoveAnalyst" message="tns:IQuestionnaireService_RemoveAnalyst_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRespondent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/AddRespondent" message="tns:IQuestionnaireService_AddRespondent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/AddRespondentResponse" message="tns:IQuestionnaireService_AddRespondent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRespondent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/RemoveRespondent" message="tns:IQuestionnaireService_RemoveRespondent_InputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IQuestionnaireAdministrativeService">
@@ -77,11 +101,9 @@
     </wsdl:operation>
     <wsdl:operation name="StoreQuestionnaire">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/StoreQuestionnaire" message="tns:IQuestionnaireService_StoreQuestionnaire_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/StoreQuestionnaireResponse" message="tns:IQuestionnaireService_StoreQuestionnaire_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteQuestionnaire">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaire" message="tns:IQuestionnaireService_DeleteQuestionnaire_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaireResponse" message="tns:IQuestionnaireService_DeleteQuestionnaire_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetUserQuestionnaireList">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireList" message="tns:IQuestionnaireService_GetUserQuestionnaireList_InputMessage" />
@@ -94,6 +116,20 @@
     <wsdl:operation name="GetUserRespondents">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserRespondents" message="tns:IQuestionnaireService_GetUserRespondents_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetUserRespondentsResponse" message="tns:IQuestionnaireService_GetUserRespondents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAnalyst">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/AddAnalyst" message="tns:IQuestionnaireService_AddAnalyst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/AddAnalystResponse" message="tns:IQuestionnaireService_AddAnalyst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAnalyst">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/RemoveAnalyst" message="tns:IQuestionnaireService_RemoveAnalyst_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRespondent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/AddRespondent" message="tns:IQuestionnaireService_AddRespondent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/AddRespondentResponse" message="tns:IQuestionnaireService_AddRespondent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRespondent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/RemoveRespondent" message="tns:IQuestionnaireService_RemoveRespondent_InputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IQuestionnaireService" type="tns:IQuestionnaireService">
@@ -112,18 +148,12 @@
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteQuestionnaire">
       <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaire" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetUserQuestionnaireList">
       <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireList" style="document" />
@@ -151,6 +181,36 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAnalyst">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/AddAnalyst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAnalyst">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/RemoveAnalyst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AddRespondent">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/AddRespondent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRespondent">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/RemoveRespondent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_IQuestionnaireAdministrativeService" type="tns:IQuestionnaireAdministrativeService">
@@ -169,18 +229,12 @@
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteQuestionnaire">
       <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaire" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetUserQuestionnaireList">
       <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireList" style="document" />
@@ -208,6 +262,36 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAnalyst">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/AddAnalyst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAnalyst">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/RemoveAnalyst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AddRespondent">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/AddRespondent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRespondent">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/RemoveRespondent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="QuestionnaireService">

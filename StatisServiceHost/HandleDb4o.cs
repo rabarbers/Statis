@@ -6,6 +6,7 @@ using System.IO;
 using Db4objects.Db4o;
 using Db4objects.Db4o.Linq;
 using StatisServiceContracts;
+using User = StatisServiceContracts.User;
 
 namespace StatisServiceHost
 {
@@ -13,11 +14,18 @@ namespace StatisServiceHost
     {
         readonly static string StoreYapFileName = Path.Combine(@"D:\", "store.yap");
         private static IObjectContainer _database;
+        private static object _sync = new object();
             //Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "store.yap");
 
         public static IObjectContainer Database
         {
-            get { return _database ?? (_database = GetDb(StoreYapFileName)); }
+            get
+            {
+                lock(_sync)
+                {
+                    return _database ?? (_database = GetDb(StoreYapFileName));
+                }
+            }
         }
 
         private static IObjectContainer GetDb(string dbFileName)
@@ -104,6 +112,126 @@ namespace StatisServiceHost
             return new List<string>();
         }
 
+        public static IEnumerable<string> GetUserRespondents(string userName)
+        {
+            var loggedInUser =
+                (from Analyst user in Database
+                 where user.UserName == userName
+                 select user).FirstOrDefault();
+
+            if (loggedInUser != null && loggedInUser.Respondents != null)
+            {
+                var questionnaires =
+                    (from User respondent in loggedInUser.Respondents
+                     select respondent.Email).ToList();
+                return questionnaires;
+            }
+            return new List<string>();
+        }
+
+        public static bool AddAnalyst(string currentUserName, string analystUserName)
+        {
+            var loggedInUser =
+                (from Analyst user in Database
+                 where user.UserName == currentUserName
+                 select user).FirstOrDefault();
+
+            var analystUser =
+                (from Analyst user in Database
+                 where user.UserName == analystUserName
+                 select user).FirstOrDefault();
+
+            if (loggedInUser != null && analystUser != null)
+            {
+                if(loggedInUser.TrustedAnalysts == null)
+                {
+                    loggedInUser.TrustedAnalysts = new List<Analyst>();
+                }
+                
+                loggedInUser.TrustedAnalysts.Add(analystUser);
+                return true;
+            }
+            return false;
+        }
+
+        public static void RemoveAnalyst(string currentUserName, string analystUserName)
+        {
+            var loggedInUser =
+                (from Analyst user in Database
+                 where user.UserName == currentUserName
+                 select user).FirstOrDefault();
+
+            var analystUser =
+                (from Analyst user in Database
+                 where user.UserName == analystUserName
+                 select user).FirstOrDefault();
+
+            if (loggedInUser != null && analystUser != null)
+            {
+                if (loggedInUser.TrustedAnalysts != null)
+                {
+                    loggedInUser.TrustedAnalysts.Remove(analystUser);
+                }
+            }
+        }
+
+        public static bool AddRespondent(string currentUserName, string respondentEmail)
+        {
+            var loggedInUser =
+                (from Analyst user in Database
+                 where user.UserName == currentUserName
+                 select user).FirstOrDefault();
+
+            var respondentUser =
+                (from User user in Database
+                 where user.Email == respondentEmail
+                 select user).FirstOrDefault();
+
+            if (loggedInUser != null)
+            {
+                if (loggedInUser.Respondents == null)
+                {
+                    loggedInUser.Respondents = new List<User>();
+                }
+
+                var x = loggedInUser.Respondents.Where(n => n.Email == respondentEmail).Any();
+
+                if (respondentUser != null && !loggedInUser.Respondents.Where(n => n.Email.Equals(respondentEmail)).Any())
+                {
+                    loggedInUser.Respondents.Add(respondentUser);
+                    return true;
+                }
+
+                if (respondentUser == null && !loggedInUser.Respondents.Where(n => n.Email == respondentEmail).Any())
+                {
+                    loggedInUser.Respondents.Add(new User(respondentEmail));
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static void RemoveRespondent(string currentUserName, string respondentEmail)
+        {
+            var loggedInUser =
+                (from Analyst user in Database
+                 where user.UserName == currentUserName
+                 select user).FirstOrDefault();
+
+            var respondentUser =
+                (from User user in Database
+                 where user.Email == respondentEmail
+                 select user).FirstOrDefault();
+
+            if (loggedInUser != null)
+            {
+                if (loggedInUser.Respondents != null)
+                {
+                    loggedInUser.Respondents.Remove(respondentUser);
+                }
+            }
+        }
+
         public static void LoadTestData(string dbFileName)
         {
             var questionnaire1 = new Questionnaire("Q1", "Test questionnaire");
@@ -187,6 +315,8 @@ namespace StatisServiceHost
 
             admin.TrustedAnalysts = new List<Analyst>();
             admin.TrustedAnalysts.Add(user2);
+
+            admin.Respondents = new List<User>();
             
             IObjectContainer db = GetDb(dbFileName);
             db.Store(admin);
