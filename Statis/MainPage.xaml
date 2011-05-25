@@ -10,19 +10,11 @@
     
     <UserControl.Resources>
         <ResourceDictionary>
-            <!--<DataTemplate DataType="{x:Type ViewModels:NewQuestionnaireViewModel}">
-                <VW:NewQuestionnaireView/>
-            </DataTemplate>-->
-            <!--<DataTemplate>
-                <TextBlock Text="{Binding Name}"
-                  Foreground="Green"
-                  FontWeight="Bold"
-                  VerticalAlignment="Center"/>
-            </DataTemplate>-->
+            <ViewModels:MainViewModel x:Key="ViewModel" />
         </ResourceDictionary>
     </UserControl.Resources>
-    
-    <Grid x:Name="LayoutRoot" Style="{StaticResource LayoutRootGridStyle}" >
+
+    <Grid x:Name="LayoutRoot" Style="{StaticResource LayoutRootGridStyle}" DataContext="{Binding Source={StaticResource ViewModel}}" >
 
         <Border x:Name="ContentBorder" Style="{StaticResource ContentBorderStyle}" Margin="0,115,0,0" VerticalAlignment="Top">
             <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" BorderThickness="0">
@@ -31,6 +23,7 @@
                 <navigation:Frame.UriMapper>
                   <uriMapper:UriMapper>
                     <uriMapper:UriMapping Uri="" MappedUri="/Views/Home.xaml"/>
+                    <uriMapper:UriMapping Uri="/CreateQuestionnaireView/{questionnaireName}" MappedUri="/Views/CreateQuestionnaireView.xaml"/>
                     <uriMapper:UriMapping Uri="/{pageName}" MappedUri="/Views/{pageName}.xaml"/>
                   </uriMapper:UriMapper>
                 </navigation:Frame.UriMapper>
@@ -41,10 +34,10 @@
         <Grid x:Name="NavigationGrid" Style="{StaticResource NavigationGridStyle}" MinWidth="600" Height="117">
             <StackPanel x:Name="LoginStackPanel" Style="{StaticResource LoginPanelStyle}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="19,0,25,21" Width="Auto">
                 <sdk:Label Content="Lietotājvārds:" Foreground="White" Height="Auto" HorizontalAlignment="Right" Margin="2,23,0,0" Name="label3" VerticalAlignment="Top" Width="Auto" />
-                <TextBox Height="23" HorizontalAlignment="Right" Margin="2,19,0,0" Name="loginUsr" VerticalAlignment="Top" Width="95" />
+                <TextBox Height="23" HorizontalAlignment="Right" Margin="2,19,0,0" Text="{Binding UserName, Mode=TwoWay}" VerticalAlignment="Top" Width="95" />
                 <sdk:Label Height="Auto" HorizontalAlignment="Right" Margin="15,23,0,0" Name="label2" VerticalAlignment="Center" Width="Auto" Content="Parole:" Foreground="White" />
-                <PasswordBox Height="23" HorizontalAlignment="Right" Margin="2,19,0,0" Name="loginPsw" Width="95" VerticalAlignment="Top" />
-                <Button Margin="10,19,0,0" Content="Ielogoties"></Button>
+                <PasswordBox Height="23" HorizontalAlignment="Right" Margin="2,19,0,0" Password="{Binding Password, Mode=TwoWay}" Width="95" VerticalAlignment="Top" />
+                <Button Margin="10,19,0,0" Content="Ielogoties" Command="{Binding LoginCommand}"></Button>
             </StackPanel>
             <StackPanel x:Name="LinksStackPanel" Style="{StaticResource LinksStackPanelStyle}" VerticalAlignment="Bottom" Margin="19,0,25,21" Height="42" HorizontalAlignment="Right">
                 <sdk:Label Height="28" HorizontalAlignment="Left" Margin="221,7,0,7" Name="label1" VerticalAlignment="Center" Width="48" FontSize="13" Foreground="#FFFF4B71" FontWeight="Bold" Content="Gribu:" FlowDirection="LeftToRight"></sdk:Label>

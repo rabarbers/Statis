@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Net;
 using System.Windows;
+using System.Windows.Browser;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Ink;
@@ -20,21 +21,28 @@ namespace Statis.ViewModels
         private readonly ObservableCollection<string> _questionnaires = new ObservableCollection<string>();
         private string _selectedQuestionnaireName;
         
-        public DelegateCommand EditQuestionnaire { get; private set; }
         public DelegateCommand DeleteQuestionnaire { get; private set; }
         public DelegateCommand SendQuestionnaireToRespondents { get; private set; }
 
         public ReviewViewModel()
         {
+
+            
+
+
             _service = new QuestionnaireAdministrativeServiceClient();
             _service.OpenCompleted += delegate
                                           {
-                                              _service.GetUserQuestionnaireListAsync(null);
+                                              var user = Application.Current.Resources["user"] as string;
+                                              if(user != null)
+                                              {
+                                                  _service.GetUserQuestionnaireListAsync(user);
+                                              }
                                           };
             _service.GetUserQuestionnaireListCompleted += ProxyGetUserQuestionnaireListCompleted;
             _service.DeleteQuestionnaireCompleted += ProxyDeleteQuestionnaireCompleted;
 
-            _service.OpenAsync();
+            
 
             DeleteQuestionnaire = new DelegateCommand(() =>
                                                           {
@@ -44,11 +52,6 @@ namespace Statis.ViewModels
                                                                       SelectedQuestionnaireName);
                                                               }
                                                           });
-            //AddTextQuestion = new DelegateCommand(() =>
-            //                                          {
-            //                                              _model.Questions.Add(new TextQuestion());
-            //                                              Update();
-            //                                          });
             //AddImgSingleChoiceQuestion = new DelegateCommand(() =>
             //{
             //    var question = new ImgChoiceQuestion
@@ -64,25 +67,29 @@ namespace Statis.ViewModels
             //    _model.Questions.Add(question);
             //    Update();
             //});
+
+            _service.OpenAsync();
         }
 
         
 
-        public void ProxyGetUserQuestionnaireListCompleted(object sender, GetUserQuestionnaireListCompletedEventArgs1 e)
+        private void ProxyGetUserQuestionnaireListCompleted(object sender, GetUserQuestionnaireListCompletedEventArgs1 e)
         {
             _questionnaires.Clear();
             foreach (var questionnaire in e.Result)
             {
                 _questionnaires.Add(questionnaire);
             }
-            //Update();
+            OnNotifyPropertyChanged("QuestionnaireViewUri");
         }
-
-        void ProxyDeleteQuestionnaireCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        private void ProxyDeleteQuestionnaireCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             _questionnaires.Remove(SelectedQuestionnaireName);
         }
 
+        
+        
+        
         public string SelectedQuestionnaireName
         {
             get { return _selectedQuestionnaireName; }
@@ -92,8 +99,19 @@ namespace Statis.ViewModels
                 {
                     _selectedQuestionnaireName = value;
                     OnNotifyPropertyChanged("SelectedQuestionnaireName");
+                    OnNotifyPropertyChanged("QuestionnaireViewUri");
                 }
             }
+        }
+
+        public ObservableCollection<string> MyQuestionnaires
+        {
+            get { return _questionnaires; }
+        }
+
+        public string QuestionnaireViewUri
+        {
+            get { return SelectedQuestionnaireName != null ? @"/CreateQuestionnaireView/" + SelectedQuestionnaireName : @"/CreateQuestionnaireView"; }
         }
     }
 }
