@@ -13,10 +13,10 @@
             </basicHttpBinding>
         </bindings>
         <client>
-            <endpoint address="http://localhost:8000/StatisServices" binding="basicHttpBinding"
+            <endpoint address="http://localhost:8001/StatisServices" binding="basicHttpBinding"
                 bindingConfiguration="BasicHttpBinding_IQuestionnaireService"
                 contract="StatisServices.IQuestionnaireService" name="BasicHttpBinding_IQuestionnaireService" />
-            <endpoint address="http://localhost:8000/StatisServices/adminstrative"
+            <endpoint address="http://localhost:8001/StatisServices/adminstrative"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IQuestionnaireAdministrativeService"
                 contract="StatisServices.IQuestionnaireAdministrativeService"
                 name="BasicHttpBinding_IQuestionnaireAdministrativeService" />
