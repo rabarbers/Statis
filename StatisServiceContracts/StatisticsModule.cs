@@ -7,13 +7,45 @@ namespace StatisServiceContracts
     {
         private Questionnaire _q { get; set; }
         private FilledQuestionnaire _fq { get; set; }
+        // _rList holds all requested results in the form of strings ready for response to user
 		private List<string> _rList;
-        public StatisticsModule(Questionnaire q, FilledQuestionnaire fq)
+        private string culture;
+        public StatisticsModule(Questionnaire q, FilledQuestionnaire fq, string culture)
 		{
 			this._q = q;
             this._fq = fq;
+            this.culture = culture;
 			_rList = new List<string>();
 		}
+
+        // the methods below represent some basic statistics formulas that a user could demand
+        // it is intended that the list of methods could (and should) be extended
+
+        public void CalcMean(List<double> values)
+        {
+            double sum = 0;
+            double result;
+            int i;
+            for (i = 0; i < values.Count; i++ )
+            {
+                sum += values[i];
+            }
+            result = sum / i;
+            if (String.Compare(culture, "lv")==0)
+                _rList.Add("Vidçjais aritmçtiskais ir " + result);
+            else if (String.Compare(culture, "en_US")==0) 
+                _rList.Add("The mean is " + result);
+        }
+
+        public void CalcMedian()
+        {
+
+        }
+
+        public void CalcMode()
+        {
+        }
+
         public void CalcCorrelation(string field1, string field2, double a, double b)
         {
             // actual formula missing
