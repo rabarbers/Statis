@@ -18,14 +18,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8000/StatisServices" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8001/StatisServices" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="StatisServices.disco" MetadataType="Disco" ID="f0e61aa3-9507-4289-972c-52440331aea7" SourceId="1" SourceUrl="http://localhost:8000/StatisServices?disco" />
-    <MetadataFile FileName="StatisServices2.xsd" MetadataType="Schema" ID="f8d2f1f2-7e5a-4150-847d-b42aece132b9" SourceId="1" SourceUrl="http://localhost:8000/StatisServices?xsd=xsd1" />
-    <MetadataFile FileName="StatisServices1.xsd" MetadataType="Schema" ID="54ad927c-aae7-422f-85c6-991f29948f30" SourceId="1" SourceUrl="http://localhost:8000/StatisServices?xsd=xsd2" />
-    <MetadataFile FileName="QuestionnaireService.wsdl" MetadataType="Wsdl" ID="63060003-e5aa-4a73-be02-33345691f6d4" SourceId="1" SourceUrl="http://localhost:8000/StatisServices?wsdl" />
-    <MetadataFile FileName="StatisServices.xsd" MetadataType="Schema" ID="0c69da1a-0270-4423-a840-15961b28d338" SourceId="1" SourceUrl="http://localhost:8000/StatisServices?xsd=xsd0" />
+    <MetadataFile FileName="StatisServices3.xsd" MetadataType="Schema" ID="57e29e1a-5135-4ee5-b0d1-e9abb42db663" SourceId="1" SourceUrl="http://localhost:8001/StatisServices?xsd=xsd0" />
+    <MetadataFile FileName="StatisServices31.xsd" MetadataType="Schema" ID="cecd04a0-5733-4656-8494-447a8ba1d86c" SourceId="1" SourceUrl="http://localhost:8001/StatisServices?xsd=xsd1" />
+    <MetadataFile FileName="StatisServices32.xsd" MetadataType="Schema" ID="2f4178ad-1d5f-49ae-88a5-c43df8443130" SourceId="1" SourceUrl="http://localhost:8001/StatisServices?xsd=xsd2" />
+    <MetadataFile FileName="QuestionnaireService1.wsdl" MetadataType="Wsdl" ID="91166382-707f-42f2-91e5-005cc462b798" SourceId="1" SourceUrl="http://localhost:8001/StatisServices?wsdl" />
+    <MetadataFile FileName="StatisServices1.disco" MetadataType="Disco" ID="a2b5d65c-8a97-49ee-b707-92f46662a652" SourceId="1" SourceUrl="http://localhost:8001/StatisServices?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

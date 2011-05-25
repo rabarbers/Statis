@@ -192,14 +192,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
-    <None Include="Service References\StatisServices\QuestionnaireService1.wsdl" />
-    <None Include="Service References\StatisServices\Statis.StatisServices.Questionnaire.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\StatisServices\StatisServices.disco" />
+    <None Include="Service References\StatisServices\configuration91.svcinfo" />
+    <None Include="Service References\StatisServices\configuration.svcinfo" />
+    <None Include="Service References\StatisServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceReferences.ClientConfig">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Service References\StatisServices\QuestionnaireService.wsdl" />
     <None Include="Service References\StatisServices\StatisServices.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -228,19 +231,6 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\StatisServices\" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\StatisServices\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\StatisServices\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\StatisServices\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

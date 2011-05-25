@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="gfGrAh9jOzQPivXfEKyv23URPHM=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="SxmQ1vSvgloMiuHc8zM+NGOT1hM=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IQuestionnaireService">
       <properties>
@@ -221,10 +221,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IQuestionnaireService" contract="StatisService.IQuestionnaireService" bindingType="basicHttpBinding" address="http://localhost:8000/StatisServices" bindingConfiguration="BasicHttpBinding_IQuestionnaireService">
+    <endpoint name="BasicHttpBinding_IQuestionnaireService" contract="StatisService.IQuestionnaireService" bindingType="basicHttpBinding" address="http://localhost:8001/StatisServices" bindingConfiguration="BasicHttpBinding_IQuestionnaireService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8000/StatisServices</serializedValue>
+          <serializedValue>http://localhost:8001/StatisServices</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -306,10 +306,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_IQuestionnaireAdministrativeService" contract="StatisService.IQuestionnaireAdministrativeService" bindingType="basicHttpBinding" address="http://localhost:8000/StatisServices/adminstrative" bindingConfiguration="BasicHttpBinding_IQuestionnaireAdministrativeService">
+    <endpoint name="BasicHttpBinding_IQuestionnaireAdministrativeService" contract="StatisService.IQuestionnaireAdministrativeService" bindingType="basicHttpBinding" address="http://localhost:8001/StatisServices/adminstrative" bindingConfiguration="BasicHttpBinding_IQuestionnaireAdministrativeService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8000/StatisServices/adminstrative</serializedValue>
+          <serializedValue>http://localhost:8001/StatisServices/adminstrative</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

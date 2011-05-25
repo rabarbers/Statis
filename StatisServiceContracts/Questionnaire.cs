@@ -24,6 +24,9 @@ namespace StatisServiceContracts
         /// <summary></summary>
         /// <param name="name"></param>
         /// <param name="description"></param>
+        public Questionnaire()
+        {
+        }
         public Questionnaire(string name, string description)
         {
             Name = name;

@@ -28,3 +28,14 @@ D:\GitStatisLast\StatisServiceTests\bin\Debug\Db4objects.Db4o.xml
 D:\GitStatisLast\StatisServiceTests\obj\Debug\ResolveAssemblyReference.cache
 D:\GitStatisLast\StatisServiceTests\obj\Debug\StatisServiceTests.dll
 D:\GitStatisLast\StatisServiceTests\obj\Debug\StatisServiceTests.pdb
+C:\Users\anna\Desktop\StatisFinal\StatisServiceTests\bin\Debug\ClientAccessPolicy.xml
+C:\Users\anna\Desktop\StatisFinal\StatisServiceTests\bin\Debug\StatisServiceTests.dll.config
+C:\Users\anna\Desktop\StatisFinal\StatisServiceTests\bin\Debug\StatisServiceTests.dll
+C:\Users\anna\Desktop\StatisFinal\StatisServiceTests\bin\Debug\StatisServiceTests.pdb
+C:\Users\anna\Desktop\StatisFinal\StatisServiceTests\bin\Debug\StatisServiceContracts.dll
+C:\Users\anna\Desktop\StatisFinal\StatisServiceTests\bin\Debug\StatisServiceHost.exe
+C:\Users\anna\Desktop\StatisFinal\StatisServiceTests\bin\Debug\StatisServiceContracts.pdb
+C:\Users\anna\Desktop\StatisFinal\StatisServiceTests\bin\Debug\StatisServiceHost.pdb
+C:\Users\anna\Desktop\StatisFinal\StatisServiceTests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\anna\Desktop\StatisFinal\StatisServiceTests\obj\Debug\StatisServiceTests.dll
+C:\Users\anna\Desktop\StatisFinal\StatisServiceTests\obj\Debug\StatisServiceTests.pdb

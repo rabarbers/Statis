@@ -11,7 +11,7 @@ namespace StatisServiceHost
 {
     public class HandleDb4o
     {
-        readonly static string StoreYapFileName = Path.Combine(@"D:\", "store.yap");
+        readonly static string StoreYapFileName = Path.Combine("store.yap");
             //Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "store.yap");
 
         private static IObjectContainer GetDb()
