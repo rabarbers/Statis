@@ -21,12 +21,13 @@ namespace StatisServiceContracts
         [DataMember]
         public List<Question> Questions { get; private set; }
 
-        /// <summary></summary>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
         public Questionnaire()
         {
         }
+
+        /// <summary></summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
         public Questionnaire(string name, string description)
         {
             Name = name;

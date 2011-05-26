@@ -7,6 +7,7 @@ using System.Web;
 namespace StatisServiceContracts
 {
     [DataContract]
+    [KnownType(typeof(Answer))]
     public class FilledQuestionnaire
     {
         [DataMember]
