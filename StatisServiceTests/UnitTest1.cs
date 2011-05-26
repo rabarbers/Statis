@@ -124,7 +124,8 @@ namespace StatisServiceTests
             using(var proxy = new QuestionnaireAdministrativeServiceClient())
             {
                 proxy.Open();
-                var serviceQuestionnaire = proxy.GetQuestionnaire(testQuestionnaireName);
+                
+                var serviceQuestionnaire = proxy.GetQuestionnaire("jb", testQuestionnaireName);
 
                 //commpare db and service returned questionnaires
                 Assert.IsNotNull(serviceQuestionnaire, "Service does not return any data.");

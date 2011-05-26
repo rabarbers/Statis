@@ -10,17 +10,17 @@ namespace StatisServiceHost
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class QuestionnaireService: IQuestionnaireAdministrativeService
     {
-        public Questionnaire GetQuestionnaire(string questionnaireName)
+        public Questionnaire GetQuestionnaire(string userName, string questionnaireName)
         {
             return HandleDb4o.GetQuestionnaire(questionnaireName);
         }
 
-        public void StoreQuestionnaire(Questionnaire questionnaire)
+        public void StoreQuestionnaire(string userName, Questionnaire questionnaire)
         {
             HandleDb4o.StoreQuestionnaire(questionnaire);
         }
 
-        public void DeleteQuestionnaire(string questionnaireName)
+        public void DeleteQuestionnaire(string userName, string questionnaireName)
         {
             HandleDb4o.DeleteQuestionnaire(questionnaireName);
         }
@@ -60,19 +60,19 @@ namespace StatisServiceHost
             HandleDb4o.RemoveRespondent(currentUserName, respondentEmail);
         }
 
-        public void StoreFilledQuestionnaire(FilledQuestionnaire filled)
+        public void StoreFilledQuestionnaire(string userName, FilledQuestionnaire filled)
         {
             HandleDb4o.StoreFilledQuestionnaire(filled);
         }
 
-        public FilledQuestionnaire GetFilledQuestionnaire(Guid id)
+        public FilledQuestionnaire GetFilledQuestionnaire(string userName, Guid id)
         {
             return HandleDb4o.GetFilledQuestionnaire(id);
         }
         
         public bool AuthenticateUser(string userName, string password)
         {
-            return true;
+            return HandleDb4o.AuthenticateUser(userName, password);
         }
     }
 }

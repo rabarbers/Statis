@@ -62,16 +62,6 @@ namespace StatisServiceHost
                  where user.UserName == userName
                  select user).FirstOrDefault();
 
-            var loggedInUsers =
-                (from Analyst user in Database
-                 //where user.UserName == userName
-                 select user).ToList();
-
-            var loggedInUsers2 =
-                (from Questionnaire user in Database
-                 //where user.UserName == userName
-                 select user).ToList();
-
             if (loggedInUser != null)
             {
                 var questionnaires =
@@ -281,6 +271,16 @@ namespace StatisServiceHost
                      where q.Id == id
                      select q);
             return questionnaireQuery.FirstOrDefault();
+        }
+
+        public static bool AuthenticateUser(string userName, string password)
+        {
+            var loggedInUserPassword =
+            (from Analyst user in Database
+             where user.UserName == userName
+             select user.Password).FirstOrDefault();
+
+            return loggedInUserPassword == password;
         }
 
         public static void LoadTestData(string dbFileName)

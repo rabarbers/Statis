@@ -31,10 +31,10 @@ namespace Statis.ViewModels
             
             DeleteQuestionnaire = new DelegateCommand(() =>
                                                           {
-                                                              if (SelectedQuestionnaireName != null)
+                                                              var user = Application.Current.Resources["user"] as string;
+                                                              if (user != null && SelectedQuestionnaireName != null)
                                                               {
-                                                                  _service.DeleteQuestionnaireAsync(
-                                                                      SelectedQuestionnaireName);
+                                                                  _service.DeleteQuestionnaireAsync(user, SelectedQuestionnaireName);
                                                               }
                                                           });
             _service.OpenAsync();

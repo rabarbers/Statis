@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows;
 using Microsoft.Practices.Prism.Commands;
 using Statis.StatisServices;
 
@@ -27,7 +28,14 @@ namespace Statis.ViewModels
             _service.GetQuestionnaireCompleted += ProxyGetQuestionnaireCompleted;
             _service.OpenAsync();
 
-            SaveQuestionnaire = new DelegateCommand(() =>_service.StoreQuestionnaireAsync(_model));
+            SaveQuestionnaire = new DelegateCommand(() =>
+                                                        {
+                                                            var user = Application.Current.Resources["user"] as string;
+                                                            if (user != null)
+                                                            {
+                                                                _service.StoreQuestionnaireAsync(user, _model);
+                                                            }
+                                                        });
             AddTextQuestion = new DelegateCommand(() =>
                                                       {
                                                           _model.Questions.Add(new TextQuestion());
@@ -95,7 +103,11 @@ namespace Statis.ViewModels
 
         public void EditQuestionnaire(string questionnaireName)
         {
-            _service.GetQuestionnaireAsync(questionnaireName);
+            var user = Application.Current.Resources["user"] as string;
+            if (user != null)
+            {
+                _service.GetQuestionnaireAsync(user, questionnaireName);
+            }
         }
 
         public int ImgQuestionNumberOfSingleChoices

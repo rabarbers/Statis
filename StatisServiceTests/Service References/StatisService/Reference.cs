@@ -16,13 +16,13 @@ namespace StatisServiceTests.StatisService {
     public interface IQuestionnaireService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuestionnaireService/GetQuestionnaire", ReplyAction="http://tempuri.org/IQuestionnaireService/GetQuestionnaireResponse")]
-        StatisServiceContracts.Questionnaire GetQuestionnaire(string questionnaireName);
+        StatisServiceContracts.Questionnaire GetQuestionnaire(string userName, string questionnaireName);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IQuestionnaireService/StoreQuestionnaire")]
-        void StoreQuestionnaire(StatisServiceContracts.Questionnaire questionnaire);
+        void StoreQuestionnaire(string userName, StatisServiceContracts.Questionnaire questionnaire);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaire")]
-        void DeleteQuestionnaire(string questionnaireName);
+        void DeleteQuestionnaire(string userName, string questionnaireName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireList", ReplyAction="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireListResponse")]
         string[] GetUserQuestionnaireList(string userName);
@@ -46,10 +46,13 @@ namespace StatisServiceTests.StatisService {
         void RemoveRespondent(string currentUserName, string respondentEmail);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IQuestionnaireService/StoreFilledQuestionnaire")]
-        void StoreFilledQuestionnaire(StatisServiceContracts.FilledQuestionnaire filled);
+        void StoreFilledQuestionnaire(string userName, StatisServiceContracts.FilledQuestionnaire filled);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaire", ReplyAction="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaireResponse")]
-        StatisServiceContracts.FilledQuestionnaire GetFilledQuestionnaire(System.Guid id);
+        StatisServiceContracts.FilledQuestionnaire GetFilledQuestionnaire(string userName, System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuestionnaireService/AuthenticateUser", ReplyAction="http://tempuri.org/IQuestionnaireService/AuthenticateUserResponse")]
+        bool AuthenticateUser(string userName, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -79,16 +82,16 @@ namespace StatisServiceTests.StatisService {
                 base(binding, remoteAddress) {
         }
         
-        public StatisServiceContracts.Questionnaire GetQuestionnaire(string questionnaireName) {
-            return base.Channel.GetQuestionnaire(questionnaireName);
+        public StatisServiceContracts.Questionnaire GetQuestionnaire(string userName, string questionnaireName) {
+            return base.Channel.GetQuestionnaire(userName, questionnaireName);
         }
         
-        public void StoreQuestionnaire(StatisServiceContracts.Questionnaire questionnaire) {
-            base.Channel.StoreQuestionnaire(questionnaire);
+        public void StoreQuestionnaire(string userName, StatisServiceContracts.Questionnaire questionnaire) {
+            base.Channel.StoreQuestionnaire(userName, questionnaire);
         }
         
-        public void DeleteQuestionnaire(string questionnaireName) {
-            base.Channel.DeleteQuestionnaire(questionnaireName);
+        public void DeleteQuestionnaire(string userName, string questionnaireName) {
+            base.Channel.DeleteQuestionnaire(userName, questionnaireName);
         }
         
         public string[] GetUserQuestionnaireList(string userName) {
@@ -119,12 +122,16 @@ namespace StatisServiceTests.StatisService {
             base.Channel.RemoveRespondent(currentUserName, respondentEmail);
         }
         
-        public void StoreFilledQuestionnaire(StatisServiceContracts.FilledQuestionnaire filled) {
-            base.Channel.StoreFilledQuestionnaire(filled);
+        public void StoreFilledQuestionnaire(string userName, StatisServiceContracts.FilledQuestionnaire filled) {
+            base.Channel.StoreFilledQuestionnaire(userName, filled);
         }
         
-        public StatisServiceContracts.FilledQuestionnaire GetFilledQuestionnaire(System.Guid id) {
-            return base.Channel.GetFilledQuestionnaire(id);
+        public StatisServiceContracts.FilledQuestionnaire GetFilledQuestionnaire(string userName, System.Guid id) {
+            return base.Channel.GetFilledQuestionnaire(userName, id);
+        }
+        
+        public bool AuthenticateUser(string userName, string password) {
+            return base.Channel.AuthenticateUser(userName, password);
         }
     }
     
@@ -133,13 +140,13 @@ namespace StatisServiceTests.StatisService {
     public interface IQuestionnaireAdministrativeService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuestionnaireService/GetQuestionnaire", ReplyAction="http://tempuri.org/IQuestionnaireService/GetQuestionnaireResponse")]
-        StatisServiceContracts.Questionnaire GetQuestionnaire(string questionnaireName);
+        StatisServiceContracts.Questionnaire GetQuestionnaire(string userName, string questionnaireName);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IQuestionnaireService/StoreQuestionnaire")]
-        void StoreQuestionnaire(StatisServiceContracts.Questionnaire questionnaire);
+        void StoreQuestionnaire(string userName, StatisServiceContracts.Questionnaire questionnaire);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaire")]
-        void DeleteQuestionnaire(string questionnaireName);
+        void DeleteQuestionnaire(string userName, string questionnaireName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireList", ReplyAction="http://tempuri.org/IQuestionnaireService/GetUserQuestionnaireListResponse")]
         string[] GetUserQuestionnaireList(string userName);
@@ -163,10 +170,13 @@ namespace StatisServiceTests.StatisService {
         void RemoveRespondent(string currentUserName, string respondentEmail);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IQuestionnaireService/StoreFilledQuestionnaire")]
-        void StoreFilledQuestionnaire(StatisServiceContracts.FilledQuestionnaire filled);
+        void StoreFilledQuestionnaire(string userName, StatisServiceContracts.FilledQuestionnaire filled);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaire", ReplyAction="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaireResponse")]
-        StatisServiceContracts.FilledQuestionnaire GetFilledQuestionnaire(System.Guid id);
+        StatisServiceContracts.FilledQuestionnaire GetFilledQuestionnaire(string userName, System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IQuestionnaireService/AuthenticateUser", ReplyAction="http://tempuri.org/IQuestionnaireService/AuthenticateUserResponse")]
+        bool AuthenticateUser(string userName, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -196,16 +206,16 @@ namespace StatisServiceTests.StatisService {
                 base(binding, remoteAddress) {
         }
         
-        public StatisServiceContracts.Questionnaire GetQuestionnaire(string questionnaireName) {
-            return base.Channel.GetQuestionnaire(questionnaireName);
+        public StatisServiceContracts.Questionnaire GetQuestionnaire(string userName, string questionnaireName) {
+            return base.Channel.GetQuestionnaire(userName, questionnaireName);
         }
         
-        public void StoreQuestionnaire(StatisServiceContracts.Questionnaire questionnaire) {
-            base.Channel.StoreQuestionnaire(questionnaire);
+        public void StoreQuestionnaire(string userName, StatisServiceContracts.Questionnaire questionnaire) {
+            base.Channel.StoreQuestionnaire(userName, questionnaire);
         }
         
-        public void DeleteQuestionnaire(string questionnaireName) {
-            base.Channel.DeleteQuestionnaire(questionnaireName);
+        public void DeleteQuestionnaire(string userName, string questionnaireName) {
+            base.Channel.DeleteQuestionnaire(userName, questionnaireName);
         }
         
         public string[] GetUserQuestionnaireList(string userName) {
@@ -236,12 +246,16 @@ namespace StatisServiceTests.StatisService {
             base.Channel.RemoveRespondent(currentUserName, respondentEmail);
         }
         
-        public void StoreFilledQuestionnaire(StatisServiceContracts.FilledQuestionnaire filled) {
-            base.Channel.StoreFilledQuestionnaire(filled);
+        public void StoreFilledQuestionnaire(string userName, StatisServiceContracts.FilledQuestionnaire filled) {
+            base.Channel.StoreFilledQuestionnaire(userName, filled);
         }
         
-        public StatisServiceContracts.FilledQuestionnaire GetFilledQuestionnaire(System.Guid id) {
-            return base.Channel.GetFilledQuestionnaire(id);
+        public StatisServiceContracts.FilledQuestionnaire GetFilledQuestionnaire(string userName, System.Guid id) {
+            return base.Channel.GetFilledQuestionnaire(userName, id);
+        }
+        
+        public bool AuthenticateUser(string userName, string password) {
+            return base.Channel.AuthenticateUser(userName, password);
         }
     }
 }
