@@ -12,9 +12,9 @@ namespace StatisServiceHost
 {
     public class HandleDb4o
     {
-        readonly static string StoreYapFileName = Path.Combine("store.yap");
+        public readonly static string StoreYapFileName = Path.Combine("store.yap");
         private static IObjectContainer _database;
-        private static object _sync = new object();
+        private static readonly object _sync = new object();
             //Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "store.yap");
 
         public static IObjectContainer Database
@@ -61,6 +61,16 @@ namespace StatisServiceHost
                 (from Analyst user in Database
                  where user.UserName == userName
                  select user).FirstOrDefault();
+
+            var loggedInUsers =
+                (from Analyst user in Database
+                 //where user.UserName == userName
+                 select user).ToList();
+
+            var loggedInUsers2 =
+                (from Questionnaire user in Database
+                 //where user.UserName == userName
+                 select user).ToList();
 
             if (loggedInUser != null)
             {
@@ -345,14 +355,14 @@ namespace StatisServiceHost
             filledQuestionnaire2.Answers.Add(answer4);
             filledQuestionnaire2.Answers.Add(answer5);
 
-            var admin = new Administrator("jb", "Jānis", "Bērziņš", "mentor@delfi.lv");
+            var admin = new Administrator("jb", "Jānis", "Bērziņš", "mentor@delfi.lv", "go");
             var questionnaires = new List<Questionnaire>();
             questionnaires.Add(questionnaire1);
             questionnaires.Add(questionnaire2);
             admin.Questionnaires = questionnaires;
 
 
-            var user2 = new Analyst("SysAnal", "A", "B", "test@test.lv");
+            var user2 = new Analyst("SysAnal", "A", "B", "test@test.lv", "go");
 
             admin.TrustedAnalysts = new List<Analyst>();
             admin.TrustedAnalysts.Add(user2);
@@ -361,6 +371,7 @@ namespace StatisServiceHost
             
             IObjectContainer db = GetDb(dbFileName);
             db.Store(admin);
+            db.Store(user2);
             //db.Store(questionnaire1);
             //db.Store(questionnaire2);
             //db.Store(filledQuestionnaire1);

@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Net;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Browser;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Microsoft.Practices.Prism.Commands;
 using Statis.StatisServices;
 
@@ -26,10 +16,6 @@ namespace Statis.ViewModels
 
         public ReviewViewModel()
         {
-
-            
-
-
             _service = new QuestionnaireAdministrativeServiceClient();
             _service.OpenCompleted += delegate
                                           {
@@ -43,7 +29,6 @@ namespace Statis.ViewModels
             _service.DeleteQuestionnaireCompleted += ProxyDeleteQuestionnaireCompleted;
 
             
-
             DeleteQuestionnaire = new DelegateCommand(() =>
                                                           {
                                                               if (SelectedQuestionnaireName != null)
@@ -52,22 +37,6 @@ namespace Statis.ViewModels
                                                                       SelectedQuestionnaireName);
                                                               }
                                                           });
-            //AddImgSingleChoiceQuestion = new DelegateCommand(() =>
-            //{
-            //    var question = new ImgChoiceQuestion
-            //                       {
-            //                           QuestionId = Guid.NewGuid(),
-            //                           Img = null,
-            //                           ChoiceList = new ObservableCollection<Choice>()
-            //                       };
-            //    for (var i = 0; i < _imgQuestionNumberOfSingleChoices; i++)
-            //    {
-            //        question.ChoiceList.Add(new TextChoice());
-            //    }
-            //    _model.Questions.Add(question);
-            //    Update();
-            //});
-
             _service.OpenAsync();
         }
 

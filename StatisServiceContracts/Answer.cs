@@ -9,7 +9,7 @@ namespace StatisServiceContracts
     [DataContract]
     [KnownType(typeof(ChoiceAnswer))]
     [KnownType(typeof(TextAnswer))]
-    public abstract class Answer
+    public class Answer
     {
         
     }

@@ -69,5 +69,10 @@ namespace StatisServiceHost
         {
             return HandleDb4o.GetFilledQuestionnaire(id);
         }
+        
+        public bool AuthenticateUser(string userName, string password)
+        {
+            return true;
+        }
     }
 }

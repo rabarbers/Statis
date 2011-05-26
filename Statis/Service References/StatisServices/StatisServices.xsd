@@ -1,15 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfstring">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
-  <xs:complexType name="ArrayOfint">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="int" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfint" nillable="true" type="tns:ArrayOfint" />
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8001/StatisServices?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts" />
+  <xs:import schemaLocation="http://localhost:8001/StatisServices?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:8001/StatisServices?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="GetQuestionnaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="questionnaireName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuestionnaireResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/StatisServiceContracts" minOccurs="0" name="GetQuestionnaireResult" nillable="true" type="q1:Questionnaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreQuestionnaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/StatisServiceContracts" minOccurs="0" name="questionnaire" nillable="true" type="q2:Questionnaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteQuestionnaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="questionnaireName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserQuestionnaireList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserQuestionnaireListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetUserQuestionnaireListResult" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAnalysts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAnalystsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetUserAnalystsResult" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRespondents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRespondentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetUserRespondentsResult" nillable="true" type="q5:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAnalyst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="currentUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="analystUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAnalystResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddAnalystResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveAnalyst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="currentUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="analystUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRespondent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="currentUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="respondentEmail" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRespondentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddRespondentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveRespondent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="currentUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="respondentEmail" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreFilledQuestionnaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/StatisServiceContracts" minOccurs="0" name="filled" nillable="true" type="q6:FilledQuestionnaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilledQuestionnaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q7:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilledQuestionnaireResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/StatisServiceContracts" minOccurs="0" name="GetFilledQuestionnaireResult" nillable="true" type="q8:FilledQuestionnaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticateUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticateUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AuthenticateUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

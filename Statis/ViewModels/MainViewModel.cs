@@ -18,6 +18,7 @@ namespace Statis.ViewModels
         private readonly QuestionnaireAdministrativeServiceClient _service;
         private string _userName;
         private string _password;
+        private string _authenticatingUserName;
         private string _loggedUserName;
 
         public DelegateCommand LoginCommand { get; private set; }
@@ -32,27 +33,24 @@ namespace Statis.ViewModels
                     {
                         Application.Current.Resources.Remove("user");
                     }
-                    Application.Current.Resources.Add("user", UserName);
-
-                    //_service.GetUserRespondentsAsync(UserName);
+                    _authenticatingUserName = UserName;
+                    _service.AuthenticateUserAsync(UserName, Password);
                 }
             });
 
-            //_service = new QuestionnaireAdministrativeServiceClient();
-            //_service.OpenCompleted += delegate
-            //                              {
-            //                                  if (Application.Current.Resources.Contains("user"))
-            //                                  {
-            //                                      var user = Application.Current.Resources["user"] as string;
-            //                                      _service.GetUserRespondentsAsync(user);
-            //                                  }
-            //                              };
-            //_service.GetUserRespondentsCompleted += ProxyGetUserRespondentsCompleted;
-            //_service.OpenAsync();
+            _service = new QuestionnaireAdministrativeServiceClient();
+            _service.AuthenticateUserCompleted += ProxyAuthenticateUserCompleted;
+            _service.OpenAsync();
             
         }
 
-        
+        private void ProxyAuthenticateUserCompleted(object sender, AuthenticateUserCompletedEventArgs1 e)
+        {
+            if(e.Result)
+            {
+                Application.Current.Resources.Add("user", _authenticatingUserName);
+            }
+        }
 
         public string UserName
         {

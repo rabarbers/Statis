@@ -10,14 +10,6 @@
                     maxBufferSize="2147483647" maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
-                <binding name="BasicHttpBinding_IQuestionnaireService1" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_IQuestionnaireAdministrativeService1"
-                    maxBufferSize="2147483647" maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
             </basicHttpBinding>
         </bindings>
         <client>
@@ -28,13 +20,6 @@
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IQuestionnaireAdministrativeService"
                 contract="StatisServices.IQuestionnaireAdministrativeService"
                 name="BasicHttpBinding_IQuestionnaireAdministrativeService" />
-            <endpoint address="http://localhost:8001/StatisServices" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_IQuestionnaireService1"
-                contract="StatisServices.IQuestionnaireService" name="BasicHttpBinding_IQuestionnaireService1" />
-            <endpoint address="http://localhost:8001/StatisServices/adminstrative"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IQuestionnaireAdministrativeService1"
-                contract="StatisServices.IQuestionnaireAdministrativeService"
-                name="BasicHttpBinding_IQuestionnaireAdministrativeService1" />
         </client>
     </system.serviceModel>
 </configuration>

@@ -10,7 +10,7 @@ namespace StatisServiceHost
     {
         static void Main()
         {
-            //HandleDb4o.LoadTestData(Path.Combine(@"D:\", "store.yap"));
+            //HandleDb4o.LoadTestData(HandleDb4o.StoreYapFileName);
             
             Console.WriteLine("Starting...");
             var crossDomainserviceHost = new ServiceHost(typeof(CrossDomainService));

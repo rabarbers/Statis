@@ -12,6 +12,8 @@ namespace StatisServiceContracts
     /// <summary></summary>
     [ServiceContract]
     [ServiceKnownType(typeof(Questionnaire))]
+    [ServiceKnownType(typeof(FilledQuestionnaire))]
+    [ServiceKnownType(typeof(Guid))]
     public interface IQuestionnaireService
     {
         [OperationContract]
@@ -38,6 +40,8 @@ namespace StatisServiceContracts
         void StoreFilledQuestionnaire(FilledQuestionnaire filled);
         [OperationContract]
         FilledQuestionnaire GetFilledQuestionnaire(Guid id);
+        [OperationContract]
+        bool AuthenticateUser(string userName, string password);
     }
 
     /// <summary></summary>
