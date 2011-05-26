@@ -37,7 +37,42 @@ namespace StatisServiceHost
 
         public IEnumerable<string> GetUserRespondents(string userName)
         {
-            throw new NotImplementedException();
+            return HandleDb4o.GetUserRespondents(userName);
+        }
+
+        public bool AddAnalyst(string currentUserName, string analystUserName)
+        {
+            return HandleDb4o.AddAnalyst(currentUserName, analystUserName);
+        }
+
+        public void RemoveAnalyst(string currentUserName, string analystUserName)
+        {
+            HandleDb4o.RemoveAnalyst(currentUserName, analystUserName);
+        }
+
+        public bool AddRespondent(string currentUserName, string respondentEmail)
+        {
+            return HandleDb4o.AddRespondent(currentUserName, respondentEmail);
+        }
+
+        public void RemoveRespondent(string currentUserName, string respondentEmail)
+        {
+            HandleDb4o.RemoveRespondent(currentUserName, respondentEmail);
+        }
+
+        public void StoreFilledQuestionnaire(FilledQuestionnaire filled)
+        {
+            HandleDb4o.StoreFilledQuestionnaire(filled);
+        }
+
+        public FilledQuestionnaire GetFilledQuestionnaire(Guid id)
+        {
+            return HandleDb4o.GetFilledQuestionnaire(id);
+        }
+        
+        public bool AuthenticateUser(string userName, string password)
+        {
+            return true;
         }
     }
 }

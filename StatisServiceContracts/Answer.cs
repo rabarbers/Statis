@@ -7,28 +7,34 @@ using System.Web;
 namespace StatisServiceContracts
 {
     [DataContract]
-    [KnownType(typeof(Answer))]
-    public abstract class Answer
+    [KnownType(typeof(ChoiceAnswer))]
+    [KnownType(typeof(TextAnswer))]
+    public class Answer
     {
-        [DataMember]
-        public Guid answerId;
+        
     }
+
+    [DataContract]
     public class ChoiceAnswer : Answer
     {
         [DataMember]
-        public List<int> answerList = new List<int>();
+        public List<int> AnswerList = new List<int>();
+        
         public ChoiceAnswer(int indexNo)
         {
-            answerList.Add(indexNo);
+            AnswerList.Add(indexNo);
         }
     }
+
+    [DataContract]
     public class TextAnswer : Answer
     {
         [DataMember]
-        public string answerText;
+        public string AnswerText;
+        
         public TextAnswer(string text)
         {
-            answerText = text;
+            AnswerText = text;
         }
     }
 }

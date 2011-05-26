@@ -12,13 +12,15 @@ namespace StatisServiceContracts
     /// <summary></summary>
     [ServiceContract]
     [ServiceKnownType(typeof(Questionnaire))]
+    [ServiceKnownType(typeof(FilledQuestionnaire))]
+    [ServiceKnownType(typeof(Guid))]
     public interface IQuestionnaireService
     {
         [OperationContract]
         Questionnaire GetQuestionnaire(string questionnaireName);
-        [OperationContract]
+        [OperationContract(IsOneWay = true)]
         void StoreQuestionnaire(Questionnaire questionnaire);
-        [OperationContract]
+        [OperationContract(IsOneWay = true)]
         void DeleteQuestionnaire(string questionnaireName);
         [OperationContract]
         IEnumerable<string> GetUserQuestionnaireList(string userName);
@@ -26,6 +28,20 @@ namespace StatisServiceContracts
         IEnumerable<string> GetUserAnalysts(string userName);
         [OperationContract]
         IEnumerable<string> GetUserRespondents(string userName);
+        [OperationContract]
+        bool AddAnalyst(string currentUserName, string analystUserName);
+        [OperationContract(IsOneWay = true)]
+        void RemoveAnalyst(string currentUserName, string analystUserName);
+        [OperationContract]
+        bool AddRespondent(string currentUserName, string respondentEmail);
+        [OperationContract(IsOneWay = true)]
+        void RemoveRespondent(string currentUserName, string respondentEmail);
+        [OperationContract(IsOneWay = true)]
+        void StoreFilledQuestionnaire(FilledQuestionnaire filled);
+        [OperationContract]
+        FilledQuestionnaire GetFilledQuestionnaire(Guid id);
+        [OperationContract]
+        bool AuthenticateUser(string userName, string password);
     }
 
     /// <summary></summary>

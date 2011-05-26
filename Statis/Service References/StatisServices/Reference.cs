@@ -80,9 +80,9 @@ namespace Statis.StatisServices {
     [System.Runtime.Serialization.DataContractAttribute(Name="Question", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgTextQuestion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgChoiceQuestion))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgQuestion))]
     public partial class Question : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Guid QuestionIdField;
@@ -135,19 +135,25 @@ namespace Statis.StatisServices {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ImgTextQuestion", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<int>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.FilledQuestionnaire))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Answer>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Answer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceAnswer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextAnswer))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Questionnaire))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Question>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Question))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextQuestion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Choice>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Choice))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.NumberChoice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextChoice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgChoice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.NumberChoice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgChoiceQuestion))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgQuestion))]
     public partial class ImgTextQuestion : Statis.StatisServices.TextQuestion {
         
         private object ImgField;
@@ -161,6 +167,46 @@ namespace Statis.StatisServices {
                 if ((object.ReferenceEquals(this.ImgField, value) != true)) {
                     this.ImgField = value;
                     this.RaisePropertyChanged("Img");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ImgQuestion", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<int>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.FilledQuestionnaire))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Answer>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Answer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceAnswer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextAnswer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Questionnaire))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Question>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Question))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextQuestion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgTextQuestion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceQuestion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Choice>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Choice))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.NumberChoice))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextChoice))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgChoice))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgChoiceQuestion))]
+    public partial class ImgQuestion : Statis.StatisServices.Question {
+        
+        private object ImageField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public object Image {
+            get {
+                return this.ImageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageField, value) != true)) {
+                    this.ImageField = value;
+                    this.RaisePropertyChanged("Image");
                 }
             }
         }
@@ -191,19 +237,25 @@ namespace Statis.StatisServices {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ImgChoiceQuestion", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<int>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.FilledQuestionnaire))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Answer>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Answer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceAnswer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextAnswer))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Questionnaire))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Question>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Question))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgTextQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextQuestion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgQuestion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgTextQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Choice>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Choice))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.NumberChoice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextChoice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgChoice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.NumberChoice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgQuestion))]
     public partial class ImgChoiceQuestion : Statis.StatisServices.ChoiceQuestion {
         
         private object ImgField;
@@ -224,33 +276,118 @@ namespace Statis.StatisServices {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ImgQuestion", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Questionnaire))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Question>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Question))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgTextQuestion))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextQuestion))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceQuestion))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Choice>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Choice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextChoice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgChoice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.NumberChoice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgChoiceQuestion))]
-    public partial class ImgQuestion : Statis.StatisServices.Question {
+    [System.Runtime.Serialization.DataContractAttribute(Name="FilledQuestionnaire", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
+    public partial class FilledQuestionnaire : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private object ImageField;
+        private System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Answer> AnswersField;
+        
+        private System.Guid IdField;
+        
+        private string QuestionnaireNameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public object Image {
+        public System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Answer> Answers {
             get {
-                return this.ImageField;
+                return this.AnswersField;
             }
             set {
-                if ((object.ReferenceEquals(this.ImageField, value) != true)) {
-                    this.ImageField = value;
-                    this.RaisePropertyChanged("Image");
+                if ((object.ReferenceEquals(this.AnswersField, value) != true)) {
+                    this.AnswersField = value;
+                    this.RaisePropertyChanged("Answers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string QuestionnaireName {
+            get {
+                return this.QuestionnaireNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.QuestionnaireNameField, value) != true)) {
+                    this.QuestionnaireNameField = value;
+                    this.RaisePropertyChanged("QuestionnaireName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Answer", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceAnswer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextAnswer))]
+    public partial class Answer : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ChoiceAnswer", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
+    public partial class ChoiceAnswer : Statis.StatisServices.Answer {
+        
+        private System.Collections.ObjectModel.ObservableCollection<int> AnswerListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<int> AnswerList {
+            get {
+                return this.AnswerListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AnswerListField, value) != true)) {
+                    this.AnswerListField = value;
+                    this.RaisePropertyChanged("AnswerList");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TextAnswer", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
+    public partial class TextAnswer : Statis.StatisServices.Answer {
+        
+        private string AnswerTextField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AnswerText {
+            get {
+                return this.AnswerTextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AnswerTextField, value) != true)) {
+                    this.AnswerTextField = value;
+                    this.RaisePropertyChanged("AnswerText");
                 }
             }
         }
@@ -259,9 +396,9 @@ namespace Statis.StatisServices {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Choice", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.NumberChoice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextChoice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgChoice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.NumberChoice))]
     public partial class Choice : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -270,6 +407,27 @@ namespace Statis.StatisServices {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NumberChoice", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
+    public partial class NumberChoice : Statis.StatisServices.Choice {
+        
+        private double OptionField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Option {
+            get {
+                return this.OptionField;
+            }
+            set {
+                if ((this.OptionField.Equals(value) != true)) {
+                    this.OptionField = value;
+                    this.RaisePropertyChanged("Option");
+                }
             }
         }
     }
@@ -316,27 +474,6 @@ namespace Statis.StatisServices {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NumberChoice", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
-    public partial class NumberChoice : Statis.StatisServices.Choice {
-        
-        private double OptionField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Option {
-            get {
-                return this.OptionField;
-            }
-            set {
-                if ((this.OptionField.Equals(value) != true)) {
-                    this.OptionField = value;
-                    this.RaisePropertyChanged("Option");
-                }
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="StatisServices.IQuestionnaireService")]
     public interface IQuestionnaireService {
@@ -346,12 +483,12 @@ namespace Statis.StatisServices {
         
         Statis.StatisServices.Questionnaire EndGetQuestionnaire(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/StoreQuestionnaire", ReplyAction="http://tempuri.org/IQuestionnaireService/StoreQuestionnaireResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/StoreQuestionnaire")]
         System.IAsyncResult BeginStoreQuestionnaire(Statis.StatisServices.Questionnaire questionnaire, System.AsyncCallback callback, object asyncState);
         
         void EndStoreQuestionnaire(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaire", ReplyAction="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaireResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaire")]
         System.IAsyncResult BeginDeleteQuestionnaire(string questionnaireName, System.AsyncCallback callback, object asyncState);
         
         void EndDeleteQuestionnaire(System.IAsyncResult result);
@@ -370,6 +507,41 @@ namespace Statis.StatisServices {
         System.IAsyncResult BeginGetUserRespondents(string userName, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<string> EndGetUserRespondents(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/AddAnalyst", ReplyAction="http://tempuri.org/IQuestionnaireService/AddAnalystResponse")]
+        System.IAsyncResult BeginAddAnalyst(string currentUserName, string analystUserName, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddAnalyst(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/RemoveAnalyst")]
+        System.IAsyncResult BeginRemoveAnalyst(string currentUserName, string analystUserName, System.AsyncCallback callback, object asyncState);
+        
+        void EndRemoveAnalyst(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/AddRespondent", ReplyAction="http://tempuri.org/IQuestionnaireService/AddRespondentResponse")]
+        System.IAsyncResult BeginAddRespondent(string currentUserName, string respondentEmail, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddRespondent(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/RemoveRespondent")]
+        System.IAsyncResult BeginRemoveRespondent(string currentUserName, string respondentEmail, System.AsyncCallback callback, object asyncState);
+        
+        void EndRemoveRespondent(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/StoreFilledQuestionnaire")]
+        System.IAsyncResult BeginStoreFilledQuestionnaire(Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState);
+        
+        void EndStoreFilledQuestionnaire(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaire", ReplyAction="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaireResponse")]
+        System.IAsyncResult BeginGetFilledQuestionnaire(System.Guid id, System.AsyncCallback callback, object asyncState);
+        
+        Statis.StatisServices.FilledQuestionnaire EndGetFilledQuestionnaire(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/AuthenticateUser", ReplyAction="http://tempuri.org/IQuestionnaireService/AuthenticateUserResponse")]
+        System.IAsyncResult BeginAuthenticateUser(string userName, string password, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAuthenticateUser(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -454,6 +626,82 @@ namespace Statis.StatisServices {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddAnalystCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddAnalystCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddRespondentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddRespondentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetFilledQuestionnaireCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetFilledQuestionnaireCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Statis.StatisServices.FilledQuestionnaire Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Statis.StatisServices.FilledQuestionnaire)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AuthenticateUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AuthenticateUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class QuestionnaireServiceClient : System.ServiceModel.ClientBase<Statis.StatisServices.IQuestionnaireService>, Statis.StatisServices.IQuestionnaireService {
         
         private BeginOperationDelegate onBeginGetQuestionnaireDelegate;
@@ -491,6 +739,48 @@ namespace Statis.StatisServices {
         private EndOperationDelegate onEndGetUserRespondentsDelegate;
         
         private System.Threading.SendOrPostCallback onGetUserRespondentsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddAnalystDelegate;
+        
+        private EndOperationDelegate onEndAddAnalystDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddAnalystCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRemoveAnalystDelegate;
+        
+        private EndOperationDelegate onEndRemoveAnalystDelegate;
+        
+        private System.Threading.SendOrPostCallback onRemoveAnalystCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddRespondentDelegate;
+        
+        private EndOperationDelegate onEndAddRespondentDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddRespondentCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRemoveRespondentDelegate;
+        
+        private EndOperationDelegate onEndRemoveRespondentDelegate;
+        
+        private System.Threading.SendOrPostCallback onRemoveRespondentCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginStoreFilledQuestionnaireDelegate;
+        
+        private EndOperationDelegate onEndStoreFilledQuestionnaireDelegate;
+        
+        private System.Threading.SendOrPostCallback onStoreFilledQuestionnaireCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetFilledQuestionnaireDelegate;
+        
+        private EndOperationDelegate onEndGetFilledQuestionnaireDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetFilledQuestionnaireCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAuthenticateUserDelegate;
+        
+        private EndOperationDelegate onEndAuthenticateUserDelegate;
+        
+        private System.Threading.SendOrPostCallback onAuthenticateUserCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -556,6 +846,20 @@ namespace Statis.StatisServices {
         public event System.EventHandler<GetUserAnalystsCompletedEventArgs> GetUserAnalystsCompleted;
         
         public event System.EventHandler<GetUserRespondentsCompletedEventArgs> GetUserRespondentsCompleted;
+        
+        public event System.EventHandler<AddAnalystCompletedEventArgs> AddAnalystCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RemoveAnalystCompleted;
+        
+        public event System.EventHandler<AddRespondentCompletedEventArgs> AddRespondentCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RemoveRespondentCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> StoreFilledQuestionnaireCompleted;
+        
+        public event System.EventHandler<GetFilledQuestionnaireCompletedEventArgs> GetFilledQuestionnaireCompleted;
+        
+        public event System.EventHandler<AuthenticateUserCompletedEventArgs> AuthenticateUserCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -835,6 +1139,335 @@ namespace Statis.StatisServices {
                         userName}, this.onEndGetUserRespondentsDelegate, this.onGetUserRespondentsCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireService.BeginAddAnalyst(string currentUserName, string analystUserName, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddAnalyst(currentUserName, analystUserName, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool Statis.StatisServices.IQuestionnaireService.EndAddAnalyst(System.IAsyncResult result) {
+            return base.Channel.EndAddAnalyst(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddAnalyst(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string currentUserName = ((string)(inValues[0]));
+            string analystUserName = ((string)(inValues[1]));
+            return ((Statis.StatisServices.IQuestionnaireService)(this)).BeginAddAnalyst(currentUserName, analystUserName, callback, asyncState);
+        }
+        
+        private object[] OnEndAddAnalyst(System.IAsyncResult result) {
+            bool retVal = ((Statis.StatisServices.IQuestionnaireService)(this)).EndAddAnalyst(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddAnalystCompleted(object state) {
+            if ((this.AddAnalystCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddAnalystCompleted(this, new AddAnalystCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddAnalystAsync(string currentUserName, string analystUserName) {
+            this.AddAnalystAsync(currentUserName, analystUserName, null);
+        }
+        
+        public void AddAnalystAsync(string currentUserName, string analystUserName, object userState) {
+            if ((this.onBeginAddAnalystDelegate == null)) {
+                this.onBeginAddAnalystDelegate = new BeginOperationDelegate(this.OnBeginAddAnalyst);
+            }
+            if ((this.onEndAddAnalystDelegate == null)) {
+                this.onEndAddAnalystDelegate = new EndOperationDelegate(this.OnEndAddAnalyst);
+            }
+            if ((this.onAddAnalystCompletedDelegate == null)) {
+                this.onAddAnalystCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddAnalystCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddAnalystDelegate, new object[] {
+                        currentUserName,
+                        analystUserName}, this.onEndAddAnalystDelegate, this.onAddAnalystCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireService.BeginRemoveAnalyst(string currentUserName, string analystUserName, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRemoveAnalyst(currentUserName, analystUserName, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void Statis.StatisServices.IQuestionnaireService.EndRemoveAnalyst(System.IAsyncResult result) {
+            base.Channel.EndRemoveAnalyst(result);
+        }
+        
+        private System.IAsyncResult OnBeginRemoveAnalyst(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string currentUserName = ((string)(inValues[0]));
+            string analystUserName = ((string)(inValues[1]));
+            return ((Statis.StatisServices.IQuestionnaireService)(this)).BeginRemoveAnalyst(currentUserName, analystUserName, callback, asyncState);
+        }
+        
+        private object[] OnEndRemoveAnalyst(System.IAsyncResult result) {
+            ((Statis.StatisServices.IQuestionnaireService)(this)).EndRemoveAnalyst(result);
+            return null;
+        }
+        
+        private void OnRemoveAnalystCompleted(object state) {
+            if ((this.RemoveAnalystCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RemoveAnalystCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RemoveAnalystAsync(string currentUserName, string analystUserName) {
+            this.RemoveAnalystAsync(currentUserName, analystUserName, null);
+        }
+        
+        public void RemoveAnalystAsync(string currentUserName, string analystUserName, object userState) {
+            if ((this.onBeginRemoveAnalystDelegate == null)) {
+                this.onBeginRemoveAnalystDelegate = new BeginOperationDelegate(this.OnBeginRemoveAnalyst);
+            }
+            if ((this.onEndRemoveAnalystDelegate == null)) {
+                this.onEndRemoveAnalystDelegate = new EndOperationDelegate(this.OnEndRemoveAnalyst);
+            }
+            if ((this.onRemoveAnalystCompletedDelegate == null)) {
+                this.onRemoveAnalystCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRemoveAnalystCompleted);
+            }
+            base.InvokeAsync(this.onBeginRemoveAnalystDelegate, new object[] {
+                        currentUserName,
+                        analystUserName}, this.onEndRemoveAnalystDelegate, this.onRemoveAnalystCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireService.BeginAddRespondent(string currentUserName, string respondentEmail, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddRespondent(currentUserName, respondentEmail, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool Statis.StatisServices.IQuestionnaireService.EndAddRespondent(System.IAsyncResult result) {
+            return base.Channel.EndAddRespondent(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddRespondent(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string currentUserName = ((string)(inValues[0]));
+            string respondentEmail = ((string)(inValues[1]));
+            return ((Statis.StatisServices.IQuestionnaireService)(this)).BeginAddRespondent(currentUserName, respondentEmail, callback, asyncState);
+        }
+        
+        private object[] OnEndAddRespondent(System.IAsyncResult result) {
+            bool retVal = ((Statis.StatisServices.IQuestionnaireService)(this)).EndAddRespondent(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddRespondentCompleted(object state) {
+            if ((this.AddRespondentCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddRespondentCompleted(this, new AddRespondentCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddRespondentAsync(string currentUserName, string respondentEmail) {
+            this.AddRespondentAsync(currentUserName, respondentEmail, null);
+        }
+        
+        public void AddRespondentAsync(string currentUserName, string respondentEmail, object userState) {
+            if ((this.onBeginAddRespondentDelegate == null)) {
+                this.onBeginAddRespondentDelegate = new BeginOperationDelegate(this.OnBeginAddRespondent);
+            }
+            if ((this.onEndAddRespondentDelegate == null)) {
+                this.onEndAddRespondentDelegate = new EndOperationDelegate(this.OnEndAddRespondent);
+            }
+            if ((this.onAddRespondentCompletedDelegate == null)) {
+                this.onAddRespondentCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddRespondentCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddRespondentDelegate, new object[] {
+                        currentUserName,
+                        respondentEmail}, this.onEndAddRespondentDelegate, this.onAddRespondentCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireService.BeginRemoveRespondent(string currentUserName, string respondentEmail, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRemoveRespondent(currentUserName, respondentEmail, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void Statis.StatisServices.IQuestionnaireService.EndRemoveRespondent(System.IAsyncResult result) {
+            base.Channel.EndRemoveRespondent(result);
+        }
+        
+        private System.IAsyncResult OnBeginRemoveRespondent(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string currentUserName = ((string)(inValues[0]));
+            string respondentEmail = ((string)(inValues[1]));
+            return ((Statis.StatisServices.IQuestionnaireService)(this)).BeginRemoveRespondent(currentUserName, respondentEmail, callback, asyncState);
+        }
+        
+        private object[] OnEndRemoveRespondent(System.IAsyncResult result) {
+            ((Statis.StatisServices.IQuestionnaireService)(this)).EndRemoveRespondent(result);
+            return null;
+        }
+        
+        private void OnRemoveRespondentCompleted(object state) {
+            if ((this.RemoveRespondentCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RemoveRespondentCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RemoveRespondentAsync(string currentUserName, string respondentEmail) {
+            this.RemoveRespondentAsync(currentUserName, respondentEmail, null);
+        }
+        
+        public void RemoveRespondentAsync(string currentUserName, string respondentEmail, object userState) {
+            if ((this.onBeginRemoveRespondentDelegate == null)) {
+                this.onBeginRemoveRespondentDelegate = new BeginOperationDelegate(this.OnBeginRemoveRespondent);
+            }
+            if ((this.onEndRemoveRespondentDelegate == null)) {
+                this.onEndRemoveRespondentDelegate = new EndOperationDelegate(this.OnEndRemoveRespondent);
+            }
+            if ((this.onRemoveRespondentCompletedDelegate == null)) {
+                this.onRemoveRespondentCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRemoveRespondentCompleted);
+            }
+            base.InvokeAsync(this.onBeginRemoveRespondentDelegate, new object[] {
+                        currentUserName,
+                        respondentEmail}, this.onEndRemoveRespondentDelegate, this.onRemoveRespondentCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireService.BeginStoreFilledQuestionnaire(Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginStoreFilledQuestionnaire(filled, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void Statis.StatisServices.IQuestionnaireService.EndStoreFilledQuestionnaire(System.IAsyncResult result) {
+            base.Channel.EndStoreFilledQuestionnaire(result);
+        }
+        
+        private System.IAsyncResult OnBeginStoreFilledQuestionnaire(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            Statis.StatisServices.FilledQuestionnaire filled = ((Statis.StatisServices.FilledQuestionnaire)(inValues[0]));
+            return ((Statis.StatisServices.IQuestionnaireService)(this)).BeginStoreFilledQuestionnaire(filled, callback, asyncState);
+        }
+        
+        private object[] OnEndStoreFilledQuestionnaire(System.IAsyncResult result) {
+            ((Statis.StatisServices.IQuestionnaireService)(this)).EndStoreFilledQuestionnaire(result);
+            return null;
+        }
+        
+        private void OnStoreFilledQuestionnaireCompleted(object state) {
+            if ((this.StoreFilledQuestionnaireCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.StoreFilledQuestionnaireCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void StoreFilledQuestionnaireAsync(Statis.StatisServices.FilledQuestionnaire filled) {
+            this.StoreFilledQuestionnaireAsync(filled, null);
+        }
+        
+        public void StoreFilledQuestionnaireAsync(Statis.StatisServices.FilledQuestionnaire filled, object userState) {
+            if ((this.onBeginStoreFilledQuestionnaireDelegate == null)) {
+                this.onBeginStoreFilledQuestionnaireDelegate = new BeginOperationDelegate(this.OnBeginStoreFilledQuestionnaire);
+            }
+            if ((this.onEndStoreFilledQuestionnaireDelegate == null)) {
+                this.onEndStoreFilledQuestionnaireDelegate = new EndOperationDelegate(this.OnEndStoreFilledQuestionnaire);
+            }
+            if ((this.onStoreFilledQuestionnaireCompletedDelegate == null)) {
+                this.onStoreFilledQuestionnaireCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnStoreFilledQuestionnaireCompleted);
+            }
+            base.InvokeAsync(this.onBeginStoreFilledQuestionnaireDelegate, new object[] {
+                        filled}, this.onEndStoreFilledQuestionnaireDelegate, this.onStoreFilledQuestionnaireCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireService.BeginGetFilledQuestionnaire(System.Guid id, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetFilledQuestionnaire(id, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Statis.StatisServices.FilledQuestionnaire Statis.StatisServices.IQuestionnaireService.EndGetFilledQuestionnaire(System.IAsyncResult result) {
+            return base.Channel.EndGetFilledQuestionnaire(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetFilledQuestionnaire(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            System.Guid id = ((System.Guid)(inValues[0]));
+            return ((Statis.StatisServices.IQuestionnaireService)(this)).BeginGetFilledQuestionnaire(id, callback, asyncState);
+        }
+        
+        private object[] OnEndGetFilledQuestionnaire(System.IAsyncResult result) {
+            Statis.StatisServices.FilledQuestionnaire retVal = ((Statis.StatisServices.IQuestionnaireService)(this)).EndGetFilledQuestionnaire(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetFilledQuestionnaireCompleted(object state) {
+            if ((this.GetFilledQuestionnaireCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetFilledQuestionnaireCompleted(this, new GetFilledQuestionnaireCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetFilledQuestionnaireAsync(System.Guid id) {
+            this.GetFilledQuestionnaireAsync(id, null);
+        }
+        
+        public void GetFilledQuestionnaireAsync(System.Guid id, object userState) {
+            if ((this.onBeginGetFilledQuestionnaireDelegate == null)) {
+                this.onBeginGetFilledQuestionnaireDelegate = new BeginOperationDelegate(this.OnBeginGetFilledQuestionnaire);
+            }
+            if ((this.onEndGetFilledQuestionnaireDelegate == null)) {
+                this.onEndGetFilledQuestionnaireDelegate = new EndOperationDelegate(this.OnEndGetFilledQuestionnaire);
+            }
+            if ((this.onGetFilledQuestionnaireCompletedDelegate == null)) {
+                this.onGetFilledQuestionnaireCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetFilledQuestionnaireCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetFilledQuestionnaireDelegate, new object[] {
+                        id}, this.onEndGetFilledQuestionnaireDelegate, this.onGetFilledQuestionnaireCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireService.BeginAuthenticateUser(string userName, string password, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAuthenticateUser(userName, password, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool Statis.StatisServices.IQuestionnaireService.EndAuthenticateUser(System.IAsyncResult result) {
+            return base.Channel.EndAuthenticateUser(result);
+        }
+        
+        private System.IAsyncResult OnBeginAuthenticateUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string userName = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            return ((Statis.StatisServices.IQuestionnaireService)(this)).BeginAuthenticateUser(userName, password, callback, asyncState);
+        }
+        
+        private object[] OnEndAuthenticateUser(System.IAsyncResult result) {
+            bool retVal = ((Statis.StatisServices.IQuestionnaireService)(this)).EndAuthenticateUser(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAuthenticateUserCompleted(object state) {
+            if ((this.AuthenticateUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AuthenticateUserCompleted(this, new AuthenticateUserCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AuthenticateUserAsync(string userName, string password) {
+            this.AuthenticateUserAsync(userName, password, null);
+        }
+        
+        public void AuthenticateUserAsync(string userName, string password, object userState) {
+            if ((this.onBeginAuthenticateUserDelegate == null)) {
+                this.onBeginAuthenticateUserDelegate = new BeginOperationDelegate(this.OnBeginAuthenticateUser);
+            }
+            if ((this.onEndAuthenticateUserDelegate == null)) {
+                this.onEndAuthenticateUserDelegate = new EndOperationDelegate(this.OnEndAuthenticateUser);
+            }
+            if ((this.onAuthenticateUserCompletedDelegate == null)) {
+                this.onAuthenticateUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAuthenticateUserCompleted);
+            }
+            base.InvokeAsync(this.onBeginAuthenticateUserDelegate, new object[] {
+                        userName,
+                        password}, this.onEndAuthenticateUserDelegate, this.onAuthenticateUserCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -986,6 +1619,99 @@ namespace Statis.StatisServices {
                 System.Collections.ObjectModel.ObservableCollection<string> _result = ((System.Collections.ObjectModel.ObservableCollection<string>)(base.EndInvoke("GetUserRespondents", _args, result)));
                 return _result;
             }
+            
+            public System.IAsyncResult BeginAddAnalyst(string currentUserName, string analystUserName, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = currentUserName;
+                _args[1] = analystUserName;
+                System.IAsyncResult _result = base.BeginInvoke("AddAnalyst", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndAddAnalyst(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("AddAnalyst", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginRemoveAnalyst(string currentUserName, string analystUserName, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = currentUserName;
+                _args[1] = analystUserName;
+                System.IAsyncResult _result = base.BeginInvoke("RemoveAnalyst", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndRemoveAnalyst(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("RemoveAnalyst", _args, result);
+            }
+            
+            public System.IAsyncResult BeginAddRespondent(string currentUserName, string respondentEmail, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = currentUserName;
+                _args[1] = respondentEmail;
+                System.IAsyncResult _result = base.BeginInvoke("AddRespondent", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndAddRespondent(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("AddRespondent", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginRemoveRespondent(string currentUserName, string respondentEmail, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = currentUserName;
+                _args[1] = respondentEmail;
+                System.IAsyncResult _result = base.BeginInvoke("RemoveRespondent", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndRemoveRespondent(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("RemoveRespondent", _args, result);
+            }
+            
+            public System.IAsyncResult BeginStoreFilledQuestionnaire(Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = filled;
+                System.IAsyncResult _result = base.BeginInvoke("StoreFilledQuestionnaire", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndStoreFilledQuestionnaire(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("StoreFilledQuestionnaire", _args, result);
+            }
+            
+            public System.IAsyncResult BeginGetFilledQuestionnaire(System.Guid id, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = id;
+                System.IAsyncResult _result = base.BeginInvoke("GetFilledQuestionnaire", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public Statis.StatisServices.FilledQuestionnaire EndGetFilledQuestionnaire(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                Statis.StatisServices.FilledQuestionnaire _result = ((Statis.StatisServices.FilledQuestionnaire)(base.EndInvoke("GetFilledQuestionnaire", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginAuthenticateUser(string userName, string password, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = userName;
+                _args[1] = password;
+                System.IAsyncResult _result = base.BeginInvoke("AuthenticateUser", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndAuthenticateUser(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("AuthenticateUser", _args, result)));
+                return _result;
+            }
         }
     }
     
@@ -998,12 +1724,12 @@ namespace Statis.StatisServices {
         
         Statis.StatisServices.Questionnaire EndGetQuestionnaire(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/StoreQuestionnaire", ReplyAction="http://tempuri.org/IQuestionnaireService/StoreQuestionnaireResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/StoreQuestionnaire")]
         System.IAsyncResult BeginStoreQuestionnaire(Statis.StatisServices.Questionnaire questionnaire, System.AsyncCallback callback, object asyncState);
         
         void EndStoreQuestionnaire(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaire", ReplyAction="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaireResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/DeleteQuestionnaire")]
         System.IAsyncResult BeginDeleteQuestionnaire(string questionnaireName, System.AsyncCallback callback, object asyncState);
         
         void EndDeleteQuestionnaire(System.IAsyncResult result);
@@ -1022,6 +1748,41 @@ namespace Statis.StatisServices {
         System.IAsyncResult BeginGetUserRespondents(string userName, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<string> EndGetUserRespondents(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/AddAnalyst", ReplyAction="http://tempuri.org/IQuestionnaireService/AddAnalystResponse")]
+        System.IAsyncResult BeginAddAnalyst(string currentUserName, string analystUserName, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddAnalyst(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/RemoveAnalyst")]
+        System.IAsyncResult BeginRemoveAnalyst(string currentUserName, string analystUserName, System.AsyncCallback callback, object asyncState);
+        
+        void EndRemoveAnalyst(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/AddRespondent", ReplyAction="http://tempuri.org/IQuestionnaireService/AddRespondentResponse")]
+        System.IAsyncResult BeginAddRespondent(string currentUserName, string respondentEmail, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddRespondent(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/RemoveRespondent")]
+        System.IAsyncResult BeginRemoveRespondent(string currentUserName, string respondentEmail, System.AsyncCallback callback, object asyncState);
+        
+        void EndRemoveRespondent(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/StoreFilledQuestionnaire")]
+        System.IAsyncResult BeginStoreFilledQuestionnaire(Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState);
+        
+        void EndStoreFilledQuestionnaire(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaire", ReplyAction="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaireResponse")]
+        System.IAsyncResult BeginGetFilledQuestionnaire(System.Guid id, System.AsyncCallback callback, object asyncState);
+        
+        Statis.StatisServices.FilledQuestionnaire EndGetFilledQuestionnaire(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/AuthenticateUser", ReplyAction="http://tempuri.org/IQuestionnaireService/AuthenticateUserResponse")]
+        System.IAsyncResult BeginAuthenticateUser(string userName, string password, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAuthenticateUser(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1106,6 +1867,82 @@ namespace Statis.StatisServices {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddAnalystCompletedEventArgs1 : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddAnalystCompletedEventArgs1(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddRespondentCompletedEventArgs1 : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddRespondentCompletedEventArgs1(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetFilledQuestionnaireCompletedEventArgs1 : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetFilledQuestionnaireCompletedEventArgs1(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Statis.StatisServices.FilledQuestionnaire Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Statis.StatisServices.FilledQuestionnaire)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AuthenticateUserCompletedEventArgs1 : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AuthenticateUserCompletedEventArgs1(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class QuestionnaireAdministrativeServiceClient : System.ServiceModel.ClientBase<Statis.StatisServices.IQuestionnaireAdministrativeService>, Statis.StatisServices.IQuestionnaireAdministrativeService {
         
         private BeginOperationDelegate onBeginGetQuestionnaireDelegate;
@@ -1143,6 +1980,48 @@ namespace Statis.StatisServices {
         private EndOperationDelegate onEndGetUserRespondentsDelegate;
         
         private System.Threading.SendOrPostCallback onGetUserRespondentsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddAnalystDelegate;
+        
+        private EndOperationDelegate onEndAddAnalystDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddAnalystCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRemoveAnalystDelegate;
+        
+        private EndOperationDelegate onEndRemoveAnalystDelegate;
+        
+        private System.Threading.SendOrPostCallback onRemoveAnalystCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddRespondentDelegate;
+        
+        private EndOperationDelegate onEndAddRespondentDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddRespondentCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRemoveRespondentDelegate;
+        
+        private EndOperationDelegate onEndRemoveRespondentDelegate;
+        
+        private System.Threading.SendOrPostCallback onRemoveRespondentCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginStoreFilledQuestionnaireDelegate;
+        
+        private EndOperationDelegate onEndStoreFilledQuestionnaireDelegate;
+        
+        private System.Threading.SendOrPostCallback onStoreFilledQuestionnaireCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetFilledQuestionnaireDelegate;
+        
+        private EndOperationDelegate onEndGetFilledQuestionnaireDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetFilledQuestionnaireCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAuthenticateUserDelegate;
+        
+        private EndOperationDelegate onEndAuthenticateUserDelegate;
+        
+        private System.Threading.SendOrPostCallback onAuthenticateUserCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -1208,6 +2087,20 @@ namespace Statis.StatisServices {
         public event System.EventHandler<GetUserAnalystsCompletedEventArgs1> GetUserAnalystsCompleted;
         
         public event System.EventHandler<GetUserRespondentsCompletedEventArgs1> GetUserRespondentsCompleted;
+        
+        public event System.EventHandler<AddAnalystCompletedEventArgs1> AddAnalystCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RemoveAnalystCompleted;
+        
+        public event System.EventHandler<AddRespondentCompletedEventArgs1> AddRespondentCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RemoveRespondentCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> StoreFilledQuestionnaireCompleted;
+        
+        public event System.EventHandler<GetFilledQuestionnaireCompletedEventArgs1> GetFilledQuestionnaireCompleted;
+        
+        public event System.EventHandler<AuthenticateUserCompletedEventArgs1> AuthenticateUserCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -1487,6 +2380,335 @@ namespace Statis.StatisServices {
                         userName}, this.onEndGetUserRespondentsDelegate, this.onGetUserRespondentsCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireAdministrativeService.BeginAddAnalyst(string currentUserName, string analystUserName, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddAnalyst(currentUserName, analystUserName, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool Statis.StatisServices.IQuestionnaireAdministrativeService.EndAddAnalyst(System.IAsyncResult result) {
+            return base.Channel.EndAddAnalyst(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddAnalyst(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string currentUserName = ((string)(inValues[0]));
+            string analystUserName = ((string)(inValues[1]));
+            return ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).BeginAddAnalyst(currentUserName, analystUserName, callback, asyncState);
+        }
+        
+        private object[] OnEndAddAnalyst(System.IAsyncResult result) {
+            bool retVal = ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).EndAddAnalyst(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddAnalystCompleted(object state) {
+            if ((this.AddAnalystCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddAnalystCompleted(this, new AddAnalystCompletedEventArgs1(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddAnalystAsync(string currentUserName, string analystUserName) {
+            this.AddAnalystAsync(currentUserName, analystUserName, null);
+        }
+        
+        public void AddAnalystAsync(string currentUserName, string analystUserName, object userState) {
+            if ((this.onBeginAddAnalystDelegate == null)) {
+                this.onBeginAddAnalystDelegate = new BeginOperationDelegate(this.OnBeginAddAnalyst);
+            }
+            if ((this.onEndAddAnalystDelegate == null)) {
+                this.onEndAddAnalystDelegate = new EndOperationDelegate(this.OnEndAddAnalyst);
+            }
+            if ((this.onAddAnalystCompletedDelegate == null)) {
+                this.onAddAnalystCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddAnalystCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddAnalystDelegate, new object[] {
+                        currentUserName,
+                        analystUserName}, this.onEndAddAnalystDelegate, this.onAddAnalystCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireAdministrativeService.BeginRemoveAnalyst(string currentUserName, string analystUserName, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRemoveAnalyst(currentUserName, analystUserName, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void Statis.StatisServices.IQuestionnaireAdministrativeService.EndRemoveAnalyst(System.IAsyncResult result) {
+            base.Channel.EndRemoveAnalyst(result);
+        }
+        
+        private System.IAsyncResult OnBeginRemoveAnalyst(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string currentUserName = ((string)(inValues[0]));
+            string analystUserName = ((string)(inValues[1]));
+            return ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).BeginRemoveAnalyst(currentUserName, analystUserName, callback, asyncState);
+        }
+        
+        private object[] OnEndRemoveAnalyst(System.IAsyncResult result) {
+            ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).EndRemoveAnalyst(result);
+            return null;
+        }
+        
+        private void OnRemoveAnalystCompleted(object state) {
+            if ((this.RemoveAnalystCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RemoveAnalystCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RemoveAnalystAsync(string currentUserName, string analystUserName) {
+            this.RemoveAnalystAsync(currentUserName, analystUserName, null);
+        }
+        
+        public void RemoveAnalystAsync(string currentUserName, string analystUserName, object userState) {
+            if ((this.onBeginRemoveAnalystDelegate == null)) {
+                this.onBeginRemoveAnalystDelegate = new BeginOperationDelegate(this.OnBeginRemoveAnalyst);
+            }
+            if ((this.onEndRemoveAnalystDelegate == null)) {
+                this.onEndRemoveAnalystDelegate = new EndOperationDelegate(this.OnEndRemoveAnalyst);
+            }
+            if ((this.onRemoveAnalystCompletedDelegate == null)) {
+                this.onRemoveAnalystCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRemoveAnalystCompleted);
+            }
+            base.InvokeAsync(this.onBeginRemoveAnalystDelegate, new object[] {
+                        currentUserName,
+                        analystUserName}, this.onEndRemoveAnalystDelegate, this.onRemoveAnalystCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireAdministrativeService.BeginAddRespondent(string currentUserName, string respondentEmail, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddRespondent(currentUserName, respondentEmail, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool Statis.StatisServices.IQuestionnaireAdministrativeService.EndAddRespondent(System.IAsyncResult result) {
+            return base.Channel.EndAddRespondent(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddRespondent(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string currentUserName = ((string)(inValues[0]));
+            string respondentEmail = ((string)(inValues[1]));
+            return ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).BeginAddRespondent(currentUserName, respondentEmail, callback, asyncState);
+        }
+        
+        private object[] OnEndAddRespondent(System.IAsyncResult result) {
+            bool retVal = ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).EndAddRespondent(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddRespondentCompleted(object state) {
+            if ((this.AddRespondentCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddRespondentCompleted(this, new AddRespondentCompletedEventArgs1(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddRespondentAsync(string currentUserName, string respondentEmail) {
+            this.AddRespondentAsync(currentUserName, respondentEmail, null);
+        }
+        
+        public void AddRespondentAsync(string currentUserName, string respondentEmail, object userState) {
+            if ((this.onBeginAddRespondentDelegate == null)) {
+                this.onBeginAddRespondentDelegate = new BeginOperationDelegate(this.OnBeginAddRespondent);
+            }
+            if ((this.onEndAddRespondentDelegate == null)) {
+                this.onEndAddRespondentDelegate = new EndOperationDelegate(this.OnEndAddRespondent);
+            }
+            if ((this.onAddRespondentCompletedDelegate == null)) {
+                this.onAddRespondentCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddRespondentCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddRespondentDelegate, new object[] {
+                        currentUserName,
+                        respondentEmail}, this.onEndAddRespondentDelegate, this.onAddRespondentCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireAdministrativeService.BeginRemoveRespondent(string currentUserName, string respondentEmail, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRemoveRespondent(currentUserName, respondentEmail, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void Statis.StatisServices.IQuestionnaireAdministrativeService.EndRemoveRespondent(System.IAsyncResult result) {
+            base.Channel.EndRemoveRespondent(result);
+        }
+        
+        private System.IAsyncResult OnBeginRemoveRespondent(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string currentUserName = ((string)(inValues[0]));
+            string respondentEmail = ((string)(inValues[1]));
+            return ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).BeginRemoveRespondent(currentUserName, respondentEmail, callback, asyncState);
+        }
+        
+        private object[] OnEndRemoveRespondent(System.IAsyncResult result) {
+            ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).EndRemoveRespondent(result);
+            return null;
+        }
+        
+        private void OnRemoveRespondentCompleted(object state) {
+            if ((this.RemoveRespondentCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RemoveRespondentCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RemoveRespondentAsync(string currentUserName, string respondentEmail) {
+            this.RemoveRespondentAsync(currentUserName, respondentEmail, null);
+        }
+        
+        public void RemoveRespondentAsync(string currentUserName, string respondentEmail, object userState) {
+            if ((this.onBeginRemoveRespondentDelegate == null)) {
+                this.onBeginRemoveRespondentDelegate = new BeginOperationDelegate(this.OnBeginRemoveRespondent);
+            }
+            if ((this.onEndRemoveRespondentDelegate == null)) {
+                this.onEndRemoveRespondentDelegate = new EndOperationDelegate(this.OnEndRemoveRespondent);
+            }
+            if ((this.onRemoveRespondentCompletedDelegate == null)) {
+                this.onRemoveRespondentCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRemoveRespondentCompleted);
+            }
+            base.InvokeAsync(this.onBeginRemoveRespondentDelegate, new object[] {
+                        currentUserName,
+                        respondentEmail}, this.onEndRemoveRespondentDelegate, this.onRemoveRespondentCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireAdministrativeService.BeginStoreFilledQuestionnaire(Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginStoreFilledQuestionnaire(filled, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void Statis.StatisServices.IQuestionnaireAdministrativeService.EndStoreFilledQuestionnaire(System.IAsyncResult result) {
+            base.Channel.EndStoreFilledQuestionnaire(result);
+        }
+        
+        private System.IAsyncResult OnBeginStoreFilledQuestionnaire(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            Statis.StatisServices.FilledQuestionnaire filled = ((Statis.StatisServices.FilledQuestionnaire)(inValues[0]));
+            return ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).BeginStoreFilledQuestionnaire(filled, callback, asyncState);
+        }
+        
+        private object[] OnEndStoreFilledQuestionnaire(System.IAsyncResult result) {
+            ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).EndStoreFilledQuestionnaire(result);
+            return null;
+        }
+        
+        private void OnStoreFilledQuestionnaireCompleted(object state) {
+            if ((this.StoreFilledQuestionnaireCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.StoreFilledQuestionnaireCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void StoreFilledQuestionnaireAsync(Statis.StatisServices.FilledQuestionnaire filled) {
+            this.StoreFilledQuestionnaireAsync(filled, null);
+        }
+        
+        public void StoreFilledQuestionnaireAsync(Statis.StatisServices.FilledQuestionnaire filled, object userState) {
+            if ((this.onBeginStoreFilledQuestionnaireDelegate == null)) {
+                this.onBeginStoreFilledQuestionnaireDelegate = new BeginOperationDelegate(this.OnBeginStoreFilledQuestionnaire);
+            }
+            if ((this.onEndStoreFilledQuestionnaireDelegate == null)) {
+                this.onEndStoreFilledQuestionnaireDelegate = new EndOperationDelegate(this.OnEndStoreFilledQuestionnaire);
+            }
+            if ((this.onStoreFilledQuestionnaireCompletedDelegate == null)) {
+                this.onStoreFilledQuestionnaireCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnStoreFilledQuestionnaireCompleted);
+            }
+            base.InvokeAsync(this.onBeginStoreFilledQuestionnaireDelegate, new object[] {
+                        filled}, this.onEndStoreFilledQuestionnaireDelegate, this.onStoreFilledQuestionnaireCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireAdministrativeService.BeginGetFilledQuestionnaire(System.Guid id, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetFilledQuestionnaire(id, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Statis.StatisServices.FilledQuestionnaire Statis.StatisServices.IQuestionnaireAdministrativeService.EndGetFilledQuestionnaire(System.IAsyncResult result) {
+            return base.Channel.EndGetFilledQuestionnaire(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetFilledQuestionnaire(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            System.Guid id = ((System.Guid)(inValues[0]));
+            return ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).BeginGetFilledQuestionnaire(id, callback, asyncState);
+        }
+        
+        private object[] OnEndGetFilledQuestionnaire(System.IAsyncResult result) {
+            Statis.StatisServices.FilledQuestionnaire retVal = ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).EndGetFilledQuestionnaire(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetFilledQuestionnaireCompleted(object state) {
+            if ((this.GetFilledQuestionnaireCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetFilledQuestionnaireCompleted(this, new GetFilledQuestionnaireCompletedEventArgs1(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetFilledQuestionnaireAsync(System.Guid id) {
+            this.GetFilledQuestionnaireAsync(id, null);
+        }
+        
+        public void GetFilledQuestionnaireAsync(System.Guid id, object userState) {
+            if ((this.onBeginGetFilledQuestionnaireDelegate == null)) {
+                this.onBeginGetFilledQuestionnaireDelegate = new BeginOperationDelegate(this.OnBeginGetFilledQuestionnaire);
+            }
+            if ((this.onEndGetFilledQuestionnaireDelegate == null)) {
+                this.onEndGetFilledQuestionnaireDelegate = new EndOperationDelegate(this.OnEndGetFilledQuestionnaire);
+            }
+            if ((this.onGetFilledQuestionnaireCompletedDelegate == null)) {
+                this.onGetFilledQuestionnaireCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetFilledQuestionnaireCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetFilledQuestionnaireDelegate, new object[] {
+                        id}, this.onEndGetFilledQuestionnaireDelegate, this.onGetFilledQuestionnaireCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireAdministrativeService.BeginAuthenticateUser(string userName, string password, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAuthenticateUser(userName, password, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool Statis.StatisServices.IQuestionnaireAdministrativeService.EndAuthenticateUser(System.IAsyncResult result) {
+            return base.Channel.EndAuthenticateUser(result);
+        }
+        
+        private System.IAsyncResult OnBeginAuthenticateUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string userName = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            return ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).BeginAuthenticateUser(userName, password, callback, asyncState);
+        }
+        
+        private object[] OnEndAuthenticateUser(System.IAsyncResult result) {
+            bool retVal = ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).EndAuthenticateUser(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAuthenticateUserCompleted(object state) {
+            if ((this.AuthenticateUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AuthenticateUserCompleted(this, new AuthenticateUserCompletedEventArgs1(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AuthenticateUserAsync(string userName, string password) {
+            this.AuthenticateUserAsync(userName, password, null);
+        }
+        
+        public void AuthenticateUserAsync(string userName, string password, object userState) {
+            if ((this.onBeginAuthenticateUserDelegate == null)) {
+                this.onBeginAuthenticateUserDelegate = new BeginOperationDelegate(this.OnBeginAuthenticateUser);
+            }
+            if ((this.onEndAuthenticateUserDelegate == null)) {
+                this.onEndAuthenticateUserDelegate = new EndOperationDelegate(this.OnEndAuthenticateUser);
+            }
+            if ((this.onAuthenticateUserCompletedDelegate == null)) {
+                this.onAuthenticateUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAuthenticateUserCompleted);
+            }
+            base.InvokeAsync(this.onBeginAuthenticateUserDelegate, new object[] {
+                        userName,
+                        password}, this.onEndAuthenticateUserDelegate, this.onAuthenticateUserCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -1638,7 +2860,99 @@ namespace Statis.StatisServices {
                 System.Collections.ObjectModel.ObservableCollection<string> _result = ((System.Collections.ObjectModel.ObservableCollection<string>)(base.EndInvoke("GetUserRespondents", _args, result)));
                 return _result;
             }
+            
+            public System.IAsyncResult BeginAddAnalyst(string currentUserName, string analystUserName, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = currentUserName;
+                _args[1] = analystUserName;
+                System.IAsyncResult _result = base.BeginInvoke("AddAnalyst", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndAddAnalyst(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("AddAnalyst", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginRemoveAnalyst(string currentUserName, string analystUserName, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = currentUserName;
+                _args[1] = analystUserName;
+                System.IAsyncResult _result = base.BeginInvoke("RemoveAnalyst", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndRemoveAnalyst(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("RemoveAnalyst", _args, result);
+            }
+            
+            public System.IAsyncResult BeginAddRespondent(string currentUserName, string respondentEmail, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = currentUserName;
+                _args[1] = respondentEmail;
+                System.IAsyncResult _result = base.BeginInvoke("AddRespondent", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndAddRespondent(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("AddRespondent", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginRemoveRespondent(string currentUserName, string respondentEmail, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = currentUserName;
+                _args[1] = respondentEmail;
+                System.IAsyncResult _result = base.BeginInvoke("RemoveRespondent", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndRemoveRespondent(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("RemoveRespondent", _args, result);
+            }
+            
+            public System.IAsyncResult BeginStoreFilledQuestionnaire(Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = filled;
+                System.IAsyncResult _result = base.BeginInvoke("StoreFilledQuestionnaire", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndStoreFilledQuestionnaire(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("StoreFilledQuestionnaire", _args, result);
+            }
+            
+            public System.IAsyncResult BeginGetFilledQuestionnaire(System.Guid id, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = id;
+                System.IAsyncResult _result = base.BeginInvoke("GetFilledQuestionnaire", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public Statis.StatisServices.FilledQuestionnaire EndGetFilledQuestionnaire(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                Statis.StatisServices.FilledQuestionnaire _result = ((Statis.StatisServices.FilledQuestionnaire)(base.EndInvoke("GetFilledQuestionnaire", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginAuthenticateUser(string userName, string password, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = userName;
+                _args[1] = password;
+                System.IAsyncResult _result = base.BeginInvoke("AuthenticateUser", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndAuthenticateUser(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("AuthenticateUser", _args, result)));
+                return _result;
+            }
         }
     }
 }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
