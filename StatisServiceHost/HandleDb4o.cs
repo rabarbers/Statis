@@ -61,12 +61,28 @@ namespace StatisServiceHost
                  where user.UserName == userName
                  select user).FirstOrDefault();
 
-            var questionnaires =
-                (from Questionnaire q in loggedInUser.Questionnaires
-                 select q.Name).ToList();
+            if (loggedInUser != null)
+            {
+                var questionnaires =
+                    (from Questionnaire q in loggedInUser.Questionnaires
+                     select q.Name).ToList();
 
-            return questionnaires;
+                var trustedAnalyst =
+                    (from Analyst user in Database
+                     where user.TrustedAnalysts.Contains(loggedInUser)
+                     select user);
+
+                foreach (var trusted in trustedAnalyst)
+                {
+                    questionnaires.AddRange(trusted.Questionnaires.Select(n => n.Name));
+                }
+
+                return questionnaires;
+            }
+
+            return new List<string>();
         }
+    
 
         public static void StoreQuestionnaire(Questionnaire questionnaireToStore)
         {
