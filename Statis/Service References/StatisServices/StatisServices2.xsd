@@ -118,4 +118,23 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="StoreFilledQuestionnaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/StatisServiceContracts" minOccurs="0" name="filled" nillable="true" type="q6:FilledQuestionnaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilledQuestionnaire">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilledQuestionnaireResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/StatisServiceContracts" minOccurs="0" name="GetFilledQuestionnaireResult" nillable="true" type="q7:FilledQuestionnaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

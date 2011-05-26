@@ -33,10 +33,6 @@ namespace Statis.ViewModels
         
         public CreateQuestionnaireViewModel()
         {
-
-            var x = HtmlPage.Document.QueryString;
-            
-            
             _model = new Questionnaire {Questions = new ObservableCollection<Question>()};
 
             _service = new QuestionnaireAdministrativeServiceClient();

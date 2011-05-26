@@ -34,6 +34,10 @@ namespace StatisServiceContracts
         bool AddRespondent(string currentUserName, string respondentEmail);
         [OperationContract(IsOneWay = true)]
         void RemoveRespondent(string currentUserName, string respondentEmail);
+        [OperationContract(IsOneWay = true)]
+        void StoreFilledQuestionnaire(FilledQuestionnaire filled);
+        [OperationContract]
+        FilledQuestionnaire GetFilledQuestionnaire(Guid id);
     }
 
     /// <summary></summary>

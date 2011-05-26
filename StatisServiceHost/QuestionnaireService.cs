@@ -59,5 +59,15 @@ namespace StatisServiceHost
         {
             HandleDb4o.RemoveRespondent(currentUserName, respondentEmail);
         }
+
+        public void StoreFilledQuestionnaire(FilledQuestionnaire filled)
+        {
+            HandleDb4o.StoreFilledQuestionnaire(filled);
+        }
+
+        public FilledQuestionnaire GetFilledQuestionnaire(Guid id)
+        {
+            return HandleDb4o.GetFilledQuestionnaire(id);
+        }
     }
 }

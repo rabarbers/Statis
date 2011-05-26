@@ -32,6 +32,7 @@ namespace StatisServiceHost
         {
             var config = Db4oEmbedded.NewConfiguration();
             config.Common.ObjectClass(typeof(Questionnaire)).CascadeOnDelete(true);
+            config.Common.ObjectClass(typeof(FilledQuestionnaire)).CascadeOnDelete(true);
             return Db4oEmbedded.OpenFile(config, dbFileName);
         }
 
@@ -165,6 +166,7 @@ namespace StatisServiceHost
                 }
                 
                 loggedInUser.TrustedAnalysts.Add(analystUser);
+                Database.Store(loggedInUser);
                 return true;
             }
             return false;
@@ -187,6 +189,7 @@ namespace StatisServiceHost
                 if (loggedInUser.TrustedAnalysts != null)
                 {
                     loggedInUser.TrustedAnalysts.Remove(analystUser);
+                    Database.Store(loggedInUser);
                 }
             }
         }
@@ -215,12 +218,14 @@ namespace StatisServiceHost
                 if (respondentUser != null && !loggedInUser.Respondents.Where(n => n.Email.Equals(respondentEmail)).Any())
                 {
                     loggedInUser.Respondents.Add(respondentUser);
+                    Database.Store(loggedInUser);
                     return true;
                 }
 
                 if (respondentUser == null && !loggedInUser.Respondents.Where(n => n.Email == respondentEmail).Any())
                 {
                     loggedInUser.Respondents.Add(new User(respondentEmail));
+                    Database.Store(loggedInUser);
                     return true;
                 }
             }
@@ -244,8 +249,28 @@ namespace StatisServiceHost
                 if (loggedInUser.Respondents != null)
                 {
                     loggedInUser.Respondents.Remove(respondentUser);
+                    Database.Store(loggedInUser);
                 }
             }
+        }
+
+        public static void StoreFilledQuestionnaire(FilledQuestionnaire filled)
+        {
+            var questionnaire = GetFilledQuestionnaire(filled.Id);
+            if(questionnaire != null)
+            {
+                Database.Delete(questionnaire);
+            }
+            Database.Store(filled);
+        }
+
+        public static FilledQuestionnaire GetFilledQuestionnaire(Guid id)
+        {
+            var questionnaireQuery =
+                    (from FilledQuestionnaire q in Database
+                     where q.Id == id
+                     select q);
+            return questionnaireQuery.FirstOrDefault();
         }
 
         public static void LoadTestData(string dbFileName)
@@ -308,17 +333,17 @@ namespace StatisServiceHost
             var filledQuestionnaire1 = new FilledQuestionnaire(questionnaire1);
             var answer1 = new ChoiceAnswer(0);
             var answer2 = new ChoiceAnswer(2);
-            filledQuestionnaire1.AddAnswer(answer1);
-            filledQuestionnaire1.AddAnswer(answer2);
+            filledQuestionnaire1.Answers.Add(answer1);
+            filledQuestionnaire1.Answers.Add(answer2);
 
             var filledQuestionnaire2 = new FilledQuestionnaire(questionnaire2);
             var answer3 = new TextAnswer("I love testing");
             var answer4 = new TextAnswer("Definitely");
             var answer5 = new ChoiceAnswer(2);
 
-            filledQuestionnaire2.AddAnswer(answer3);
-            filledQuestionnaire2.AddAnswer(answer4);
-            filledQuestionnaire2.AddAnswer(answer5);
+            filledQuestionnaire2.Answers.Add(answer3);
+            filledQuestionnaire2.Answers.Add(answer4);
+            filledQuestionnaire2.Answers.Add(answer5);
 
             var admin = new Administrator("jb", "Jānis", "Bērziņš", "mentor@delfi.lv");
             var questionnaires = new List<Questionnaire>();

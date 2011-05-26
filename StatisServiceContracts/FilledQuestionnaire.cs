@@ -1,26 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Web;
 
 namespace StatisServiceContracts
 {
+    [DataContract]
     public class FilledQuestionnaire
     {
-        private Questionnaire _questionnaire;
-        private List<Answer> _aList;
-        public FilledQuestionnaire(Questionnaire q)
+        [DataMember]
+        public string QuestionnaireName { get; set; }
+        [DataMember]
+        public List<Answer> Answers { get; set; }
+        [DataMember]
+        public Guid Id { get; set; }
+
+        public FilledQuestionnaire(Questionnaire q): this(q.Name) { }
+        public FilledQuestionnaire(string questionnaireName)
         {
-            this._questionnaire = q;
-            _aList = new List<Answer>();
+            QuestionnaireName = questionnaireName;
+            Answers = new List<Answer>();
+            Id = Guid.NewGuid();
         }
-        public void AddAnswer(Answer a)
-        {
-            _aList.Add(a);
-        }
-        public void RemoveLastAnswer()
-        {
-            _aList.RemoveAt(_aList.Count - 1);
-        }
+        
     }
 }

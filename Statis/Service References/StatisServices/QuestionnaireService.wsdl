@@ -56,6 +56,15 @@
   <wsdl:message name="IQuestionnaireService_RemoveRespondent_InputMessage">
     <wsdl:part name="parameters" element="tns:RemoveRespondent" />
   </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_StoreFilledQuestionnaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreFilledQuestionnaire" />
+  </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_GetFilledQuestionnaire_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilledQuestionnaire" />
+  </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_GetFilledQuestionnaire_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilledQuestionnaireResponse" />
+  </wsdl:message>
   <wsdl:portType name="IQuestionnaireService">
     <wsdl:operation name="GetQuestionnaire">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetQuestionnaire" message="tns:IQuestionnaireService_GetQuestionnaire_InputMessage" />
@@ -92,6 +101,13 @@
     </wsdl:operation>
     <wsdl:operation name="RemoveRespondent">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/RemoveRespondent" message="tns:IQuestionnaireService_RemoveRespondent_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreFilledQuestionnaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/StoreFilledQuestionnaire" message="tns:IQuestionnaireService_StoreFilledQuestionnaire_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilledQuestionnaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaire" message="tns:IQuestionnaireService_GetFilledQuestionnaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaireResponse" message="tns:IQuestionnaireService_GetFilledQuestionnaire_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IQuestionnaireAdministrativeService">
@@ -130,6 +146,13 @@
     </wsdl:operation>
     <wsdl:operation name="RemoveRespondent">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/RemoveRespondent" message="tns:IQuestionnaireService_RemoveRespondent_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreFilledQuestionnaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/StoreFilledQuestionnaire" message="tns:IQuestionnaireService_StoreFilledQuestionnaire_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilledQuestionnaire">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaire" message="tns:IQuestionnaireService_GetFilledQuestionnaire_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaireResponse" message="tns:IQuestionnaireService_GetFilledQuestionnaire_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IQuestionnaireService" type="tns:IQuestionnaireService">
@@ -212,6 +235,21 @@
         <soap:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="StoreFilledQuestionnaire">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/StoreFilledQuestionnaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilledQuestionnaire">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_IQuestionnaireAdministrativeService" type="tns:IQuestionnaireAdministrativeService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -292,6 +330,21 @@
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="StoreFilledQuestionnaire">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/StoreFilledQuestionnaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilledQuestionnaire">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="QuestionnaireService">

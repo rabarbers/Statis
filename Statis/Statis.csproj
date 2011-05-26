@@ -98,6 +98,7 @@
     <Compile Include="ViewModels\CreateQuestionnaireViewModel.cs" />
     <Compile Include="ViewModels\ImgChoiceQuestionViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\QuestionnaireFillingViewModel.cs" />
     <Compile Include="ViewModels\QuestionViewModel.cs" />
     <Compile Include="ViewModels\ReviewViewModel.cs" />
     <Compile Include="ViewModels\TextChoiceViewModel.cs" />
@@ -128,6 +129,9 @@
     </Compile>
     <Compile Include="Views\Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionnaireFillingView.xaml.cs">
+      <DependentUpon>QuestionnaireFillingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Review.xaml.cs">
       <DependentUpon>Review.xaml</DependentUpon>
@@ -160,6 +164,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Page1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QuestionnaireFillingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,6 +210,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
+    <None Include="Service References\StatisServices\Statis.StatisServices.FilledQuestionnaire.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\StatisServices\Statis.StatisServices.Questionnaire.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
