@@ -3,3 +3,8 @@ D:\GitStatisLast\StatisServiceContracts\bin\Debug\StatisServiceContracts.pdb
 D:\GitStatisLast\StatisServiceContracts\obj\Debug\ResolveAssemblyReference.cache
 D:\GitStatisLast\StatisServiceContracts\obj\Debug\StatisServiceContracts.dll
 D:\GitStatisLast\StatisServiceContracts\obj\Debug\StatisServiceContracts.pdb
+C:\Users\anna\Desktop\StatisFinal\StatisServiceContracts\bin\Debug\StatisServiceContracts.dll
+C:\Users\anna\Desktop\StatisFinal\StatisServiceContracts\bin\Debug\StatisServiceContracts.pdb
+C:\Users\anna\Desktop\StatisFinal\StatisServiceContracts\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\anna\Desktop\StatisFinal\StatisServiceContracts\obj\Debug\StatisServiceContracts.dll
+C:\Users\anna\Desktop\StatisFinal\StatisServiceContracts\obj\Debug\StatisServiceContracts.pdb

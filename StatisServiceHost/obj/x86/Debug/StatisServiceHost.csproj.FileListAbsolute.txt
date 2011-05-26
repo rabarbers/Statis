@@ -13,3 +13,12 @@ D:\GitStatisLast\StatisServiceHost\bin\Debug\Db4objects.Db4o.CS.xml
 D:\GitStatisLast\StatisServiceHost\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\GitStatisLast\StatisServiceHost\obj\x86\Debug\StatisServiceHost.exe
 D:\GitStatisLast\StatisServiceHost\obj\x86\Debug\StatisServiceHost.pdb
+C:\Users\anna\Desktop\StatisFinal\StatisServiceHost\bin\Debug\StatisServiceHost.exe.config
+C:\Users\anna\Desktop\StatisFinal\StatisServiceHost\obj\x86\Debug\StatisServiceHost.exe
+C:\Users\anna\Desktop\StatisFinal\StatisServiceHost\obj\x86\Debug\StatisServiceHost.pdb
+C:\Users\anna\Desktop\StatisFinal\StatisServiceHost\bin\Debug\ClientAccessPolicy.xml
+C:\Users\anna\Desktop\StatisFinal\StatisServiceHost\bin\Debug\StatisServiceHost.exe
+C:\Users\anna\Desktop\StatisFinal\StatisServiceHost\bin\Debug\StatisServiceHost.pdb
+C:\Users\anna\Desktop\StatisFinal\StatisServiceHost\bin\Debug\StatisServiceContracts.dll
+C:\Users\anna\Desktop\StatisFinal\StatisServiceHost\bin\Debug\StatisServiceContracts.pdb
+C:\Users\anna\Desktop\StatisFinal\StatisServiceHost\obj\x86\Debug\ResolveAssemblyReference.cache

@@ -92,7 +92,7 @@ namespace StatisServiceTests
         //
         #endregion
 
-        /// <summary>Tests pārbaudīs vai datu bāzi ir pareizi nokonfigurēta, kaskāžu dzēšanās, lai dzēšot anketu, tiktu izdzēsti visi tās jautājumi</summary>
+        /// <summary>Tests pārbaudīs vai datu bāze ir pareizi nokonfigurēta kaskāžu dzēšanās, lai dzēšot anketu, tiktu izdzēsti visi tās jautājumi</summary>
         [TestMethod]
         public void TestQuestionnaireDeletionFromDb()
         {
@@ -103,7 +103,7 @@ namespace StatisServiceTests
         [TestMethod]
         public void TestStatisServiceMethodGetQuestionnaire()
         {
-            //openning database for data querying for comparison
+            //opening database for data querying for comparison
             var config = Db4oEmbedded.NewConfiguration();
             config.Common.ObjectClass(typeof(Questionnaire)).CascadeOnDelete(true);
             var db = Db4oEmbedded.OpenFile(config, TestDbFile);
@@ -128,25 +128,68 @@ namespace StatisServiceTests
 
                 //commpare db and service returned questionnaires
                 Assert.IsNotNull(serviceQuestionnaire, "Service does not return any data.");
-                Assert.AreEqual(questionnaire.Name, serviceQuestionnaire.Name, "Service and db contains questionnaires with different names.");
-                Assert.AreEqual(questionnaire.Description, serviceQuestionnaire.Description, "Service and db contains questionnaires with different descriptions.");
-                Assert.AreEqual(questionnaire.Questions.Count, serviceQuestionnaire.Questions.Count, "Service and db questionnaires contains different number of questions.");
+                Assert.AreEqual(questionnaire.Name, serviceQuestionnaire.Name, "Service and db contain questionnaires with different names.");
+                Assert.AreEqual(questionnaire.Description, serviceQuestionnaire.Description, "Service and db contain questionnaires with different descriptions.");
+                Assert.AreEqual(questionnaire.Questions.Count, serviceQuestionnaire.Questions.Count, "Service and db questionnaires contain different number of questions.");
             }
-           
         }
 
         /// <summary>Tiek pārbaudīta anketu saglabāšanas servisa metode</summary>
         [TestMethod]
         public void TestStatisServiceMethodStoreQuestionnaire()
         {
-            Assert.Inconclusive();
+            var config = Db4oEmbedded.NewConfiguration();
+            config.Common.ObjectClass(typeof(Questionnaire)).CascadeOnDelete(true);
+            var db = Db4oEmbedded.OpenFile(config, TestDbFile);
+
+            int noOfObjectsBefore;
+            var questionnaireExample = new Questionnaire();
+            noOfObjectsBefore = db.QueryByExample(questionnaireExample).Count;
+            
+            var questionnaire = new Questionnaire("Q99", "Clean test database");
+            db.Store(questionnaire);
+
+            int noOfObjectsAfter = db.QueryByExample(questionnaireExample).Count;
+
+            Assert.AreNotEqual(noOfObjectsBefore, noOfObjectsAfter, "No new database stored");
+            Assert.IsTrue(db.QueryByExample(questionnaireExample).Contains(questionnaire), "Test database not stored");
+
+            /*using(var proxy = new QuestionnaireAdministrativeServiceClient())
+            {
+                proxy.Open();
+                proxy.StoreQuestionnaire(questionnaire);
+                
+                //commpare db and service returned questionnaires
+                Assert.IsNotNull(serviceQuestionnaire, "Service does not return any data.");
+                Assert.AreEqual(questionnaire.Name, serviceQuestionnaire.Name, "Service and db contain questionnaires with different names.");
+                Assert.AreEqual(questionnaire.Description, serviceQuestionnaire.Description, "Service and db contains questionnaires with different descriptions.");
+                Assert.AreEqual(questionnaire.Questions.Count, serviceQuestionnaire.Questions.Count, "Service and db questionnaires contains different number of questions.");
+            }*/
         }
 
         /// <summary>Tiek pārbaudīta anektu dzēšanas metodes loģika</summary>
         [TestMethod]
         public void TestStatisServiceMethodDeleteQuestionnaire()
         {
-            Assert.Inconclusive();
+            var config = Db4oEmbedded.NewConfiguration();
+            config.Common.ObjectClass(typeof(Questionnaire)).CascadeOnDelete(true);
+            var db = Db4oEmbedded.OpenFile(config, TestDbFile);
+
+            int noOfObjectsBefore;
+            var questionnaireExample = new Questionnaire();
+            noOfObjectsBefore = db.QueryByExample(questionnaireExample).Count;
+
+            var questionnaire = new Questionnaire("Q99", "Clean test database");
+            IObjectSet set = db.QueryByExample(questionnaire);
+
+            var questionnaireVerify = new Questionnaire();
+            questionnaireVerify = (Questionnaire)set[0];
+            db.Delete(questionnaireVerify);
+
+            int noOfObjectsAfter = db.QueryByExample(questionnaireExample).Count;
+
+            Assert.AreNotEqual(noOfObjectsBefore, noOfObjectsAfter, "Test database not deleted");
+            Assert.IsFalse(db.QueryByExample(questionnaireExample).Contains(questionnaire), "Test database not deleted");
         }
 
         /// <summary>Tiek pārbaudīta REST servisa metode, kas publicē ClientAccessPolicy.xml failu un ļauj Silverlight klientam consumot WCF servisu</summary>

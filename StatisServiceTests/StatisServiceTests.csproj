@@ -67,14 +67,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Properties\DataSources\StatisServiceContracts.Questionnaire.datasource" />
-    <None Include="Service References\StatisService\QuestionnaireService.wsdl" />
-    <None Include="Service References\StatisService\StatisServices.xsd">
+    <None Include="Service References\StatisService\QuestionnaireService1.wsdl" />
+    <None Include="Service References\StatisService\StatisServices3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\StatisService\StatisServices1.xsd">
+    <None Include="Service References\StatisService\StatisServices31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\StatisService\StatisServices2.xsd">
+    <None Include="Service References\StatisService\StatisServices32.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\StatisService\StatisServices3.xsd">
@@ -85,13 +85,13 @@
     <Content Include="ClientAccessPolicy.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\StatisService\StatisServices1.disco" />
     <None Include="Service References\StatisService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Service References\StatisService\configuration.svcinfo" />
     <None Include="Service References\StatisService\configuration91.svcinfo" />
-    <None Include="Service References\StatisService\StatisServices.disco" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StatisServiceContracts\StatisServiceContracts.csproj">
