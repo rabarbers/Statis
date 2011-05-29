@@ -98,10 +98,6 @@ namespace StatisServiceContracts
         /// <param name="password"></param>
         public Administrator(string userName, string firstName, string lastName, string email, string password): base(userName, firstName, lastName, email, password)
         {
-           
         }
-
-    }
-
-    
+    }   
 }

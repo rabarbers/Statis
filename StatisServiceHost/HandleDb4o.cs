@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.IO;
 using Db4objects.Db4o;
 using Db4objects.Db4o.Linq;
@@ -10,12 +9,14 @@ using User = StatisServiceContracts.User;
 
 namespace StatisServiceHost
 {
+    /// <summary>
+    /// HandleDb4o handles all data exchange with the database
+    /// </summary>
     public class HandleDb4o
     {
         public readonly static string StoreYapFileName = Path.Combine("store.yap");
         private static IObjectContainer _database;
         private static readonly object _sync = new object();
-            //Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "store.yap");
 
         public static IObjectContainer Database
         {
@@ -41,10 +42,6 @@ namespace StatisServiceHost
 
         /// <summary>
         /// Ensure we return a copy of the result from DB40
-        /// 
-        /// DB40 does not have a distinct implementation by default
-        /// To stop it returning the categories assigned to the basket products
-        /// Create an equality comparison on the Category name
         /// </summary>
         /// <returns></returns>
         public static Questionnaire GetQuestionnaire(string questionnaireName)
@@ -148,6 +145,7 @@ namespace StatisServiceHost
             return new List<string>();
         }
 
+        // handling analyst users
         public static bool AddAnalyst(string currentUserName, string analystUserName)
         {
             var loggedInUser =
@@ -196,6 +194,55 @@ namespace StatisServiceHost
             }
         }
 
+        // handling admin users
+/*        public static bool AddAdmin(string currentUserName, string analystUserName)
+        {
+            var loggedInUser =
+                (from Admin user in Database
+                 where user.UserName == currentUserName
+                 select user).FirstOrDefault();
+
+            var analystUser =
+                (from Admin user in Database
+                 where user.UserName == adminUserName
+                 select user).FirstOrDefault();
+
+            if (loggedInUser != null && analystUser != null)
+            {
+                if (loggedInUser.TrustedAnalysts == null)
+                {
+                    loggedInUser.TrustedAnalysts = new List<Admin>();
+                }
+
+                loggedInUser.TrustedAnalysts.Add(analystUser);
+                Database.Store(loggedInUser);
+                return true;
+            }
+            return false;
+        }
+
+        public static void RemoveAnalyst(string currentUserName, string analystUserName)
+        {
+            var loggedInUser =
+                (from Analyst user in Database
+                 where user.UserName == currentUserName
+                 select user).FirstOrDefault();
+
+            var analystUser =
+                (from Analyst user in Database
+                 where user.UserName == analystUserName
+                 select user).FirstOrDefault();
+
+            if (loggedInUser != null && analystUser != null)
+            {
+                if (loggedInUser.TrustedAnalysts != null)
+                {
+                    loggedInUser.TrustedAnalysts.Remove(analystUser);
+                    Database.Store(loggedInUser);
+                }
+            }
+        }
+        */
         public static bool AddRespondent(string currentUserName, string respondentEmail)
         {
             var loggedInUser =
@@ -302,6 +349,10 @@ namespace StatisServiceHost
             return loggedInUserPassword == password;
         }
 
+        /// <summary>
+        /// Creates some test data
+        /// </summary>
+        /// <param name="dbFileName"></param>
         public static void LoadTestData(string dbFileName)
         {
             var questionnaire1 = new Questionnaire("Q1", "Test questionnaire");

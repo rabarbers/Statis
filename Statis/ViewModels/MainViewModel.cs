@@ -1,13 +1,8 @@
-﻿using System;
-using System.Net;
+﻿/// <summary>
+/// handles the main user authentication
+/// </summary>
+
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Microsoft.Practices.Prism.Commands;
 using Statis.StatisServices;
 
@@ -19,7 +14,8 @@ namespace Statis.ViewModels
         private string _userName;
         private string _password;
         private string _authenticatingUserName;
-        private string _loggedUserName;
+        public string greeting { get; set; }
+        //private string _loggedUserName;
 
         public DelegateCommand LoginCommand { get; private set; }
 
@@ -35,6 +31,7 @@ namespace Statis.ViewModels
                     }
                     _authenticatingUserName = UserName;
                     _service.AuthenticateUserAsync(UserName, Password);
+                    greeting = "Sveiks, lietotāj!";
                 }
             });
 
@@ -50,6 +47,7 @@ namespace Statis.ViewModels
             {
                 Application.Current.Resources.Add("user", _authenticatingUserName);
             }
+            greeting = "Sveiks, " + _authenticatingUserName + "!";
         }
 
         public string UserName

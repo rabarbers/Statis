@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Statis.StatisServices;
 
 namespace Statis
@@ -41,8 +32,17 @@ namespace Statis
                     }
                 }
             }
-
-            
+            // handle login/logout panel visibility depending on user
+            if (Application.Current.Resources.Contains("user"))
+            {
+                LoginStackPanel.Visibility = System.Windows.Visibility.Collapsed;
+                LogoutStackPanel.Visibility = System.Windows.Visibility.Visible;
+            }
+            else
+            {
+                LoginStackPanel.Visibility = System.Windows.Visibility.Visible;
+                LogoutStackPanel.Visibility = System.Windows.Visibility.Collapsed;
+            }
         }
 
         // If an error occurs during navigation, show an error window
