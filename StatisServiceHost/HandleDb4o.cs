@@ -31,6 +31,8 @@ namespace StatisServiceHost
         private static IObjectContainer GetDb(string dbFileName)
         {
             var config = Db4oEmbedded.NewConfiguration();
+            config.Common.ObjectClass(typeof(Analyst)).CascadeOnUpdate(true);
+            config.Common.ObjectClass(typeof(Administrator)).CascadeOnUpdate(true);
             config.Common.ObjectClass(typeof(Questionnaire)).CascadeOnDelete(true);
             config.Common.ObjectClass(typeof(FilledQuestionnaire)).CascadeOnDelete(true);
             return Db4oEmbedded.OpenFile(config, dbFileName);
@@ -213,19 +215,20 @@ namespace StatisServiceHost
                     loggedInUser.Respondents = new List<User>();
                 }
 
-                var x = loggedInUser.Respondents.Where(n => n.Email == respondentEmail).Any();
-
-                if (respondentUser != null && !loggedInUser.Respondents.Where(n => n.Email.Equals(respondentEmail)).Any())
+                if (respondentUser != null && !loggedInUser.Respondents.Where(n => n.Email == respondentEmail).Any())
                 {
                     loggedInUser.Respondents.Add(respondentUser);
                     Database.Store(loggedInUser);
                     return true;
                 }
 
-                if (respondentUser == null && !loggedInUser.Respondents.Where(n => n.Email == respondentEmail).Any())
+                if (respondentUser == null)
                 {
-                    loggedInUser.Respondents.Add(new User(respondentEmail));
-                    Database.Store(loggedInUser);
+                    var u = new User(respondentEmail);
+                    loggedInUser.Respondents.Add(u);
+                    var db = Database;
+                    db.Store(u);
+                    db.Store(loggedInUser);
                     return true;
                 }
             }
