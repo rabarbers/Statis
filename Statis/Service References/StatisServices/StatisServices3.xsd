@@ -61,14 +61,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Question" nillable="true" type="tns:Question" />
-  <xs:complexType name="TextQuestion">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Question">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="TextQuestion" nillable="true" type="tns:TextQuestion" />
   <xs:complexType name="ImgQuestion">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Question">
@@ -89,6 +81,14 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ImgTextQuestion" nillable="true" type="tns:ImgTextQuestion" />
+  <xs:complexType name="TextQuestion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Question">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TextQuestion" nillable="true" type="tns:TextQuestion" />
   <xs:complexType name="ChoiceQuestion">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Question">

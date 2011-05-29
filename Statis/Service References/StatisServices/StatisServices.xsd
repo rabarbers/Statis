@@ -6,6 +6,7 @@
   <xs:element name="GetQuestionnaire">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="questionnaireName" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -20,6 +21,7 @@
   <xs:element name="StoreQuestionnaire">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
         <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/StatisServiceContracts" minOccurs="0" name="questionnaire" nillable="true" type="q2:Questionnaire" />
       </xs:sequence>
     </xs:complexType>
@@ -27,6 +29,7 @@
   <xs:element name="DeleteQuestionnaire">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="questionnaireName" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -122,6 +125,7 @@
   <xs:element name="StoreFilledQuestionnaire">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
         <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/StatisServiceContracts" minOccurs="0" name="filled" nillable="true" type="q6:FilledQuestionnaire" />
       </xs:sequence>
     </xs:complexType>
@@ -129,6 +133,7 @@
   <xs:element name="GetFilledQuestionnaire">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
         <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q7:guid" />
       </xs:sequence>
     </xs:complexType>
@@ -137,6 +142,24 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/StatisServiceContracts" minOccurs="0" name="GetFilledQuestionnaireResult" nillable="true" type="q8:FilledQuestionnaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegisterUserResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -152,6 +175,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AuthenticateUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendQuestionnaireToRespondents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="currentUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

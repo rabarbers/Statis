@@ -10,6 +10,7 @@ namespace Statis.ViewModels
         private readonly QuestionnaireAdministrativeServiceClient _service;
         private readonly ObservableCollection<string> _questionnaires = new ObservableCollection<string>();
         private string _selectedQuestionnaireName;
+        private string _messageToSend;
         
         public DelegateCommand DeleteQuestionnaire { get; private set; }
         public DelegateCommand SendQuestionnaireToRespondents { get; private set; }
@@ -27,21 +28,37 @@ namespace Statis.ViewModels
                                           };
             _service.GetUserQuestionnaireListCompleted += ProxyGetUserQuestionnaireListCompleted;
             _service.DeleteQuestionnaireCompleted += ProxyDeleteQuestionnaireCompleted;
-
+            _service.SendQuestionnaireToRespondentsCompleted += ProxySendQuestionnaireToRespondentsCompleted;
             
             DeleteQuestionnaire = new DelegateCommand(() =>
                                                           {
-                                                              if (SelectedQuestionnaireName != null)
+                                                              var user = Application.Current.Resources["user"] as string;
+                                                              if (user != null && SelectedQuestionnaireName != null)
                                                               {
-                                                                  _service.DeleteQuestionnaireAsync(
-                                                                      SelectedQuestionnaireName);
+                                                                  _service.DeleteQuestionnaireAsync(user, SelectedQuestionnaireName);
                                                               }
                                                           });
+
+            SendQuestionnaireToRespondents = new DelegateCommand(() =>
+            {
+                var user = Application.Current.Resources["user"] as string;
+                if (user != null && SelectedQuestionnaireName != null)
+                {
+                    var message = MessageToSend ?? "";
+                    var questionnarieAddress = @"localhost//StatisTestPage.html#/CreateQuestionnaireView/" + SelectedQuestionnaireName;
+                    
+                    _service.SendQuestionnaireToRespondentsAsync(user, message.Replace("<questionnaire>", questionnarieAddress));
+                }
+            });
+
             _service.OpenAsync();
         }
 
+        private static void ProxySendQuestionnaireToRespondentsCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            MessageBox.Show("Message send...");
+        }
         
-
         private void ProxyGetUserQuestionnaireListCompleted(object sender, GetUserQuestionnaireListCompletedEventArgs1 e)
         {
             _questionnaires.Clear();
@@ -69,6 +86,19 @@ namespace Statis.ViewModels
                     _selectedQuestionnaireName = value;
                     OnNotifyPropertyChanged("SelectedQuestionnaireName");
                     OnNotifyPropertyChanged("QuestionnaireViewUri");
+                }
+            }
+        }
+
+        public string MessageToSend
+        {
+            get { return _messageToSend; }
+            set
+            {
+                if (_messageToSend != value)
+                {
+                    _messageToSend = value;
+                    OnNotifyPropertyChanged("MessageToSend");
                 }
             }
         }

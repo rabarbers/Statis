@@ -65,11 +65,20 @@
   <wsdl:message name="IQuestionnaireService_GetFilledQuestionnaire_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFilledQuestionnaireResponse" />
   </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_RegisterUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_RegisterUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  </wsdl:message>
   <wsdl:message name="IQuestionnaireService_AuthenticateUser_InputMessage">
     <wsdl:part name="parameters" element="tns:AuthenticateUser" />
   </wsdl:message>
   <wsdl:message name="IQuestionnaireService_AuthenticateUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_SendQuestionnaireToRespondents_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendQuestionnaireToRespondents" />
   </wsdl:message>
   <wsdl:portType name="IQuestionnaireService">
     <wsdl:operation name="GetQuestionnaire">
@@ -115,9 +124,16 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaire" message="tns:IQuestionnaireService_GetFilledQuestionnaire_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaireResponse" message="tns:IQuestionnaireService_GetFilledQuestionnaire_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/RegisterUser" message="tns:IQuestionnaireService_RegisterUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/RegisterUserResponse" message="tns:IQuestionnaireService_RegisterUser_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AuthenticateUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/AuthenticateUser" message="tns:IQuestionnaireService_AuthenticateUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/AuthenticateUserResponse" message="tns:IQuestionnaireService_AuthenticateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendQuestionnaireToRespondents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/SendQuestionnaireToRespondents" message="tns:IQuestionnaireService_SendQuestionnaireToRespondents_InputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IQuestionnaireAdministrativeService">
@@ -164,9 +180,16 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaire" message="tns:IQuestionnaireService_GetFilledQuestionnaire_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaireResponse" message="tns:IQuestionnaireService_GetFilledQuestionnaire_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/RegisterUser" message="tns:IQuestionnaireService_RegisterUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/RegisterUserResponse" message="tns:IQuestionnaireService_RegisterUser_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AuthenticateUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/AuthenticateUser" message="tns:IQuestionnaireService_AuthenticateUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/AuthenticateUserResponse" message="tns:IQuestionnaireService_AuthenticateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendQuestionnaireToRespondents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/SendQuestionnaireToRespondents" message="tns:IQuestionnaireService_SendQuestionnaireToRespondents_InputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IQuestionnaireService" type="tns:IQuestionnaireService">
@@ -264,6 +287,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AuthenticateUser">
       <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/AuthenticateUser" style="document" />
       <wsdl:input>
@@ -272,6 +304,12 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendQuestionnaireToRespondents">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/SendQuestionnaireToRespondents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_IQuestionnaireAdministrativeService" type="tns:IQuestionnaireAdministrativeService">
@@ -369,6 +407,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AuthenticateUser">
       <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/AuthenticateUser" style="document" />
       <wsdl:input>
@@ -377,6 +424,12 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendQuestionnaireToRespondents">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/SendQuestionnaireToRespondents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="QuestionnaireService">

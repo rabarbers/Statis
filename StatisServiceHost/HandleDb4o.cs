@@ -32,6 +32,8 @@ namespace StatisServiceHost
         private static IObjectContainer GetDb(string dbFileName)
         {
             var config = Db4oEmbedded.NewConfiguration();
+            config.Common.ObjectClass(typeof(Analyst)).CascadeOnUpdate(true);
+            config.Common.ObjectClass(typeof(Administrator)).CascadeOnUpdate(true);
             config.Common.ObjectClass(typeof(Questionnaire)).CascadeOnDelete(true);
             config.Common.ObjectClass(typeof(FilledQuestionnaire)).CascadeOnDelete(true);
             return Db4oEmbedded.OpenFile(config, dbFileName);
@@ -58,16 +60,6 @@ namespace StatisServiceHost
                 (from Analyst user in Database
                  where user.UserName == userName
                  select user).FirstOrDefault();
-
-            var loggedInUsers =
-                (from Analyst user in Database
-                 //where user.UserName == userName
-                 select user).ToList();
-
-            var loggedInUsers2 =
-                (from Questionnaire user in Database
-                 //where user.UserName == userName
-                 select user).ToList();
 
             if (loggedInUser != null)
             {
@@ -270,19 +262,20 @@ namespace StatisServiceHost
                     loggedInUser.Respondents = new List<User>();
                 }
 
-                var x = loggedInUser.Respondents.Where(n => n.Email == respondentEmail).Any();
-
-                if (respondentUser != null && !loggedInUser.Respondents.Where(n => n.Email.Equals(respondentEmail)).Any())
+                if (respondentUser != null && !loggedInUser.Respondents.Where(n => n.Email == respondentEmail).Any())
                 {
                     loggedInUser.Respondents.Add(respondentUser);
                     Database.Store(loggedInUser);
                     return true;
                 }
 
-                if (respondentUser == null && !loggedInUser.Respondents.Where(n => n.Email == respondentEmail).Any())
+                if (respondentUser == null)
                 {
-                    loggedInUser.Respondents.Add(new User(respondentEmail));
-                    Database.Store(loggedInUser);
+                    var u = new User(respondentEmail);
+                    loggedInUser.Respondents.Add(u);
+                    var db = Database;
+                    db.Store(u);
+                    db.Store(loggedInUser);
                     return true;
                 }
             }
@@ -328,6 +321,32 @@ namespace StatisServiceHost
                      where q.Id == id
                      select q);
             return questionnaireQuery.FirstOrDefault();
+        }
+
+        public static bool RegisterAnalyst(Analyst analyst)
+        {
+            var alreadyRegisteredUser =
+            (from Analyst user in Database
+             where user.UserName == analyst.UserName
+             select user).FirstOrDefault();
+
+            if (alreadyRegisteredUser == null)
+            {
+                Database.Store(analyst);
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool AuthenticateUser(string userName, string password)
+        {
+            var loggedInUserPassword =
+            (from Analyst user in Database
+             where user.UserName == userName
+             select user.Password).FirstOrDefault();
+
+            return loggedInUserPassword == password;
         }
 
         /// <summary>
