@@ -30,9 +30,9 @@
                 </ItemsControl>
             </ScrollViewer>
         </StackPanel>
-        <HyperlinkButton Content="Labot" NavigateUri="{Binding QuestionnaireViewUri}" Height="23" HorizontalAlignment="Left" Margin="41,425,0,0" Name="hyperlinkButton1" VerticalAlignment="Top" Width="43" />
-        <HyperlinkButton Content="Izsūtīt" Height="23" HorizontalAlignment="Left" Margin="216,425,0,0" Name="hyperlinkButton2" VerticalAlignment="Top" Width="50" />
-        <HyperlinkButton Content="Analizēt" Height="23" HorizontalAlignment="Right" Margin="0,425,990,0" Name="hyperlinkButton3" VerticalAlignment="Top" Width="56" />
-        <HyperlinkButton Content="Likvidēt" Command="{Binding DeleteQuestionnaire}" Height="23" HorizontalAlignment="Left" Margin="90,425,0,0" Name="hyperlinkButton4" VerticalAlignment="Top" Width="58" />
+        <HyperlinkButton Content="Labot" NavigateUri="{Binding QuestionnaireViewUri}" Height="23" HorizontalAlignment="Left" Margin="41,425,0,0" VerticalAlignment="Top" Width="43" />
+        <HyperlinkButton Content="Izsūtīt" Command="{Binding SendQuestionnaireToRespondents}" Height="23" HorizontalAlignment="Left" Margin="216,425,0,0" VerticalAlignment="Top" Width="50" />
+        <HyperlinkButton Content="Analizēt" Height="23" HorizontalAlignment="Right" Margin="0,425,990,0" VerticalAlignment="Top" Width="56" />
+        <HyperlinkButton Content="Likvidēt" Command="{Binding DeleteQuestionnaire}" Height="23" HorizontalAlignment="Left" Margin="90,425,0,0" VerticalAlignment="Top" Width="58" />
     </Grid>
 </navigation:Page>

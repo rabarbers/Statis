@@ -42,6 +42,8 @@ namespace StatisServiceContracts
         FilledQuestionnaire GetFilledQuestionnaire(string userName, Guid id);
         [OperationContract]
         bool AuthenticateUser(string userName, string password);
+        [OperationContract(IsOneWay = true)]
+        void SendQuestionnaireToRespondents(string currentUserName, string message);
     }
 
     /// <summary></summary>

@@ -74,5 +74,22 @@ namespace StatisServiceHost
         {
             return HandleDb4o.AuthenticateUser(userName, password);
         }
+
+        public void SendQuestionnaireToRespondents(string currentUserName, string message)
+        {
+            var recipients = GetUserRespondents(currentUserName);
+
+            foreach (var recipientEmail in recipients)
+            {
+                try
+                {
+                    //ToDo: there sould be e-mail sending logic something like this: send(recipientEmail, message);
+                }
+                catch
+                {
+                    
+                }
+            }
+        }
     }
 }

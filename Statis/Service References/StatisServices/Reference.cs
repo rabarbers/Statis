@@ -78,9 +78,9 @@ namespace Statis.StatisServices {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Question", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgTextQuestion))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgChoiceQuestion))]
     public partial class Question : object, System.ComponentModel.INotifyPropertyChanged {
@@ -127,53 +127,6 @@ namespace Statis.StatisServices {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TextQuestion", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgTextQuestion))]
-    public partial class TextQuestion : Statis.StatisServices.Question {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ImgTextQuestion", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<int>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.FilledQuestionnaire))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Answer>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Answer))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceAnswer))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextAnswer))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Questionnaire))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Question>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Question))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextQuestion))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgQuestion))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceQuestion))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Choice>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Choice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.NumberChoice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextChoice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgChoice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgChoiceQuestion))]
-    public partial class ImgTextQuestion : Statis.StatisServices.TextQuestion {
-        
-        private object ImgField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public object Img {
-            get {
-                return this.ImgField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ImgField, value) != true)) {
-                    this.ImgField = value;
-                    this.RaisePropertyChanged("Img");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ImgQuestion", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<int>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
@@ -185,8 +138,8 @@ namespace Statis.StatisServices {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Questionnaire))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Question>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Question))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgTextQuestion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Choice>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Choice))]
@@ -207,6 +160,53 @@ namespace Statis.StatisServices {
                 if ((object.ReferenceEquals(this.ImageField, value) != true)) {
                     this.ImageField = value;
                     this.RaisePropertyChanged("Image");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TextQuestion", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgTextQuestion))]
+    public partial class TextQuestion : Statis.StatisServices.Question {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ImgTextQuestion", Namespace="http://schemas.datacontract.org/2004/07/StatisServiceContracts")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<int>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<string>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.FilledQuestionnaire))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Answer>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Answer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceAnswer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextAnswer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Questionnaire))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Question>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Question))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgQuestion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextQuestion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceQuestion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Choice>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Choice))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.NumberChoice))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextChoice))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgChoice))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgChoiceQuestion))]
+    public partial class ImgTextQuestion : Statis.StatisServices.TextQuestion {
+        
+        private object ImgField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public object Img {
+            get {
+                return this.ImgField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImgField, value) != true)) {
+                    this.ImgField = value;
+                    this.RaisePropertyChanged("Img");
                 }
             }
         }
@@ -247,9 +247,9 @@ namespace Statis.StatisServices {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Questionnaire))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Question>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Question))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ImgTextQuestion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.TextQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.ChoiceQuestion))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.ObjectModel.ObservableCollection<Statis.StatisServices.Choice>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Statis.StatisServices.Choice))]
@@ -542,6 +542,11 @@ namespace Statis.StatisServices {
         System.IAsyncResult BeginAuthenticateUser(string userName, string password, System.AsyncCallback callback, object asyncState);
         
         bool EndAuthenticateUser(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/SendQuestionnaireToRespondents")]
+        System.IAsyncResult BeginSendQuestionnaireToRespondents(string currentUserName, string message, System.AsyncCallback callback, object asyncState);
+        
+        void EndSendQuestionnaireToRespondents(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -782,6 +787,12 @@ namespace Statis.StatisServices {
         
         private System.Threading.SendOrPostCallback onAuthenticateUserCompletedDelegate;
         
+        private BeginOperationDelegate onBeginSendQuestionnaireToRespondentsDelegate;
+        
+        private EndOperationDelegate onEndSendQuestionnaireToRespondentsDelegate;
+        
+        private System.Threading.SendOrPostCallback onSendQuestionnaireToRespondentsCompletedDelegate;
+        
         private BeginOperationDelegate onBeginOpenDelegate;
         
         private EndOperationDelegate onEndOpenDelegate;
@@ -860,6 +871,8 @@ namespace Statis.StatisServices {
         public event System.EventHandler<GetFilledQuestionnaireCompletedEventArgs> GetFilledQuestionnaireCompleted;
         
         public event System.EventHandler<AuthenticateUserCompletedEventArgs> AuthenticateUserCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> SendQuestionnaireToRespondentsCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -1478,6 +1491,53 @@ namespace Statis.StatisServices {
                         password}, this.onEndAuthenticateUserDelegate, this.onAuthenticateUserCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireService.BeginSendQuestionnaireToRespondents(string currentUserName, string message, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginSendQuestionnaireToRespondents(currentUserName, message, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void Statis.StatisServices.IQuestionnaireService.EndSendQuestionnaireToRespondents(System.IAsyncResult result) {
+            base.Channel.EndSendQuestionnaireToRespondents(result);
+        }
+        
+        private System.IAsyncResult OnBeginSendQuestionnaireToRespondents(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string currentUserName = ((string)(inValues[0]));
+            string message = ((string)(inValues[1]));
+            return ((Statis.StatisServices.IQuestionnaireService)(this)).BeginSendQuestionnaireToRespondents(currentUserName, message, callback, asyncState);
+        }
+        
+        private object[] OnEndSendQuestionnaireToRespondents(System.IAsyncResult result) {
+            ((Statis.StatisServices.IQuestionnaireService)(this)).EndSendQuestionnaireToRespondents(result);
+            return null;
+        }
+        
+        private void OnSendQuestionnaireToRespondentsCompleted(object state) {
+            if ((this.SendQuestionnaireToRespondentsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.SendQuestionnaireToRespondentsCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void SendQuestionnaireToRespondentsAsync(string currentUserName, string message) {
+            this.SendQuestionnaireToRespondentsAsync(currentUserName, message, null);
+        }
+        
+        public void SendQuestionnaireToRespondentsAsync(string currentUserName, string message, object userState) {
+            if ((this.onBeginSendQuestionnaireToRespondentsDelegate == null)) {
+                this.onBeginSendQuestionnaireToRespondentsDelegate = new BeginOperationDelegate(this.OnBeginSendQuestionnaireToRespondents);
+            }
+            if ((this.onEndSendQuestionnaireToRespondentsDelegate == null)) {
+                this.onEndSendQuestionnaireToRespondentsDelegate = new EndOperationDelegate(this.OnEndSendQuestionnaireToRespondents);
+            }
+            if ((this.onSendQuestionnaireToRespondentsCompletedDelegate == null)) {
+                this.onSendQuestionnaireToRespondentsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnSendQuestionnaireToRespondentsCompleted);
+            }
+            base.InvokeAsync(this.onBeginSendQuestionnaireToRespondentsDelegate, new object[] {
+                        currentUserName,
+                        message}, this.onEndSendQuestionnaireToRespondentsDelegate, this.onSendQuestionnaireToRespondentsCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -1727,6 +1787,19 @@ namespace Statis.StatisServices {
                 bool _result = ((bool)(base.EndInvoke("AuthenticateUser", _args, result)));
                 return _result;
             }
+            
+            public System.IAsyncResult BeginSendQuestionnaireToRespondents(string currentUserName, string message, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = currentUserName;
+                _args[1] = message;
+                System.IAsyncResult _result = base.BeginInvoke("SendQuestionnaireToRespondents", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndSendQuestionnaireToRespondents(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("SendQuestionnaireToRespondents", _args, result);
+            }
         }
     }
     
@@ -1798,6 +1871,11 @@ namespace Statis.StatisServices {
         System.IAsyncResult BeginAuthenticateUser(string userName, string password, System.AsyncCallback callback, object asyncState);
         
         bool EndAuthenticateUser(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/SendQuestionnaireToRespondents")]
+        System.IAsyncResult BeginSendQuestionnaireToRespondents(string currentUserName, string message, System.AsyncCallback callback, object asyncState);
+        
+        void EndSendQuestionnaireToRespondents(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2038,6 +2116,12 @@ namespace Statis.StatisServices {
         
         private System.Threading.SendOrPostCallback onAuthenticateUserCompletedDelegate;
         
+        private BeginOperationDelegate onBeginSendQuestionnaireToRespondentsDelegate;
+        
+        private EndOperationDelegate onEndSendQuestionnaireToRespondentsDelegate;
+        
+        private System.Threading.SendOrPostCallback onSendQuestionnaireToRespondentsCompletedDelegate;
+        
         private BeginOperationDelegate onBeginOpenDelegate;
         
         private EndOperationDelegate onEndOpenDelegate;
@@ -2116,6 +2200,8 @@ namespace Statis.StatisServices {
         public event System.EventHandler<GetFilledQuestionnaireCompletedEventArgs1> GetFilledQuestionnaireCompleted;
         
         public event System.EventHandler<AuthenticateUserCompletedEventArgs1> AuthenticateUserCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> SendQuestionnaireToRespondentsCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -2734,6 +2820,53 @@ namespace Statis.StatisServices {
                         password}, this.onEndAuthenticateUserDelegate, this.onAuthenticateUserCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireAdministrativeService.BeginSendQuestionnaireToRespondents(string currentUserName, string message, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginSendQuestionnaireToRespondents(currentUserName, message, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void Statis.StatisServices.IQuestionnaireAdministrativeService.EndSendQuestionnaireToRespondents(System.IAsyncResult result) {
+            base.Channel.EndSendQuestionnaireToRespondents(result);
+        }
+        
+        private System.IAsyncResult OnBeginSendQuestionnaireToRespondents(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string currentUserName = ((string)(inValues[0]));
+            string message = ((string)(inValues[1]));
+            return ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).BeginSendQuestionnaireToRespondents(currentUserName, message, callback, asyncState);
+        }
+        
+        private object[] OnEndSendQuestionnaireToRespondents(System.IAsyncResult result) {
+            ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).EndSendQuestionnaireToRespondents(result);
+            return null;
+        }
+        
+        private void OnSendQuestionnaireToRespondentsCompleted(object state) {
+            if ((this.SendQuestionnaireToRespondentsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.SendQuestionnaireToRespondentsCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void SendQuestionnaireToRespondentsAsync(string currentUserName, string message) {
+            this.SendQuestionnaireToRespondentsAsync(currentUserName, message, null);
+        }
+        
+        public void SendQuestionnaireToRespondentsAsync(string currentUserName, string message, object userState) {
+            if ((this.onBeginSendQuestionnaireToRespondentsDelegate == null)) {
+                this.onBeginSendQuestionnaireToRespondentsDelegate = new BeginOperationDelegate(this.OnBeginSendQuestionnaireToRespondents);
+            }
+            if ((this.onEndSendQuestionnaireToRespondentsDelegate == null)) {
+                this.onEndSendQuestionnaireToRespondentsDelegate = new EndOperationDelegate(this.OnEndSendQuestionnaireToRespondents);
+            }
+            if ((this.onSendQuestionnaireToRespondentsCompletedDelegate == null)) {
+                this.onSendQuestionnaireToRespondentsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnSendQuestionnaireToRespondentsCompleted);
+            }
+            base.InvokeAsync(this.onBeginSendQuestionnaireToRespondentsDelegate, new object[] {
+                        currentUserName,
+                        message}, this.onEndSendQuestionnaireToRespondentsDelegate, this.onSendQuestionnaireToRespondentsCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -2982,6 +3115,19 @@ namespace Statis.StatisServices {
                 object[] _args = new object[0];
                 bool _result = ((bool)(base.EndInvoke("AuthenticateUser", _args, result)));
                 return _result;
+            }
+            
+            public System.IAsyncResult BeginSendQuestionnaireToRespondents(string currentUserName, string message, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = currentUserName;
+                _args[1] = message;
+                System.IAsyncResult _result = base.BeginInvoke("SendQuestionnaireToRespondents", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndSendQuestionnaireToRespondents(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("SendQuestionnaireToRespondents", _args, result);
             }
         }
     }
