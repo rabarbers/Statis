@@ -5,9 +5,13 @@
     xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
     mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480"
     Title="Esi mājās"
-    Style="{StaticResource PageStyle}" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    Style="{StaticResource PageStyle}" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:ViewModels="clr-namespace:Statis.ViewModels">
 
-    <Grid x:Name="LayoutRoot">
+    <navigation:Page.Resources>
+        <ViewModels:HomeViewModel x:Key="ViewModel" />
+    </navigation:Page.Resources>
+
+    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ViewModel}}">
         <ScrollViewer x:Name="PageScrollViewer" Style="{StaticResource PageScrollViewerStyle}">
 
             <StackPanel x:Name="ContentStackPanel" Margin="0" MinWidth="0" Width="642">
@@ -20,19 +24,19 @@
                 <TextBlock Name="textBlock2" Style="{StaticResource ContentTextStyle}" Text="Ja esi administrators vai kāda administratora uzaicināts analītiķis, nāc iekšā." Width="614" />
                 <TextBlock Name="textBlock3" Style="{StaticResource ContentTextStyle}" Text="Ja gribi kļūt par administratoru, piereģistrējies." Width="Auto" />
                 <Canvas Height="266" Name="canvas1" Width="307" MinHeight="266" MinWidth="307">
-                    <TextBox Height="24" Name="registerUserName" Width="120" Canvas.Left="97" Canvas.Top="25" />
-                    <PasswordBox Canvas.Left="97" Canvas.Top="58" Height="23" Name="registerPsw1" Width="120"/>
+                    <TextBox Text="{Binding UserName, Mode=TwoWay}" Height="24" Width="120" Canvas.Left="97" Canvas.Top="25" />
+                    <PasswordBox Password="{Binding Password1, Mode=TwoWay}"  Canvas.Left="97" Canvas.Top="58" Height="23" Name="registerPsw1" Width="120"/>
                     <sdk:Label Canvas.Left="12" Canvas.Top="29" Content="lietotājvārds:" Name="label1" />
                     <sdk:Label Canvas.Left="46" Canvas.Top="62" Content="parole:" Name="label2" />
                     <sdk:Label Canvas.Left="6" Canvas.Top="96" Content="vēlreiz parole:" Name="label3" />
-                    <PasswordBox Canvas.Left="97" Canvas.Top="92" Height="23" Name="registerPsw2" Width="120" />
+                    <PasswordBox Password="{Binding Password2, Mode=TwoWay}" Canvas.Left="97" Canvas.Top="92" Height="23" Name="registerPsw2" Width="120" />
                     <sdk:Label Canvas.Left="50" Canvas.Top="131" Content="vārds:" Name="label4" />
-                    <TextBox Canvas.Left="97" Canvas.Top="127" Height="24" Name="registerName" Width="120" />
+                    <TextBox Text="{Binding FirstName, Mode=TwoWay}" Canvas.Left="97" Canvas.Top="127" Height="24" Name="registerName" Width="120" />
                     <sdk:Label Canvas.Left="37" Canvas.Top="167" Content="uzvārds:" Name="label5" />
-                    <TextBox Canvas.Left="97" Canvas.Top="163" Height="24" Name="registerSurname" Width="120" />
-                    <Button Canvas.Left="206" Canvas.Top="243" Content="gribu reģistrēties" Height="23" Name="registerButton" Click="registerButton_Click" />
+                    <TextBox Text="{Binding LastName, Mode=TwoWay}" Canvas.Left="97" Canvas.Top="163" Height="24" Name="registerSurname" Width="120" />
+                    <Button Command="{Binding RegisterMe}" Canvas.Left="206" Canvas.Top="243" Content="gribu reģistrēties" Height="23" />
                     <sdk:Label Canvas.Left="37" Canvas.Top="205" Content="e-pasts:" Name="label6" />
-                    <TextBox Canvas.Left="97" Canvas.Top="201" Height="24" Name="registerEmail" Width="120" />
+                    <TextBox Text="{Binding Email, Mode=TwoWay}" Canvas.Left="97" Canvas.Top="201" Height="24" Name="registerEmail" Width="120" />
                 </Canvas>
             </StackPanel>
 

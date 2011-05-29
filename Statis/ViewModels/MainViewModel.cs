@@ -12,13 +12,18 @@ namespace Statis.ViewModels
         private string _userName;
         private string _password;
         private string _authenticatingUserName;
-        public string greeting { get; set; }
-        //private string _loggedUserName;
-
+        private string _greeting;
+        private string _loginLogoutText;
+        private Visibility _loggedInVisibility;
+        
         public DelegateCommand LoginCommand { get; private set; }
 
         public MainViewModel()
         {
+            GreetingText = "";
+            LoginLogoutText = "Ieiet";
+            LoggedInVisibility = Visibility.Visible;
+            
             LoginCommand = new DelegateCommand(() =>
             {
                 if (UserName != null && Password != null)
@@ -29,7 +34,6 @@ namespace Statis.ViewModels
                     }
                     _authenticatingUserName = UserName;
                     _service.AuthenticateUserAsync(UserName, Password);
-                    greeting = "Sveiks, lietotāj!";
                 }
             });
 
@@ -44,8 +48,39 @@ namespace Statis.ViewModels
             if(e.Result)
             {
                 Application.Current.Resources.Add("user", _authenticatingUserName);
-            }
-            greeting = "Sveiks, " + _authenticatingUserName + "!";
+                GreetingText = "Sveiks, " + _authenticatingUserName + "!";
+
+                UserName = "";
+                Password = "";
+                LoggedInVisibility = Visibility.Collapsed;
+                LoginLogoutText = "Iziet";
+
+                LoginCommand = new DelegateCommand(() =>
+                {
+                    if (Application.Current.Resources.Contains("user"))
+                    {
+                        Application.Current.Resources.Remove("user");
+                    }
+                    GreetingText = "";
+                    LoginLogoutText = "Ieiet";
+                    LoggedInVisibility = Visibility.Visible;
+
+                    LoginCommand = new DelegateCommand(() =>
+                    {
+                        if (UserName != null && Password != null)
+                        {
+                            if (Application.Current.Resources.Contains("user"))
+                            {
+                                Application.Current.Resources.Remove("user");
+                            }
+                            _authenticatingUserName = UserName;
+                            _service.AuthenticateUserAsync(UserName, Password);
+                        }
+                    });
+                    OnNotifyPropertyChanged("LoginCommand");
+                });
+                OnNotifyPropertyChanged("LoginCommand");
+            }          
         }
 
         public string UserName
@@ -73,5 +108,45 @@ namespace Statis.ViewModels
                 }
             }
         }
+
+        public string GreetingText
+        {
+            get { return _greeting; }
+            set
+            {
+                if (_greeting != value)
+                {
+                    _greeting = value;
+                    OnNotifyPropertyChanged("GreetingText");
+                }
+            }
+        }
+        
+        public string LoginLogoutText
+        {
+            get { return _loginLogoutText; }
+            set
+            {
+                if (_loginLogoutText != value)
+                {
+                    _loginLogoutText = value;
+                    OnNotifyPropertyChanged("LoginLogoutText");
+                }
+            }
+        }
+
+        public Visibility LoggedInVisibility
+        {
+            get { return _loggedInVisibility; }
+            set
+            {
+                if (_loggedInVisibility != value)
+                {
+                    _loggedInVisibility = value;
+                    OnNotifyPropertyChanged("LoggedInVisibility");
+                }
+            }
+        }
+
     }
 }

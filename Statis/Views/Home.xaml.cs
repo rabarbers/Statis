@@ -15,10 +15,5 @@ namespace Statis
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
         }
-
-        private void registerButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

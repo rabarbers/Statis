@@ -32,24 +32,7 @@ namespace Statis
                     }
                 }
             }
-            // handle login/logout panel visibility depending on user
-            if (Application.Current.Resources.Contains("user"))
-            {
-                LoginStackPanel.Visibility = Visibility.Collapsed;
-                if(LogoutStackPanel != null)
-                {
-                    LogoutStackPanel.Visibility = Visibility.Visible;
-                }
-            }
-            else
-            {
-                LoginStackPanel.Visibility = Visibility.Visible;
-                if(LogoutStackPanel != null)
-                {
-                    LogoutStackPanel.Visibility = Visibility.Collapsed;
-                }
-                
-            }
+            
         }
 
         // If an error occurs during navigation, show an error window
