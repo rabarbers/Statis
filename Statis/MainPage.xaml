@@ -56,6 +56,7 @@
                 <StackPanel x:Name="BrandingStackPanel" Style="{StaticResource BrandingStackPanelStyle}">
 
                     <ContentControl Style="{StaticResource LogoIcon}"/>
+                    <!--<Image Height="32" Source="logo.gif" />-->
                     <TextBlock x:Name="ApplicationNameTextBlock" Style="{StaticResource ApplicationNameStyle}" 
                                Text="Statis"/>
 

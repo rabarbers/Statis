@@ -204,55 +204,6 @@ namespace StatisServiceHost
             }
         }
 
-        // handling admin users
-/*        public static bool AddAdmin(string currentUserName, string analystUserName)
-        {
-            var loggedInUser =
-                (from Admin user in Database
-                 where user.UserName == currentUserName
-                 select user).FirstOrDefault();
-
-            var analystUser =
-                (from Admin user in Database
-                 where user.UserName == adminUserName
-                 select user).FirstOrDefault();
-
-            if (loggedInUser != null && analystUser != null)
-            {
-                if (loggedInUser.TrustedAnalysts == null)
-                {
-                    loggedInUser.TrustedAnalysts = new List<Admin>();
-                }
-
-                loggedInUser.TrustedAnalysts.Add(analystUser);
-                Database.Store(loggedInUser);
-                return true;
-            }
-            return false;
-        }
-
-        public static void RemoveAnalyst(string currentUserName, string analystUserName)
-        {
-            var loggedInUser =
-                (from Analyst user in Database
-                 where user.UserName == currentUserName
-                 select user).FirstOrDefault();
-
-            var analystUser =
-                (from Analyst user in Database
-                 where user.UserName == analystUserName
-                 select user).FirstOrDefault();
-
-            if (loggedInUser != null && analystUser != null)
-            {
-                if (loggedInUser.TrustedAnalysts != null)
-                {
-                    loggedInUser.TrustedAnalysts.Remove(analystUser);
-                    Database.Store(loggedInUser);
-                }
-            }
-        }
-        */
         public static bool AddRespondent(string currentUserName, string respondentEmail)
         {
             var loggedInUser =

@@ -433,3 +433,6 @@ C:\Users\anna\Desktop\StatisFinal\Statis\obj\Debug\Views\AnalystView.g.i.cs
 C:\Users\anna\Desktop\StatisFinal\Statis\obj\Debug\Views\ImgChoiceQuestionView.g.i.cs
 C:\Users\anna\Desktop\StatisFinal\Statis\obj\Debug\Views\QuestionnaireFillingView.g.i.cs
 C:\Users\anna\Desktop\StatisFinal\Statis\obj\Debug\Views\TextChoiceView.g.i.cs
+C:\Users\anna\Desktop\StatisFinal\Statis\obj\Debug\Statis.Assets.Resources.resources
+C:\Users\anna\Desktop\StatisFinal\Statis\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\anna\Desktop\StatisFinal\Statis\obj\Debug\GenerateResource.write.1.tlog

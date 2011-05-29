@@ -100,9 +100,9 @@ namespace StatisServiceHost
                     System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com");
                     smtp.Send(message);
                 }
-                catch 
+                catch (Exception ex)
                 {
-                    
+                    Console.WriteLine(ex.Message);
                 }
             }
         }

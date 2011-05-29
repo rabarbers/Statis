@@ -93,9 +93,13 @@ namespace Statis.ViewModels
 
         void ProxyAddAnalystCompleted(object sender, AddAnalystCompletedEventArgs1 e)
         {
-            if(e.Result)
+            if (e.Result)
             {
                 _users.Add(_addingNewAnalyst);
+            }
+            else
+            {
+                MessageBox.Show("Atvaino, bet tu nedrīksti pievienot citus lietotājus...", "Kļūda", MessageBoxButton.OK);
             }
         }
 

@@ -71,15 +71,11 @@ namespace StatisServiceTests
         public void AddAnalystTest()
         {
             string currentUserName = "janka";
-            
             string analystUserName = "analītiķis1";
             
             bool actual;
             actual = HandleDb4o.AddAnalyst(currentUserName, analystUserName);
             Assert.AreEqual(true, actual);
-
-            //string analystTest = HandleDb4o.GetUserAnalysts("janka");
-            //Assert.Inconclusive("Verify the correctness of this test method.");
         }
     }
 }
