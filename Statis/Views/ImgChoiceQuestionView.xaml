@@ -28,7 +28,7 @@
                     <prism:DataTemplateSelector Content="{Binding}" HorizontalContentAlignment="Stretch" IsTabStop="False">
                         <prism:DataTemplateSelector.Resources>
                             <DataTemplate x:Key="TextChoiceViewModel">
-                                <Views:TextChoiceView DataContext="{Binding}" />
+                                <Views:TextChoiceViewForQuestion DataContext="{Binding}" />
                             </DataTemplate>
                             <!--<DataTemplate x:Key="ImgChoiceViewModel">
                                 <Views:ImgChoiceView DataContext="{Binding}" />

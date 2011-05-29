@@ -529,7 +529,7 @@ namespace Statis.StatisServices {
         void EndRemoveRespondent(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/StoreFilledQuestionnaire")]
-        System.IAsyncResult BeginStoreFilledQuestionnaire(string userName, Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginStoreFilledQuestionnaire(Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState);
         
         void EndStoreFilledQuestionnaire(System.IAsyncResult result);
         
@@ -1381,8 +1381,8 @@ namespace Statis.StatisServices {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Statis.StatisServices.IQuestionnaireService.BeginStoreFilledQuestionnaire(string userName, Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginStoreFilledQuestionnaire(userName, filled, callback, asyncState);
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireService.BeginStoreFilledQuestionnaire(Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginStoreFilledQuestionnaire(filled, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1391,9 +1391,8 @@ namespace Statis.StatisServices {
         }
         
         private System.IAsyncResult OnBeginStoreFilledQuestionnaire(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string userName = ((string)(inValues[0]));
-            Statis.StatisServices.FilledQuestionnaire filled = ((Statis.StatisServices.FilledQuestionnaire)(inValues[1]));
-            return ((Statis.StatisServices.IQuestionnaireService)(this)).BeginStoreFilledQuestionnaire(userName, filled, callback, asyncState);
+            Statis.StatisServices.FilledQuestionnaire filled = ((Statis.StatisServices.FilledQuestionnaire)(inValues[0]));
+            return ((Statis.StatisServices.IQuestionnaireService)(this)).BeginStoreFilledQuestionnaire(filled, callback, asyncState);
         }
         
         private object[] OnEndStoreFilledQuestionnaire(System.IAsyncResult result) {
@@ -1408,11 +1407,11 @@ namespace Statis.StatisServices {
             }
         }
         
-        public void StoreFilledQuestionnaireAsync(string userName, Statis.StatisServices.FilledQuestionnaire filled) {
-            this.StoreFilledQuestionnaireAsync(userName, filled, null);
+        public void StoreFilledQuestionnaireAsync(Statis.StatisServices.FilledQuestionnaire filled) {
+            this.StoreFilledQuestionnaireAsync(filled, null);
         }
         
-        public void StoreFilledQuestionnaireAsync(string userName, Statis.StatisServices.FilledQuestionnaire filled, object userState) {
+        public void StoreFilledQuestionnaireAsync(Statis.StatisServices.FilledQuestionnaire filled, object userState) {
             if ((this.onBeginStoreFilledQuestionnaireDelegate == null)) {
                 this.onBeginStoreFilledQuestionnaireDelegate = new BeginOperationDelegate(this.OnBeginStoreFilledQuestionnaire);
             }
@@ -1423,7 +1422,6 @@ namespace Statis.StatisServices {
                 this.onStoreFilledQuestionnaireCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnStoreFilledQuestionnaireCompleted);
             }
             base.InvokeAsync(this.onBeginStoreFilledQuestionnaireDelegate, new object[] {
-                        userName,
                         filled}, this.onEndStoreFilledQuestionnaireDelegate, this.onStoreFilledQuestionnaireCompletedDelegate, userState);
         }
         
@@ -1833,10 +1831,9 @@ namespace Statis.StatisServices {
                 base.EndInvoke("RemoveRespondent", _args, result);
             }
             
-            public System.IAsyncResult BeginStoreFilledQuestionnaire(string userName, Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[2];
-                _args[0] = userName;
-                _args[1] = filled;
+            public System.IAsyncResult BeginStoreFilledQuestionnaire(Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = filled;
                 System.IAsyncResult _result = base.BeginInvoke("StoreFilledQuestionnaire", _args, callback, asyncState);
                 return _result;
             }
@@ -1961,7 +1958,7 @@ namespace Statis.StatisServices {
         void EndRemoveRespondent(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/StoreFilledQuestionnaire")]
-        System.IAsyncResult BeginStoreFilledQuestionnaire(string userName, Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginStoreFilledQuestionnaire(Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState);
         
         void EndStoreFilledQuestionnaire(System.IAsyncResult result);
         
@@ -2813,8 +2810,8 @@ namespace Statis.StatisServices {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Statis.StatisServices.IQuestionnaireAdministrativeService.BeginStoreFilledQuestionnaire(string userName, Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginStoreFilledQuestionnaire(userName, filled, callback, asyncState);
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireAdministrativeService.BeginStoreFilledQuestionnaire(Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginStoreFilledQuestionnaire(filled, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2823,9 +2820,8 @@ namespace Statis.StatisServices {
         }
         
         private System.IAsyncResult OnBeginStoreFilledQuestionnaire(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string userName = ((string)(inValues[0]));
-            Statis.StatisServices.FilledQuestionnaire filled = ((Statis.StatisServices.FilledQuestionnaire)(inValues[1]));
-            return ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).BeginStoreFilledQuestionnaire(userName, filled, callback, asyncState);
+            Statis.StatisServices.FilledQuestionnaire filled = ((Statis.StatisServices.FilledQuestionnaire)(inValues[0]));
+            return ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).BeginStoreFilledQuestionnaire(filled, callback, asyncState);
         }
         
         private object[] OnEndStoreFilledQuestionnaire(System.IAsyncResult result) {
@@ -2840,11 +2836,11 @@ namespace Statis.StatisServices {
             }
         }
         
-        public void StoreFilledQuestionnaireAsync(string userName, Statis.StatisServices.FilledQuestionnaire filled) {
-            this.StoreFilledQuestionnaireAsync(userName, filled, null);
+        public void StoreFilledQuestionnaireAsync(Statis.StatisServices.FilledQuestionnaire filled) {
+            this.StoreFilledQuestionnaireAsync(filled, null);
         }
         
-        public void StoreFilledQuestionnaireAsync(string userName, Statis.StatisServices.FilledQuestionnaire filled, object userState) {
+        public void StoreFilledQuestionnaireAsync(Statis.StatisServices.FilledQuestionnaire filled, object userState) {
             if ((this.onBeginStoreFilledQuestionnaireDelegate == null)) {
                 this.onBeginStoreFilledQuestionnaireDelegate = new BeginOperationDelegate(this.OnBeginStoreFilledQuestionnaire);
             }
@@ -2855,7 +2851,6 @@ namespace Statis.StatisServices {
                 this.onStoreFilledQuestionnaireCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnStoreFilledQuestionnaireCompleted);
             }
             base.InvokeAsync(this.onBeginStoreFilledQuestionnaireDelegate, new object[] {
-                        userName,
                         filled}, this.onEndStoreFilledQuestionnaireDelegate, this.onStoreFilledQuestionnaireCompletedDelegate, userState);
         }
         
@@ -3265,10 +3260,9 @@ namespace Statis.StatisServices {
                 base.EndInvoke("RemoveRespondent", _args, result);
             }
             
-            public System.IAsyncResult BeginStoreFilledQuestionnaire(string userName, Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[2];
-                _args[0] = userName;
-                _args[1] = filled;
+            public System.IAsyncResult BeginStoreFilledQuestionnaire(Statis.StatisServices.FilledQuestionnaire filled, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = filled;
                 System.IAsyncResult _result = base.BeginInvoke("StoreFilledQuestionnaire", _args, callback, asyncState);
                 return _result;
             }

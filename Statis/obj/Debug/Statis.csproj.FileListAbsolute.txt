@@ -438,6 +438,9 @@ D:\GitStatisLast\Statis\Bin\Debug\vi\System.Windows.Controls.Input.resources.dll
 D:\GitStatisLast\Statis\Bin\Debug\zh-Hans\System.Windows.Controls.Input.resources.dll
 D:\GitStatisLast\Statis\Bin\Debug\zh-Hant\System.Windows.Controls.Input.resources.dll
 D:\GitStatisLast\Statis\obj\Debug\Views\ImgChoiceQuestionView.g.i.cs
-D:\GitStatisLast\Statis\obj\Debug\Views\TextChoiceView.g.i.cs
 D:\GitStatisLast\Statis\obj\Debug\Views\QuestionnaireFillingView.g.i.cs
 D:\GitStatisLast\Statis\obj\Debug\Views\AnalystView.g.i.cs
+D:\GitStatisLast\Statis\obj\Debug\Views\TextAnswerView.g.i.cs
+D:\GitStatisLast\Statis\obj\Debug\Views\ImgChoiceAnswerView.g.i.cs
+D:\GitStatisLast\Statis\obj\Debug\Views\TextChoiceViewForQuestion.g.i.cs
+D:\GitStatisLast\Statis\obj\Debug\Views\TextChoiceViewForAnswer.g.i.cs

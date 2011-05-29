@@ -1,5 +1,6 @@
 ﻿/// <summary>handles the main user authentication</summary>
 
+using System;
 using System.Windows;
 using Microsoft.Practices.Prism.Commands;
 using Statis.StatisServices;
@@ -61,6 +62,7 @@ namespace Statis.ViewModels
                     {
                         Application.Current.Resources.Remove("user");
                     }
+
                     GreetingText = "";
                     LoginLogoutText = "Ieiet";
                     LoggedInVisibility = Visibility.Visible;
@@ -78,6 +80,8 @@ namespace Statis.ViewModels
                         }
                     });
                     OnNotifyPropertyChanged("LoginCommand");
+
+                    System.Windows.Browser.HtmlPage.Window.Navigate(new Uri("/StatisTestPage.html#/Home", UriKind.Relative));
                 });
                 OnNotifyPropertyChanged("LoginCommand");
             }          

@@ -91,11 +91,13 @@
     <Compile Include="ViewModels\ChoiceViewModel.cs" />
     <Compile Include="ViewModels\CreateQuestionnaireViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\ImgChoiceAnswerViewModel.cs" />
     <Compile Include="ViewModels\ImgChoiceQuestionViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\QuestionnaireFillingViewModel.cs" />
     <Compile Include="ViewModels\QuestionViewModel.cs" />
     <Compile Include="ViewModels\ReviewViewModel.cs" />
+    <Compile Include="ViewModels\TextAnswerViewModel.cs" />
     <Compile Include="ViewModels\TextChoiceViewModel.cs" />
     <Compile Include="ViewModels\TextQuestionViewModel.cs" />
     <Compile Include="ViewModels\UsersViewModel.cs" />
@@ -119,6 +121,9 @@
     <Compile Include="Views\CreateQuestionnaireView.xaml.cs">
       <DependentUpon>CreateQuestionnaireView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ImgChoiceAnswerView.xaml.cs">
+      <DependentUpon>ImgChoiceAnswerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ImgChoiceQuestionView.xaml.cs">
       <DependentUpon>ImgChoiceQuestionView.xaml</DependentUpon>
     </Compile>
@@ -128,8 +133,14 @@
     <Compile Include="Views\Review.xaml.cs">
       <DependentUpon>Review.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TextChoiceView.xaml.cs">
-      <DependentUpon>TextChoiceView.xaml</DependentUpon>
+    <Compile Include="Views\TextAnswerView.xaml.cs">
+      <DependentUpon>TextAnswerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TextChoiceViewForQuestion.xaml.cs">
+      <DependentUpon>TextChoiceViewForQuestion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TextChoiceViewForAnswer.xaml.cs">
+      <DependentUpon>TextChoiceViewForAnswer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TextQuestionView.xaml.cs">
       <DependentUpon>TextQuestionView.xaml</DependentUpon>
@@ -151,6 +162,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ImgChoiceAnswerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ImgChoiceQuestionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,7 +178,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TextChoiceView.xaml">
+    <Page Include="Views\TextAnswerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TextChoiceViewForQuestion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TextChoiceViewForAnswer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -17,7 +17,7 @@ namespace StatisServiceContracts
     public interface IQuestionnaireService
     {
         [OperationContract]
-        Questionnaire GetQuestionnaire(string userName, string questionnaireName);
+        Questionnaire GetQuestionnaire(string questionnaireName);
         [OperationContract(IsOneWay = true)]
         void StoreQuestionnaire(string userName, Questionnaire questionnaire);
         [OperationContract(IsOneWay = true)]
@@ -37,7 +37,7 @@ namespace StatisServiceContracts
         [OperationContract(IsOneWay = true)]
         void RemoveRespondent(string currentUserName, string respondentEmail);
         [OperationContract(IsOneWay = true)]
-        void StoreFilledQuestionnaire(string userName, FilledQuestionnaire filled);
+        void StoreFilledQuestionnaire(FilledQuestionnaire filled);
         [OperationContract]
         FilledQuestionnaire GetFilledQuestionnaire(string userName, Guid id);
         [OperationContract]

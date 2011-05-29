@@ -2,11 +2,11 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" xmlns:viewModel="clr-namespace:Statis.ViewModels" mc:Ignorable="d"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" xmlns:viewModel="clr-namespace:Statis.ViewModels" xmlns:prism="clr-namespace:Microsoft.Practices.Prism.ViewModel;assembly=Microsoft.Practices.Prism" xmlns:Views="clr-namespace:Statis.Views" mc:Ignorable="d"
     d:DesignHeight="300" d:DesignWidth="400">
 
     <Controls:Page.Resources>
-        <!--<viewModel:QuestionnaireFillingViewModel x:Key="ViewModel" />-->
+        <viewModel:QuestionnaireFillingViewModel x:Key="ViewModel" />
     </Controls:Page.Resources>
 
     <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ViewModel}}">
@@ -15,12 +15,39 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text="Anketas nosaukums: " />
+            <TextBlock Text="{Binding Name}"/>
         </StackPanel>
-        
-        <StackPanel Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
 
+        <ScrollViewer Grid.Row="1" Height="266" Width="427" Margin="54,122,290,216" BorderBrush="Azure" VerticalAlignment="Top">
+            <ItemsControl ItemsSource="{Binding Questions}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Style="{StaticResource CreationPanelStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                        </StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <prism:DataTemplateSelector Content="{Binding}" HorizontalContentAlignment="Stretch" IsTabStop="False">
+                            <prism:DataTemplateSelector.Resources>
+                                <DataTemplate x:Key="TextAnswerViewModel">
+                                    <Views:TextAnswerView DataContext="{Binding}" />
+                                </DataTemplate>
+                                <DataTemplate x:Key="ImgChoiceAnswerViewModel">
+                                    <Views:ImgChoiceQuestionView DataContext="{Binding}" />
+                                </DataTemplate>
+                            </prism:DataTemplateSelector.Resources>
+                        </prism:DataTemplateSelector>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+
+            </ItemsControl>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="2" HorizontalAlignment="Stretch">
+            <Button Content="Saglabāt un aizvērt" Command="{Binding SaveFilledQuestionnaire}" HorizontalAlignment="Center"></Button>
         </StackPanel>
     </Grid>
 </Controls:Page>

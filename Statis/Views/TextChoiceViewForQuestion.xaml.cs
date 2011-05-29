@@ -12,9 +12,9 @@ using System.Windows.Shapes;
 
 namespace Statis.Views
 {
-    public partial class TextChoiceView : UserControl
+    public partial class TextChoiceViewForQuestion : UserControl
     {
-        public TextChoiceView()
+        public TextChoiceViewForQuestion()
         {
             InitializeComponent();
         }

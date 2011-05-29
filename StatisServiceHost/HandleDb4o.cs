@@ -317,7 +317,7 @@ namespace StatisServiceHost
         public static void StoreFilledQuestionnaire(FilledQuestionnaire filled)
         {
             var questionnaire = GetFilledQuestionnaire(filled.Id);
-            if(questionnaire != null)
+            if (questionnaire != null)
             {
                 Database.Delete(questionnaire);
             }

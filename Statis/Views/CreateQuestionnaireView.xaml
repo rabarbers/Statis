@@ -7,7 +7,7 @@
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" xmlns:prism="clr-namespace:Microsoft.Practices.Prism.ViewModel;assembly=Microsoft.Practices.Prism" xmlns:Views="clr-namespace:Statis.Views" xmlns:viewModel="clr-namespace:Statis.ViewModels" Title="Veido jaunas anketas" Height="574" Width="Auto" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" MaxWidth="Infinity" d:DesignWidth="772">
     
     <navigation:Page.Resources>
-        <viewModel:CreateQuestionnaireViewModel x:Key="ViewModel" />
+        <!--<viewModel:CreateQuestionnaireViewModel x:Key="ViewModel" />-->
     </navigation:Page.Resources>
 
     <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ViewModel}}" Height="604" HorizontalAlignment="Left" Width="772">
@@ -45,7 +45,7 @@
                     <Button Content="Pievienot jautājumu" Name="button2" Style="{StaticResource QuestionTemplateAddButtonStyle}" Command="{Binding AddTextQuestion}" />
                 <Rectangle x:Name="Div1" Style="{StaticResource TemplateDividerStyle}" />
                 
-                <TextBlock Name="questionTemplate2" Style="{StaticResource QuestionTemplateTextStyle}" Text="Jautājums ar atbilžu variantiem (viena atbilde)" Margin="0,10,0,0" />
+                <TextBlock Name="questionTemplate2" Style="{StaticResource QuestionTemplateTextStyle}" Text="Jautājums ar atbilžu variantiem" Margin="0,10,0,0" />
                 <StackPanel Height="34" Name="stackPanel1" Width="200" Margin="0,0,0,10" Orientation="Horizontal">
                         <sdk:Label Name="label1" Content="(bildes datne)" Height="28" Width="120" HorizontalContentAlignment="Right" />
                         <Button Content="Izvēlies datni" Name="button6" VerticalAlignment="Center" />
@@ -54,7 +54,7 @@
                     <Button Style="{StaticResource QuestionTemplateAddButtonStyle}" Content="Pievienot jautājumu" Command="{Binding AddImgSingleChoiceQuestion}" />
                     <Rectangle x:Name="Div2" Style="{StaticResource TemplateDividerStyle}" />
                 
-                <TextBlock Name="questionTemplate3" Style="{StaticResource QuestionTemplateTextStyle}" Text="Jautājums ar atbilžu variantiem (vairākas atbildes)" Margin="0,10,0,0" />
+                <!--<TextBlock Name="questionTemplate3" Style="{StaticResource QuestionTemplateTextStyle}" Text="Jautājums ar atbilžu variantiem (vairākas atbildes)" Margin="0,10,0,0" />
                     <StackPanel Height="34" Name="stackPanel3" Width="200" Orientation="Horizontal">
                         <sdk:Label Content="(bildes datne)" Height="28" HorizontalContentAlignment="Right" Name="label2" Width="120" />
                         <Button Content="Izvēlies datni" Name="button7" VerticalAlignment="Center" />
@@ -63,9 +63,9 @@
 
 
                     <Button Style="{StaticResource QuestionTemplateAddButtonStyle}" Content="Pievienot jautājumu" Command="{Binding AddImgSingleChoiceQuestion}" />
-                <Rectangle x:Name="Div3" Style="{StaticResource TemplateDividerStyle}" />
+                <Rectangle x:Name="Div3" Style="{StaticResource TemplateDividerStyle}" />-->
 
-                <TextBlock Name="questionTemplate4" Style="{StaticResource QuestionTemplateTextStyle}" Text="Jautājums ar bildēm kā atbilžu variantiem (viena atbilde)" Margin="0,10,0,0" />
+                <!--<TextBlock Name="questionTemplate4" Style="{StaticResource QuestionTemplateTextStyle}" Text="Jautājums ar bildēm kā atbilžu variantiem (viena atbilde)" Margin="0,10,0,0" />
                     <StackPanel Name="stackPanel4" Width="200" Orientation="Horizontal">
                         <sdk:Label Content="(bildes datne)" Height="28" HorizontalContentAlignment="Right" Name="label3" Width="120" />
                         <Button Content="Izvēlies datni" Name="button8" Style="{StaticResource FileUploadButtonStyle}" />
@@ -81,13 +81,13 @@
                     <StackPanel Name="stackPanel5" Orientation="Horizontal" Width="200">
                         <sdk:Label Content="(bildes datne)" Height="28" HorizontalContentAlignment="Right" Name="label4" Width="120" />
                         <Button Content="Izvēlies datni" Name="button9" Style="{StaticResource FileUploadButtonStyle}" />
-                    </StackPanel>
+                    </StackPanel>-->
                     <!--<ComboBox Style="{StaticResource QuestionTemplateAddComboStyle}" Name="comboBox3" >
                      <ComboBoxItem Content="2"/>
                      <ComboBoxItem Content="3" IsSelected="True" />
                      <ComboBoxItem Content="4" />
                 </ComboBox>-->
-                <Button Style="{StaticResource QuestionTemplateAddButtonStyle}" Content="Pievienot jautājumu" Name="button5" />
+                <!--<Button Style="{StaticResource QuestionTemplateAddButtonStyle}" Content="Pievienot jautājumu" Name="button5" />-->
             </StackPanel>
             </ScrollViewer>
         </StackPanel>

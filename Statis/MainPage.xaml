@@ -24,6 +24,7 @@
                   <uriMapper:UriMapper>
                     <uriMapper:UriMapping Uri="" MappedUri="/Views/Home.xaml"/>
                     <uriMapper:UriMapping Uri="/CreateQuestionnaireView/{questionnaireName}" MappedUri="/Views/CreateQuestionnaireView.xaml"/>
+                    <uriMapper:UriMapping Uri="/QuestionnaireFillingView/{questionnaireName}" MappedUri="/Views/QuestionnaireFillingView.xaml"/>
                     <uriMapper:UriMapping Uri="/{pageName}" MappedUri="/Views/{pageName}.xaml"/>
                   </uriMapper:UriMapper>
                 </navigation:Frame.UriMapper>
@@ -42,7 +43,7 @@
             </StackPanel>
             <StackPanel x:Name="LinksStackPanel" Style="{StaticResource LinksStackPanelStyle}" VerticalAlignment="Bottom" Margin="19,0,25,21" Height="42" HorizontalAlignment="Right">
                 <sdk:Label Height="28" HorizontalAlignment="Left" Margin="221,7,0,7" Name="label1" VerticalAlignment="Center" Width="48" FontSize="13" Foreground="#FFFF4B71" FontWeight="Bold" Content="Gribu:" FlowDirection="LeftToRight"></sdk:Label>
-                <HyperlinkButton x:Name="mainLink1" Style="{StaticResource LinkStyle}" NavigateUri="/Home" TargetName="ContentFrame" Content="Mājup" FontSize="16" FontWeight="ExtraBold" />
+                <HyperlinkButton x:Name="mainLink1" Style="{StaticResource LinkStyle}" NavigateUri="/QuestionnaireFillingView/Q2" TargetName="ContentFrame" Content="Mājup" FontSize="16" FontWeight="ExtraBold" />
                 <Rectangle x:Name="Divider1" Style="{StaticResource DividerStyle}" />
                 <HyperlinkButton x:Name="mainLink2" Style="{StaticResource LinkStyle}" NavigateUri="/About" TargetName="ContentFrame" Content="Lasīt" FontSize="16" FontWeight="ExtraBold" />
                 <Rectangle x:Name="Divider2" Style="{StaticResource DividerStyle}" />
