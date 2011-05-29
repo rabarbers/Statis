@@ -1,6 +1,4 @@
-﻿/// <summary>
-/// handles the main user authentication
-/// </summary>
+﻿/// <summary>handles the main user authentication</summary>
 
 using System.Windows;
 using Microsoft.Practices.Prism.Commands;

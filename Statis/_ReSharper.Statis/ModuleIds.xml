@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="1E760F8B-F15B-44DC-8C17-75054259ECEB" ModuleId="Statis" />
+  <Module PersistentId="4981DC01-165C-414D-86F6-B41DF78AF2B8" ModuleId="StatisServiceContracts" />
+</Modules>

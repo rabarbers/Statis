@@ -39,7 +39,7 @@
                 <PasswordBox Height="23" HorizontalAlignment="Right" Margin="2,19,0,0" Password="{Binding Password, Mode=TwoWay}" Width="95" VerticalAlignment="Top" />
                 <Button Margin="10,19,0,0" Content="Ienākt" Command="{Binding LoginCommand}"></Button>
             </StackPanel>
-            <StackPanel x:Name="LogoutStackPanel" HorizontalAlignment="Right" Margin="19,0,25,21" Style="{StaticResource LoginPanelStyle}" VerticalAlignment="Top" Visibility="Collapsed" Width="Auto">
+            <StackPanel x:Name="LogoutStackPanel" HorizontalAlignment="Right" Margin="19,0,25,21" Style="{StaticResource LoginPanelStyle}" VerticalAlignment="Top" Width="Auto">
                 <sdk:Label Content="{Binding greeting}" Foreground="White" Height="Auto" HorizontalAlignment="Right" Margin="2,23,0,0" Name="label4" VerticalAlignment="Top" Width="Auto" />
                 <Button Margin="10,19,0,0" Content="Iziet" Command="{Binding LoginCommand}"></Button>
             </StackPanel>
