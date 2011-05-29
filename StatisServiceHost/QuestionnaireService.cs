@@ -37,6 +37,11 @@ namespace StatisServiceHost
         {
             return HandleDb4o.GetUserRespondents(userName);
         }
+        /*public string GetUserMail(string userName)
+        
+        {
+            return HandleDb4o.GetUserMail(userName);
+        }*/
 
         public bool AddAnalyst(string currentUserName, string analystUserName)
         {
@@ -79,34 +84,26 @@ namespace StatisServiceHost
             return HandleDb4o.AuthenticateUser(userName, password);
         }
 
-        public void SendQuestionnaireToRespondents(string currentUserName, string message)
+        public void SendQuestionnaireToRespondents(string currentUserName, string userMail, string text, string questionnaireName)
         {
             var recipients = GetUserRespondents(currentUserName);
-
+            // var userMail = GetUserMail(currentUserName);
             foreach (var recipientEmail in recipients)
             {
                 try
                 {
-                    //ToDo: there sould be e-mail sending logic something like this: send(recipientEmail, message);
+                    System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage();
+                    message.To.Add(recipientEmail);
+                    message.From = new System.Net.Mail.MailAddress(userMail);
+                    message.Body = text;
+                    message.Subject = "Aicinājums aizpildīt anketu " + questionnaireName;
+                    System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com");
+                    smtp.Send(message);
                 }
-                catch
+                catch 
                 {
                     
                 }
-            }
-        }
-
-        public void SendQuestionnaires(List<string> mailingList, string fromUser, string text, string questName)
-        {
-            foreach(string mail in mailingList)
-            {
-                System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage();
-                message.To.Add(mail);
-                message.From = new System.Net.Mail.MailAddress(fromUser);
-                message.Body = text;
-                message.Subject = "Aicinājums aizpildīt anketu " + questName;
-                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com");
-                smtp.Send(message);
             }
         }
     }

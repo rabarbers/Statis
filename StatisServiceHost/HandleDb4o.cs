@@ -349,6 +349,17 @@ namespace StatisServiceHost
             return loggedInUserPassword == password;
         }
 
+        // gets admin email
+        /* 
+        internal static string GetUserMail(string userName)
+        {
+            var loggedInUserMail =
+                (from User user in Database
+                 where user.userName == userName
+                 select user.Email).FirstOrDefault();
+            return loggedInUserMail;
+        }*/
+
         /// <summary>
         /// Creates some test data
         /// </summary>
