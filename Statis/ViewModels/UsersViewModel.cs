@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Net;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Microsoft.Practices.Prism.Commands;
 using Statis.StatisServices;
 
@@ -77,14 +68,14 @@ namespace Statis.ViewModels
             
             _service = new QuestionnaireAdministrativeServiceClient();
             _service.OpenCompleted += delegate
-                                          {
-                                              if (Application.Current.Resources.Contains("user"))
-                                              {
-                                                  var user = Application.Current.Resources["user"] as string;
-                                                  _service.GetUserRespondentsAsync(user);
-                                                  _service.GetUserAnalystsAsync(user);
-                                              }
-                                          };
+            {
+                if (Application.Current.Resources.Contains("user"))
+                {
+                    var user = Application.Current.Resources["user"] as string;
+                    _service.GetUserRespondentsAsync(user);
+                    _service.GetUserAnalystsAsync(user);
+                }
+            };
             _service.GetUserRespondentsCompleted += ProxyGetUserRespondentsCompleted;
             _service.GetUserAnalystsCompleted += ProxyGetUserAnalystsCompleted;
             _service.AddAnalystCompleted += ProxyAddAnalystCompleted;
@@ -102,9 +93,13 @@ namespace Statis.ViewModels
 
         void ProxyAddAnalystCompleted(object sender, AddAnalystCompletedEventArgs1 e)
         {
-            if(e.Result)
+            if (e.Result)
             {
                 _users.Add(_addingNewAnalyst);
+            }
+            else
+            {
+                MessageBox.Show("Atvaino, bet tu nedrīksti pievienot citus lietotājus...", "Kļūda", MessageBoxButton.OK);
             }
         }
 

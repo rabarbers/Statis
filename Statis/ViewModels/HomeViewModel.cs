@@ -20,18 +20,18 @@ namespace Statis.ViewModels
         {
             _service = new QuestionnaireAdministrativeServiceClient();
             _service.RegisterUserCompleted += delegate(object sender, RegisterUserCompletedEventArgs1 e)
-                                                  {
-                                                      if (e.Result)
-                                                      {
-                                                          UserName = null;
-                                                          Password1 = null;
-                                                          Password2 = null;
-                                                          FirstName = null;
-                                                          LastName = null;
-                                                          Email = null;
-                                                          MessageBox.Show("Reģistrācija veiksmīga!");
-                                                      }
-                                                  };
+            {
+                if (e.Result)
+                {
+                    UserName = null;
+                    Password1 = null;
+                    Password2 = null;
+                    FirstName = null;
+                    LastName = null;
+                    Email = null;
+                    MessageBox.Show("Reģistrācija veiksmīga!");
+                }
+            };
             _service.OpenAsync();
             
             

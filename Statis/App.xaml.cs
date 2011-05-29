@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 
 namespace Statis
 {
@@ -35,8 +26,6 @@ namespace Statis
             {
                 // NOTE: This will allow the application to continue running after an exception has been thrown
                 // but not handled. 
-                // For production applications this error handling should be replaced with something that will 
-                // report the error to the website and stop the application.
                 e.Handled = true;
                 ChildWindow errorWin = new ErrorWindow(e.ExceptionObject);
                 errorWin.Show();

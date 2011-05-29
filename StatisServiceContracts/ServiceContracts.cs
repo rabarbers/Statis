@@ -45,7 +45,7 @@ namespace StatisServiceContracts
         [OperationContract]
         bool AuthenticateUser(string userName, string password);
         [OperationContract(IsOneWay = true)]
-        void SendQuestionnaireToRespondents(string currentUserName, string message);
+        void SendQuestionnaireToRespondents(string currentUserName, string userMail, string text, string questionnaireName);
     }
 
     /// <summary></summary>
