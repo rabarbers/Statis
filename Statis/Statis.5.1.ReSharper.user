@@ -11,60 +11,60 @@
     <RecentFiles>
       <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:StatisticsModule.cs" caret="0" fromTop="0" />
       <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Choice.cs" caret="0" fromTop="0" />
-      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Users.cs" caret="949" fromTop="18" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:Review.xaml" caret="796" fromTop="5" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/f:MainPage.xaml" caret="175" fromTop="0" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:CreateQuestionnaireView.xaml.cs" caret="366" fromTop="9" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:CreateQuestionnaireView.xaml" caret="1012" fromTop="7" />
       <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Questions.cs" caret="0" fromTop="0" />
       <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Questionnaire.cs" caret="267" fromTop="8" />
-      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:FilledQuestionnaire.cs" caret="442" fromTop="16" />
-      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Answer.cs" caret="356" fromTop="16" />
-      <File id="0181AE9B-1B2D-4B9D-88F7-A5C5DAF3A78A/f:App.config" caret="2329" fromTop="20" />
-      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:ServiceContracts.cs" caret="423" fromTop="15" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/f:ServiceReferences.ClientConfig" caret="570" fromTop="11" />
+      <File id="0181AE9B-1B2D-4B9D-88F7-A5C5DAF3A78A/f:App.config" caret="4871" fromTop="20" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/f:ServiceReferences.ClientConfig" caret="1360" fromTop="11" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:Review.xaml.cs" caret="365" fromTop="13" />
       <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:App.config" caret="1692" fromTop="32" />
-      <File id="0181AE9B-1B2D-4B9D-88F7-A5C5DAF3A78A/f:UnitTest1.cs" caret="3567" fromTop="10" />
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:Program.cs" caret="229" fromTop="12" />
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:QuestionnaireService.cs" caret="2061" fromTop="61" />
+      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Answer.cs" caret="259" fromTop="10" />
       <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:QuestionnaireFillingViewModel.cs" caret="853" fromTop="10" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="130" fromTop="0" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:MainViewModel.cs" caret="1234" fromTop="22" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:ReviewViewModel.cs" caret="2284" fromTop="20" />
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="2234" fromTop="9" />
+      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:FilledQuestionnaire.cs" caret="442" fromTop="16" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:Program.cs" caret="599" fromTop="19" />
+      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:ServiceContracts.cs" caret="1714" fromTop="24" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:QuestionnaireService.cs" caret="2023" fromTop="10" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:ReviewViewModel.cs" caret="1013" fromTop="12" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:MainViewModel.cs" caret="1765" fromTop="29" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="4620" fromTop="17" />
+      <File id="0181AE9B-1B2D-4B9D-88F7-A5C5DAF3A78A/f:UnitTest1.cs" caret="4282" fromTop="14" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="2044" fromTop="0" />
+      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Users.cs" caret="402" fromTop="15" />
     </RecentFiles>
     <RecentEdits>
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="13180" fromTop="23" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="390" fromTop="5" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="89" fromTop="3" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="1758" fromTop="15" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="2456" fromTop="31" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="3886" fromTop="22" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="1294" fromTop="27" />
-      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Questionnaire.cs" caret="234" fromTop="7" />
-      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:FilledQuestionnaire.cs" caret="244" fromTop="10" />
-      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:FilledQuestionnaire.cs" caret="653" fromTop="10" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:ReviewViewModel.cs" caret="691" fromTop="13" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:ReviewViewModel.cs" caret="2090" fromTop="29" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:ReviewViewModel.cs" caret="1472" fromTop="20" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:ReviewViewModel.cs" caret="0" fromTop="0" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:Views/f:Review.xaml.cs" caret="507" fromTop="9" />
-      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:ServiceContracts.cs" caret="1143" fromTop="19" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:QuestionnaireFillingViewModel.cs" caret="579" fromTop="19" />
-      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:ServiceContracts.cs" caret="1737" fromTop="30" />
-      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Answer.cs" caret="346" fromTop="14" />
-      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Answer.cs" caret="653" fromTop="14" />
-      <File id="0181AE9B-1B2D-4B9D-88F7-A5C5DAF3A78A/f:UnitTest1.cs" caret="7298" fromTop="18" />
-      <File id="0181AE9B-1B2D-4B9D-88F7-A5C5DAF3A78A/f:App.config" caret="682" fromTop="11" />
-      <File id="0181AE9B-1B2D-4B9D-88F7-A5C5DAF3A78A/f:App.config" caret="4199" fromTop="16" />
-      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:App.config" caret="1692" fromTop="35" />
-      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:ServiceContracts.cs" caret="691" fromTop="11" />
-      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:ServiceContracts.cs" caret="420" fromTop="9" />
-      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:ServiceContracts.cs" caret="1008" fromTop="22" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/f:ServiceReferences.ClientConfig" caret="1295" fromTop="17" />
-      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/f:ServiceReferences.ClientConfig" caret="570" fromTop="11" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:MainViewModel.cs" caret="1749" fromTop="25" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="13868" fromTop="31" />
+      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Users.cs" caret="1592" fromTop="17" />
+      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Users.cs" caret="2969" fromTop="19" />
+      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Users.cs" caret="412" fromTop="16" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:Program.cs" caret="649" fromTop="12" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="717" fromTop="23" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="316" fromTop="14" />
       <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:Program.cs" caret="229" fromTop="12" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:QuestionnaireService.cs" caret="2613" fromTop="17" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:QuestionnaireService.cs" caret="443" fromTop="12" />
+      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:ServiceContracts.cs" caret="811" fromTop="8" />
+      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:ServiceContracts.cs" caret="1813" fromTop="29" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:QuestionnaireService.cs" caret="618" fromTop="11" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:QuestionnaireService.cs" caret="788" fromTop="16" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:QuestionnaireService.cs" caret="2176" fromTop="20" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:QuestionnaireService.cs" caret="2362" fromTop="19" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:QuestionnaireService.cs" caret="2636" fromTop="7" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="1520" fromTop="21" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="1826" fromTop="24" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:ReviewViewModel.cs" caret="1644" fromTop="23" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:ReviewViewModel.cs" caret="1994" fromTop="26" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="4426" fromTop="19" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="4426" fromTop="28" />
+      <File id="1E760F8B-F15B-44DC-8C17-75054259ECEB/d:ViewModels/f:CreateQuestionnaireViewModel.cs" caret="4620" fromTop="32" />
+      <File id="0181AE9B-1B2D-4B9D-88F7-A5C5DAF3A78A/f:UnitTest1.cs" caret="4402" fromTop="17" />
+      <File id="4981DC01-165C-414D-86F6-B41DF78AF2B8/f:Users.cs" caret="3437" fromTop="19" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="2234" fromTop="12" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="9862" fromTop="23" />
+      <File id="2F258791-B7B3-4E7F-95C9-6B06AA98E566/f:HandleDb4o.cs" caret="10051" fromTop="28" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -82,23 +82,23 @@
     <ItemStatistics item="Default">
       <Item value="var" priority="11" />
       <Item value="new" priority="31" />
-      <Item value="Questionnaire`0" priority="1" />
+      <Item value="Questionnaire`0" priority="2" />
       <Item value="Question`0" priority="0" />
       <Item value="TextQuestion`0" priority="2" />
       <Item value="question1" priority="2" />
       <Item value="GetDb`0" priority="1" />
-      <Item value="db" priority="5" />
-      <Item value="public" priority="15" />
+      <Item value="db" priority="6" />
+      <Item value="public" priority="16" />
       <Item value="NewQuestionnaireViewModel`0" priority="0" />
       <Item value="using" priority="1" />
       <Item value="Statis" priority="1" />
       <Item value="StatisServices" priority="1" />
       <Item value="QuestionnaireAdministrativeServiceClient`0" priority="1" />
-      <Item value="_service" priority="11" />
+      <Item value="_service" priority="12" />
       <Item value="service" priority="1" />
-      <Item value="private" priority="16" />
-      <Item value="if" priority="16" />
-      <Item value="e" priority="3" />
+      <Item value="private" priority="17" />
+      <Item value="if" priority="17" />
+      <Item value="e" priority="4" />
       <Item value="_model" priority="13" />
       <Item value="_questions" priority="2" />
       <Item value="ObservableCollection&lt;Question&gt;" priority="1" />
@@ -118,13 +118,13 @@
       <Item value="try" priority="0" />
       <Item value="catch" priority="0" />
       <Item value="Questionnaire" priority="1" />
-      <Item value="string" priority="21" />
+      <Item value="string" priority="24" />
       <Item value="DataContext" priority="0" />
       <Item value="LoadTestData`0" priority="0" />
-      <Item value="HandleDb4o`0" priority="10" />
+      <Item value="HandleDb4o`0" priority="11" />
       <Item value="List&lt;int&gt;" priority="0" />
       <Item value="Center" priority="0" />
-      <Item value="return" priority="14" />
+      <Item value="return" priority="16" />
       <Item value="null" priority="3" />
       <Item value="_text" priority="0" />
       <Item value="DataMember" priority="3" />
@@ -163,7 +163,7 @@
       <Item value="IO" priority="0" />
       <Item value="File`0" priority="1" />
       <Item value="ObservableCollection&lt;Questionnaire&gt;" priority="0" />
-      <Item value="userName" priority="3" />
+      <Item value="userName" priority="4" />
       <Item value="GetUserQuestionnaireListCompletedEventArgs1`0" priority="0" />
       <Item value="_questionnaires" priority="2" />
       <Item value="_selectedQuestionnaire" priority="0" />
@@ -175,7 +175,7 @@
       <Item value="List" priority="1" />
       <Item value="UsersViewModel`0" priority="0" />
       <Item value="_users" priority="1" />
-      <Item value="UserName" priority="1" />
+      <Item value="UserName" priority="3" />
       <Item value="as" priority="0" />
       <Item value="_respondents" priority="2" />
       <Item value="readonly" priority="0" />
@@ -191,8 +191,8 @@
       <Item value="List&lt;Questionnaire&gt;" priority="0" />
       <Item value="Respondents" priority="0" />
       <Item value="IsOneWay" priority="2" />
-      <Item value="true" priority="6" />
-      <Item value="user" priority="2" />
+      <Item value="true" priority="7" />
+      <Item value="user" priority="3" />
       <Item value="_addingNewRespondent" priority="1" />
       <Item value="currentUserName" priority="3" />
       <Item value="analystUserName" priority="1" />
@@ -223,9 +223,10 @@
       <Item value="KnownType" priority="1" />
       <Item value="typeof" priority="2" />
       <Item value="Answer`0" priority="0" />
-      <Item value="Password" priority="0" />
-      <Item value="password" priority="1" />
+      <Item value="Password" priority="1" />
+      <Item value="password" priority="3" />
       <Item value="ServiceKnownType" priority="0" />
+      <Item value="Administrator`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:StatisServiceContracts.Questionnaire">
       <Item value="Questions" priority="3" />
@@ -243,7 +244,7 @@
       <Item value="Select`2" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Db4objects.Db4o.IObjectContainer">
-      <Item value="Store`0" priority="6" />
+      <Item value="Store`0" priority="7" />
       <Item value="Commit`0" priority="0" />
       <Item value="Close`0" priority="0" />
       <Item value="Activate`0" priority="0" />
@@ -283,6 +284,8 @@
       <Item value="AddRespondentCompleted" priority="0" />
       <Item value="RemoveAnalystAsync`0" priority="0" />
       <Item value="RemoveRespondentAsync`0" priority="0" />
+      <Item value="AuthenticateUserCompleted" priority="0" />
+      <Item value="AuthenticateUserAsync`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.String">
       <Item value="Indexer" priority="0" />
@@ -305,6 +308,7 @@
       <Item value="RemoveRespondent`0" priority="0" />
       <Item value="StoreFilledQuestionnaire`0" priority="0" />
       <Item value="GetFilledQuestionnaire`0" priority="0" />
+      <Item value="AuthenticateUser`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Statis.StatisServices.TextChoice">
       <Item value="ToString`0" priority="0" />
@@ -348,7 +352,7 @@
       <Item value="ToString`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Db4objects.Db4o.Linq.IDb4oLinqQuery`1">
-      <Item value="ToList`1" priority="1" />
+      <Item value="ToList`1" priority="2" />
       <Item value="SelectMany`3" priority="0" />
       <Item value="FirstOrDefault`1" priority="0" />
     </ItemStatistics>
@@ -361,6 +365,7 @@
       <Item value="Email" priority="0" />
       <Item value="Respondents" priority="8" />
       <Item value="Questionnaires" priority="5" />
+      <Item value="Password" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Statis.StatisServices.GetUserRespondentsCompletedEventArgs1">
       <Item value="Result" priority="0" />
@@ -383,6 +388,9 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:Statis.StatisServices.FilledQuestionnaire">
       <Item value="QuestionnaireName" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Statis.StatisServices.AuthenticateUserCompletedEventArgs1">
+      <Item value="Result" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>
