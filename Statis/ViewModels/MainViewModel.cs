@@ -15,7 +15,6 @@ namespace Statis.ViewModels
         private string _greeting;
         private string _loginLogoutText;
         private Visibility _loggedInVisibility;
-        //private string _loggedUserName;
         
         public DelegateCommand LoginCommand { get; private set; }
 
