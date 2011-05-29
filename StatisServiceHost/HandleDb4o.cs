@@ -84,12 +84,22 @@ namespace StatisServiceHost
         }
     
 
-        public static void StoreQuestionnaire(Questionnaire questionnaireToStore)
+        public static void StoreQuestionnaire(string userName, Questionnaire questionnaireToStore)
         {
             var db = Database;
-            DeleteQuestionnaire(db, questionnaireToStore.Name);
-            db.Store(questionnaireToStore);
-            db.Commit();
+            
+            var loggedInUser =
+                (from Analyst user in db
+                 where user.UserName == userName
+                 select user).FirstOrDefault();
+
+            if (loggedInUser != null)
+            {
+                DeleteQuestionnaire(db, questionnaireToStore.Name);
+                loggedInUser.Questionnaires.Add(questionnaireToStore);
+                db.Store(loggedInUser);
+                db.Commit();
+            }
         }
 
         public static void DeleteQuestionnaire(IObjectContainer db, string questionnaireName)

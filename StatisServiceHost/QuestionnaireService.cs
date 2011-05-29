@@ -15,7 +15,7 @@ namespace StatisServiceHost
 
         public void StoreQuestionnaire(string userName, Questionnaire questionnaire)
         {
-            HandleDb4o.StoreQuestionnaire(questionnaire);
+            HandleDb4o.StoreQuestionnaire(userName, questionnaire);
         }
 
         public void DeleteQuestionnaire(string userName, string questionnaireName)
