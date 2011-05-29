@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
 
 namespace StatisServiceContracts
 {
     #region Statis service interfaces
 
-    /// <summary></summary>
+    /// <summary>
+    /// ServiceContracts represents the functionality of the Questionnaire 
+    /// and User classes
+    /// </summary>
     [ServiceContract]
     [ServiceKnownType(typeof(Questionnaire))]
     [ServiceKnownType(typeof(FilledQuestionnaire))]

@@ -1,13 +1,10 @@
-﻿//ja definēts simbols WaitService, tad inicializējot testu klasi, serviss tiks darbināts 2 minūtes
-//tas nepieciešams, ja vajag uzģenerēt proxy
+﻿//if WaitService symbol defined, at test class initiation server will work for 2 minutes
+//if necessary, generate proxy
 //#define WaitService
 
-using System;
 using System.IO;
 using System.ServiceModel;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using Db4objects.Db4o;
 using Db4objects.Db4o.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -17,17 +14,17 @@ using StatisServiceTests.StatisService;
 
 namespace StatisServiceTests
 {
-    /// <summary>Summary description for UnitTest1</summary>
+    /// <summary>This is the combined UnitTests file</summary>
     [TestClass]
-    public class UnitTest1
+    public class UnitTests
     {
-        //laiks ko atvēlēsim OneWay metožu izsaukšanai (milisekundēs)
+        //the time we allow for OneWay method calling (milliseconds)
         private const int timeToWait = 100;
         private const string TestDbFile = "TestDb.yap";
 
         private static ServiceHost _serviceHost;
         
-        public UnitTest1()
+        public UnitTests()
         {
             //
             // TODO: Add constructor logic here
@@ -92,14 +89,18 @@ namespace StatisServiceTests
         //
         #endregion
 
-        /// <summary>Tests pārbaudīs vai datu bāze ir pareizi nokonfigurēta kaskāžu dzēšanās, lai dzēšot anketu, tiktu izdzēsti visi tās jautājumi</summary>
+        /// <summary>Testing whether the database is correctly configured for cascade 
+        /// deleting, so all questions are deleted along with the 
+        /// questionnaire</summary>
+
         [TestMethod]
         public void TestQuestionnaireDeletionFromDb()
         {
             Assert.Inconclusive();
         }
 
-        /// <summary>Tests pārbauda vai serviss atgriež tādus pat anektu datus kādi atrodas datu bāzē</summary>
+        /// <summary>Tests if service returns the same annect data 
+        /// as those found in the database</summary>
         [TestMethod]
         public void TestStatisServiceMethodGetQuestionnaire()
         {
@@ -192,7 +193,7 @@ namespace StatisServiceTests
             Assert.IsFalse(db.QueryByExample(questionnaireExample).Contains(questionnaire), "Test database not deleted");
         }
 
-        /// <summary>Tiek pārbaudīta REST servisa metode, kas publicē ClientAccessPolicy.xml failu un ļauj Silverlight klientam consumot WCF servisu</summary>
+        /// <summary>Tiek pārbaudīta REST servisa metode, kas publicē ClientAccessPolicy.xml failu un ļauj Silverlight klientam konsumēt WCF servisu</summary>
         [TestMethod]
         public void TestStatisCrossDomainService()
         {

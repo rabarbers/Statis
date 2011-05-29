@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.ServiceModel;
 
 namespace StatisServiceHost
@@ -11,7 +8,6 @@ namespace StatisServiceHost
         static void Main()
         {
             //HandleDb4o.LoadTestData(HandleDb4o.StoreYapFileName);
-            
             Console.WriteLine("Starting...");
             var crossDomainserviceHost = new ServiceHost(typeof(CrossDomainService));
             crossDomainserviceHost.Open();

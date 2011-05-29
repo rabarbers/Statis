@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel.Activation;
-using System.Text;
 using StatisServiceContracts;
 
 namespace StatisServiceHost
@@ -73,6 +71,20 @@ namespace StatisServiceHost
         public bool AuthenticateUser(string userName, string password)
         {
             return true;
+        }
+
+        public void SendQuestionnaires(List<string> mailingList, string fromUser, string text, string questName)
+        {
+            foreach(string mail in mailingList)
+            {
+                System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage();
+                message.To.Add(mail);
+                message.From = new System.Net.Mail.MailAddress(fromUser);
+                message.Body = text;
+                message.Subject = "Aicinājums aizpildīt anketu " + questName;
+                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com");
+                smtp.Send(message);
+            }
         }
     }
 }
