@@ -159,7 +159,7 @@ namespace StatisServiceHost
         public static bool AddAnalyst(string currentUserName, string analystUserName)
         {
             var loggedInUser =
-                (from Analyst user in Database
+                (from Administrator user in Database
                  where user.UserName == currentUserName
                  select user).FirstOrDefault();
 
