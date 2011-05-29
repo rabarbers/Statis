@@ -17,20 +17,31 @@ namespace Statis.ViewModels
     public class QuestionnaireFillingViewModel: ViewModelBase
     {
         private readonly QuestionnaireAdministrativeServiceClient _service;
-        //private FilledQuestionnaire _filledModel;
+        private FilledQuestionnaire _filledModel;
         private Questionnaire _model;
         private string _questionnaireToEdit;
+        
 
         private readonly ObservableCollection<QuestionViewModel> _questions = new ObservableCollection<QuestionViewModel>();
-        
-        
-        public DelegateCommand SaveQuestionnaire { get; private set; }
+
+
+        public DelegateCommand SaveFilledQuestionnaire { get; private set; }
         
 
         public QuestionnaireFillingViewModel()
         {
             _service = new QuestionnaireAdministrativeServiceClient();
+            _service.GetQuestionnaireCompleted += ProxyGetQuestionnaireCompleted;
             _service.OpenAsync();
+
+            SaveFilledQuestionnaire = new DelegateCommand(() =>
+            {
+                var user = Application.Current.Resources["user"] as string;
+                if (user != null)
+                {
+                    //_service.StoreQuestionnaireAsync(user, _model);
+                }
+            });
         }
 
 
@@ -58,6 +69,21 @@ namespace Statis.ViewModels
             }
             OnNotifyPropertyChanged("Name");
             OnNotifyPropertyChanged("Questions");
+        }
+
+        public void ProxyGetQuestionnaireCompleted(object sender, GetQuestionnaireCompletedEventArgs1 e)
+        {
+            _model = e.Result;
+            Update();
+        }
+
+        public void EditQuestionnaire(string questionnaireName)
+        {
+            var user = Application.Current.Resources["user"] as string;
+            if (user != null)
+            {
+                _service.GetQuestionnaireAsync(user, questionnaireName);
+            }
         }
     }
 }
