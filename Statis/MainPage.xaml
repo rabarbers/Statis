@@ -33,15 +33,12 @@
 
         <Grid x:Name="NavigationGrid" Style="{StaticResource NavigationGridStyle}" MinWidth="600" Height="117">
             <StackPanel x:Name="LoginStackPanel" Style="{StaticResource LoginPanelStyle}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="19,0,25,21" Width="Auto">
-                <sdk:Label Content="Lietotājvārds:" Foreground="White" Height="Auto" HorizontalAlignment="Right" Margin="2,23,0,0" Name="label3" VerticalAlignment="Top" Width="Auto" />
-                <TextBox Height="23" HorizontalAlignment="Right" Margin="2,19,0,0" Text="{Binding UserName, Mode=TwoWay}" VerticalAlignment="Top" Width="95" />
-                <sdk:Label Height="Auto" HorizontalAlignment="Right" Margin="15,23,0,0" Name="label2" VerticalAlignment="Center" Width="Auto" Content="Parole:" Foreground="White" />
-                <PasswordBox Height="23" HorizontalAlignment="Right" Margin="2,19,0,0" Password="{Binding Password, Mode=TwoWay}" Width="95" VerticalAlignment="Top" />
-                <Button Margin="10,19,0,0" Content="Ienākt" Command="{Binding LoginCommand}"></Button>
-            </StackPanel>
-            <StackPanel x:Name="LogoutStackPanel" HorizontalAlignment="Right" Margin="19,0,25,21" Style="{StaticResource LoginPanelStyle}" VerticalAlignment="Top" Width="Auto">
-                <sdk:Label Content="{Binding greeting}" Foreground="White" Height="Auto" HorizontalAlignment="Right" Margin="2,23,0,0" Name="label4" VerticalAlignment="Top" Width="Auto" />
-                <Button Margin="10,19,0,0" Content="Iziet" Command="{Binding LoginCommand}"></Button>
+                <sdk:Label Content="Lietotājvārds:" Visibility="{Binding LoggedInVisibility}" Foreground="White" Height="Auto" HorizontalAlignment="Right" Margin="2,23,0,0" Name="label3" VerticalAlignment="Top" Width="Auto" />
+                <TextBox Height="23" Visibility="{Binding LoggedInVisibility}" HorizontalAlignment="Right" Margin="2,19,0,0" Text="{Binding UserName, Mode=TwoWay}" VerticalAlignment="Top" Width="95" />
+                <sdk:Label Visibility="{Binding LoggedInVisibility}" Height="Auto" HorizontalAlignment="Right" Margin="15,23,0,0" Name="label2" VerticalAlignment="Center" Width="Auto" Content="Parole:" Foreground="White" />
+                <sdk:Label Content="{Binding GreetingText}" Margin="0,15,0,0" Height="20" Foreground="White" Name="label4" Width="Auto" />
+                <PasswordBox Visibility="{Binding LoggedInVisibility}" Height="23" HorizontalAlignment="Right" Margin="2,19,0,0" Password="{Binding Password, Mode=TwoWay}" Width="95" VerticalAlignment="Top" />
+                <Button Margin="10,19,0,0" Content="{Binding LoginLogoutText}" Command="{Binding LoginCommand}"></Button>
             </StackPanel>
             <StackPanel x:Name="LinksStackPanel" Style="{StaticResource LinksStackPanelStyle}" VerticalAlignment="Bottom" Margin="19,0,25,21" Height="42" HorizontalAlignment="Right">
                 <sdk:Label Height="28" HorizontalAlignment="Left" Margin="221,7,0,7" Name="label1" VerticalAlignment="Center" Width="48" FontSize="13" Foreground="#FFFF4B71" FontWeight="Bold" Content="Gribu:" FlowDirection="LeftToRight"></sdk:Label>
