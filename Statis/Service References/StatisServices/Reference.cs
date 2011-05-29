@@ -538,6 +538,11 @@ namespace Statis.StatisServices {
         
         Statis.StatisServices.FilledQuestionnaire EndGetFilledQuestionnaire(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/RegisterUser", ReplyAction="http://tempuri.org/IQuestionnaireService/RegisterUserResponse")]
+        System.IAsyncResult BeginRegisterUser(string userName, string password, string firstName, string lastName, string email, System.AsyncCallback callback, object asyncState);
+        
+        bool EndRegisterUser(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/AuthenticateUser", ReplyAction="http://tempuri.org/IQuestionnaireService/AuthenticateUserResponse")]
         System.IAsyncResult BeginAuthenticateUser(string userName, string password, System.AsyncCallback callback, object asyncState);
         
@@ -688,6 +693,25 @@ namespace Statis.StatisServices {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class RegisterUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public RegisterUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class AuthenticateUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -781,6 +805,12 @@ namespace Statis.StatisServices {
         
         private System.Threading.SendOrPostCallback onGetFilledQuestionnaireCompletedDelegate;
         
+        private BeginOperationDelegate onBeginRegisterUserDelegate;
+        
+        private EndOperationDelegate onEndRegisterUserDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterUserCompletedDelegate;
+        
         private BeginOperationDelegate onBeginAuthenticateUserDelegate;
         
         private EndOperationDelegate onEndAuthenticateUserDelegate;
@@ -869,6 +899,8 @@ namespace Statis.StatisServices {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> StoreFilledQuestionnaireCompleted;
         
         public event System.EventHandler<GetFilledQuestionnaireCompletedEventArgs> GetFilledQuestionnaireCompleted;
+        
+        public event System.EventHandler<RegisterUserCompletedEventArgs> RegisterUserCompleted;
         
         public event System.EventHandler<AuthenticateUserCompletedEventArgs> AuthenticateUserCompleted;
         
@@ -1444,6 +1476,60 @@ namespace Statis.StatisServices {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireService.BeginRegisterUser(string userName, string password, string firstName, string lastName, string email, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterUser(userName, password, firstName, lastName, email, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool Statis.StatisServices.IQuestionnaireService.EndRegisterUser(System.IAsyncResult result) {
+            return base.Channel.EndRegisterUser(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string userName = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            string firstName = ((string)(inValues[2]));
+            string lastName = ((string)(inValues[3]));
+            string email = ((string)(inValues[4]));
+            return ((Statis.StatisServices.IQuestionnaireService)(this)).BeginRegisterUser(userName, password, firstName, lastName, email, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterUser(System.IAsyncResult result) {
+            bool retVal = ((Statis.StatisServices.IQuestionnaireService)(this)).EndRegisterUser(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnRegisterUserCompleted(object state) {
+            if ((this.RegisterUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterUserCompleted(this, new RegisterUserCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterUserAsync(string userName, string password, string firstName, string lastName, string email) {
+            this.RegisterUserAsync(userName, password, firstName, lastName, email, null);
+        }
+        
+        public void RegisterUserAsync(string userName, string password, string firstName, string lastName, string email, object userState) {
+            if ((this.onBeginRegisterUserDelegate == null)) {
+                this.onBeginRegisterUserDelegate = new BeginOperationDelegate(this.OnBeginRegisterUser);
+            }
+            if ((this.onEndRegisterUserDelegate == null)) {
+                this.onEndRegisterUserDelegate = new EndOperationDelegate(this.OnEndRegisterUser);
+            }
+            if ((this.onRegisterUserCompletedDelegate == null)) {
+                this.onRegisterUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterUserCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterUserDelegate, new object[] {
+                        userName,
+                        password,
+                        firstName,
+                        lastName,
+                        email}, this.onEndRegisterUserDelegate, this.onRegisterUserCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult Statis.StatisServices.IQuestionnaireService.BeginAuthenticateUser(string userName, string password, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginAuthenticateUser(userName, password, callback, asyncState);
         }
@@ -1774,6 +1860,23 @@ namespace Statis.StatisServices {
                 return _result;
             }
             
+            public System.IAsyncResult BeginRegisterUser(string userName, string password, string firstName, string lastName, string email, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[5];
+                _args[0] = userName;
+                _args[1] = password;
+                _args[2] = firstName;
+                _args[3] = lastName;
+                _args[4] = email;
+                System.IAsyncResult _result = base.BeginInvoke("RegisterUser", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndRegisterUser(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("RegisterUser", _args, result)));
+                return _result;
+            }
+            
             public System.IAsyncResult BeginAuthenticateUser(string userName, string password, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[2];
                 _args[0] = userName;
@@ -1866,6 +1969,11 @@ namespace Statis.StatisServices {
         System.IAsyncResult BeginGetFilledQuestionnaire(string userName, System.Guid id, System.AsyncCallback callback, object asyncState);
         
         Statis.StatisServices.FilledQuestionnaire EndGetFilledQuestionnaire(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/RegisterUser", ReplyAction="http://tempuri.org/IQuestionnaireService/RegisterUserResponse")]
+        System.IAsyncResult BeginRegisterUser(string userName, string password, string firstName, string lastName, string email, System.AsyncCallback callback, object asyncState);
+        
+        bool EndRegisterUser(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IQuestionnaireService/AuthenticateUser", ReplyAction="http://tempuri.org/IQuestionnaireService/AuthenticateUserResponse")]
         System.IAsyncResult BeginAuthenticateUser(string userName, string password, System.AsyncCallback callback, object asyncState);
@@ -2017,6 +2125,25 @@ namespace Statis.StatisServices {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class RegisterUserCompletedEventArgs1 : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public RegisterUserCompletedEventArgs1(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class AuthenticateUserCompletedEventArgs1 : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -2110,6 +2237,12 @@ namespace Statis.StatisServices {
         
         private System.Threading.SendOrPostCallback onGetFilledQuestionnaireCompletedDelegate;
         
+        private BeginOperationDelegate onBeginRegisterUserDelegate;
+        
+        private EndOperationDelegate onEndRegisterUserDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterUserCompletedDelegate;
+        
         private BeginOperationDelegate onBeginAuthenticateUserDelegate;
         
         private EndOperationDelegate onEndAuthenticateUserDelegate;
@@ -2198,6 +2331,8 @@ namespace Statis.StatisServices {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> StoreFilledQuestionnaireCompleted;
         
         public event System.EventHandler<GetFilledQuestionnaireCompletedEventArgs1> GetFilledQuestionnaireCompleted;
+        
+        public event System.EventHandler<RegisterUserCompletedEventArgs1> RegisterUserCompleted;
         
         public event System.EventHandler<AuthenticateUserCompletedEventArgs1> AuthenticateUserCompleted;
         
@@ -2773,6 +2908,60 @@ namespace Statis.StatisServices {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Statis.StatisServices.IQuestionnaireAdministrativeService.BeginRegisterUser(string userName, string password, string firstName, string lastName, string email, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterUser(userName, password, firstName, lastName, email, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool Statis.StatisServices.IQuestionnaireAdministrativeService.EndRegisterUser(System.IAsyncResult result) {
+            return base.Channel.EndRegisterUser(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string userName = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            string firstName = ((string)(inValues[2]));
+            string lastName = ((string)(inValues[3]));
+            string email = ((string)(inValues[4]));
+            return ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).BeginRegisterUser(userName, password, firstName, lastName, email, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterUser(System.IAsyncResult result) {
+            bool retVal = ((Statis.StatisServices.IQuestionnaireAdministrativeService)(this)).EndRegisterUser(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnRegisterUserCompleted(object state) {
+            if ((this.RegisterUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterUserCompleted(this, new RegisterUserCompletedEventArgs1(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterUserAsync(string userName, string password, string firstName, string lastName, string email) {
+            this.RegisterUserAsync(userName, password, firstName, lastName, email, null);
+        }
+        
+        public void RegisterUserAsync(string userName, string password, string firstName, string lastName, string email, object userState) {
+            if ((this.onBeginRegisterUserDelegate == null)) {
+                this.onBeginRegisterUserDelegate = new BeginOperationDelegate(this.OnBeginRegisterUser);
+            }
+            if ((this.onEndRegisterUserDelegate == null)) {
+                this.onEndRegisterUserDelegate = new EndOperationDelegate(this.OnEndRegisterUser);
+            }
+            if ((this.onRegisterUserCompletedDelegate == null)) {
+                this.onRegisterUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterUserCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterUserDelegate, new object[] {
+                        userName,
+                        password,
+                        firstName,
+                        lastName,
+                        email}, this.onEndRegisterUserDelegate, this.onRegisterUserCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult Statis.StatisServices.IQuestionnaireAdministrativeService.BeginAuthenticateUser(string userName, string password, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginAuthenticateUser(userName, password, callback, asyncState);
         }
@@ -3100,6 +3289,23 @@ namespace Statis.StatisServices {
             public Statis.StatisServices.FilledQuestionnaire EndGetFilledQuestionnaire(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 Statis.StatisServices.FilledQuestionnaire _result = ((Statis.StatisServices.FilledQuestionnaire)(base.EndInvoke("GetFilledQuestionnaire", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginRegisterUser(string userName, string password, string firstName, string lastName, string email, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[5];
+                _args[0] = userName;
+                _args[1] = password;
+                _args[2] = firstName;
+                _args[3] = lastName;
+                _args[4] = email;
+                System.IAsyncResult _result = base.BeginInvoke("RegisterUser", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndRegisterUser(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("RegisterUser", _args, result)));
                 return _result;
             }
             

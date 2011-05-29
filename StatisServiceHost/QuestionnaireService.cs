@@ -69,6 +69,12 @@ namespace StatisServiceHost
         {
             return HandleDb4o.GetFilledQuestionnaire(id);
         }
+
+        public bool RegisterUser(string userName, string password, string firstName, string lastName, string email)
+        {
+            var user = new Analyst(userName, firstName, lastName, email, password);
+            return HandleDb4o.RegisterAnalyst(user);
+        }
         
         public bool AuthenticateUser(string userName, string password)
         {

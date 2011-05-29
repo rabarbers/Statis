@@ -273,6 +273,22 @@ namespace StatisServiceHost
             return questionnaireQuery.FirstOrDefault();
         }
 
+        public static bool RegisterAnalyst(Analyst analyst)
+        {
+            var alreadyRegisteredUser =
+            (from Analyst user in Database
+             where user.UserName == analyst.UserName
+             select user).FirstOrDefault();
+
+            if (alreadyRegisteredUser == null)
+            {
+                Database.Store(analyst);
+                return true;
+            }
+
+            return false;
+        }
+
         public static bool AuthenticateUser(string userName, string password)
         {
             var loggedInUserPassword =
