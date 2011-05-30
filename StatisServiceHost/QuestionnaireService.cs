@@ -105,7 +105,7 @@ namespace StatisServiceHost
 
                 var client = new SmtpClient("smtp.gmail.com", 587);
 
-                client.Credentials = new NetworkCredential("vanags.mikus@gmail.com", "R1j4mdeel1s%");
+                client.Credentials = new NetworkCredential("YOUR EMAIL", "YOUR PASSWORD");
                 client.EnableSsl = true;
                 
                 try
