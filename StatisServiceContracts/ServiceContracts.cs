@@ -14,6 +14,7 @@ namespace StatisServiceContracts
     [ServiceKnownType(typeof(Questionnaire))]
     [ServiceKnownType(typeof(FilledQuestionnaire))]
     [ServiceKnownType(typeof(Guid))]
+    [ServiceKnownType(typeof(FilledQuestionnaireRecord))]
     public interface IQuestionnaireService
     {
         [OperationContract]
@@ -40,6 +41,8 @@ namespace StatisServiceContracts
         void RemoveRespondent(string currentUserName, string respondentEmail);
         [OperationContract(IsOneWay = true)]
         void StoreFilledQuestionnaire(FilledQuestionnaire filled);
+        [OperationContract]
+        IEnumerable<FilledQuestionnaireRecord> GetFilledQuestionnaireList(string userName, string questionnaireName);
         [OperationContract]
         FilledQuestionnaire GetFilledQuestionnaire(string userName, Guid id);
         [OperationContract]

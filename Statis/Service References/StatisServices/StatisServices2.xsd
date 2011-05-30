@@ -143,18 +143,33 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetFilledQuestionnaireList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="questionnaireName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilledQuestionnaireListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/StatisServiceContracts" minOccurs="0" name="GetFilledQuestionnaireListResult" nillable="true" type="q8:ArrayOfFilledQuestionnaireRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetFilledQuestionnaire">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
-        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q8:guid" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q9:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetFilledQuestionnaireResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/StatisServiceContracts" minOccurs="0" name="GetFilledQuestionnaireResult" nillable="true" type="q9:FilledQuestionnaire" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/StatisServiceContracts" minOccurs="0" name="GetFilledQuestionnaireResult" nillable="true" type="q10:FilledQuestionnaire" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

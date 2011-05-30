@@ -16,8 +16,7 @@
             <ItemsControl ItemsSource="{Binding Questions}" VerticalAlignment="Stretch">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Style="{StaticResource CreationPanelStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        </StackPanel>
+                        <StackPanel Style="{StaticResource CreationPanelStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>

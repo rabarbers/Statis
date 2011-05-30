@@ -230,6 +230,9 @@
     <None Include="Service References\StatisServices\Statis.StatisServices.FilledQuestionnaire.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\StatisServices\Statis.StatisServices.FilledQuestionnaireRecord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\StatisServices\Statis.StatisServices.Questionnaire.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

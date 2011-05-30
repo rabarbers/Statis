@@ -10,12 +10,15 @@ namespace Statis.ViewModels
     {
         private readonly QuestionnaireAdministrativeServiceClient _service;
         private readonly ObservableCollection<string> _questionnaires = new ObservableCollection<string>();
+        private readonly ObservableCollection<FilledQuestionnaireRecord> _filledQuestionnaires = new ObservableCollection<FilledQuestionnaireRecord>();
         private string _selectedQuestionnaireName;
+        private FilledQuestionnaireRecord _selectedFilledQuestionnaire;
         private string _messageToSend;
         
         public DelegateCommand DeleteQuestionnaire { get; private set; }
         public DelegateCommand SendQuestionnaireToRespondents { get; private set; }
         public DelegateCommand ViewQuestionnaire { get; private set; }
+        public DelegateCommand ViewFilledQuestionnaire { get; private set; }
 
         public ReviewViewModel()
         {
@@ -30,6 +33,7 @@ namespace Statis.ViewModels
                                                   _service.GetUserQuestionnaireListAsync(user);
                                               }
                                           };
+            _service.GetFilledQuestionnaireListCompleted += ProxyGetFilledQuestionnaireListCompleted;
             _service.GetUserQuestionnaireListCompleted += ProxyGetUserQuestionnaireListCompleted;
             _service.DeleteQuestionnaireCompleted += ProxyDeleteQuestionnaireCompleted;
             _service.SendQuestionnaireToRespondentsCompleted += ProxySendQuestionnaireToRespondentsCompleted;
@@ -67,7 +71,21 @@ namespace Statis.ViewModels
                         System.Windows.Browser.HtmlPage.Window.Navigate(new Uri(address));
                     });
 
+            ViewFilledQuestionnaire = new DelegateCommand(() =>
+                                                              {
+                                                                  //ToDo
+                                                              });
+
             _service.OpenAsync();
+        }
+
+        private void ProxyGetFilledQuestionnaireListCompleted(object sender, GetFilledQuestionnaireListCompletedEventArgs1 e)
+        {
+            _filledQuestionnaires.Clear();
+            foreach (var questionnaire in e.Result)
+            {
+                _filledQuestionnaires.Add(questionnaire);
+            }
         }
 
         private static void ProxySendQuestionnaireToRespondentsCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
@@ -90,8 +108,6 @@ namespace Statis.ViewModels
         }
 
         
-        
-        
         public string SelectedQuestionnaireName
         {
             get { return _selectedQuestionnaireName; }
@@ -102,9 +118,29 @@ namespace Statis.ViewModels
                     _selectedQuestionnaireName = value;
                     OnNotifyPropertyChanged("SelectedQuestionnaireName");
                     OnNotifyPropertyChanged("QuestionnaireViewUri");
+                    
+                    var user = Application.Current.Resources["user"] as string;
+                    if(value != null && user != null)
+                    {
+                        _service.GetFilledQuestionnaireListAsync(user, value);
+                    }
                 }
             }
         }
+
+        public FilledQuestionnaireRecord SelectedFilledQuestionnaire
+        {
+            get { return _selectedFilledQuestionnaire; }
+            set
+            {
+                if (_selectedFilledQuestionnaire != value)
+                {
+                    _selectedFilledQuestionnaire = value;
+                    OnNotifyPropertyChanged("SelectedFilledQuestionnaire");
+                }
+            }
+        }
+        
 
         public string MessageToSend
         {
@@ -122,6 +158,11 @@ namespace Statis.ViewModels
         public ObservableCollection<string> MyQuestionnaires
         {
             get { return _questionnaires; }
+        }
+
+        public ObservableCollection<FilledQuestionnaireRecord> FilledQuestionnaires
+        {
+            get { return _filledQuestionnaires; }
         }
 
         public string QuestionnaireViewUri

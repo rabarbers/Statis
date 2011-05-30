@@ -7,6 +7,15 @@ using System.Web;
 namespace StatisServiceContracts
 {
     [DataContract]
+    public class FilledQuestionnaireRecord
+    {
+        [DataMember]
+        public Guid Id { get; set; }
+        [DataMember]
+        public DateTime FillingTime { get; set; }
+    }
+    
+    [DataContract]
     [KnownType(typeof(Answer))]
     [KnownType(typeof(Guid))]
     public class FilledQuestionnaire
@@ -17,6 +26,8 @@ namespace StatisServiceContracts
         public List<Answer> Answers { get; set; }
         [DataMember]
         public Guid Id { get; set; }
+        [DataMember]
+        public DateTime FillingTime { get; set; }
 
         public FilledQuestionnaire(Questionnaire q): this(q.Name) { }
         public FilledQuestionnaire(string questionnaireName)

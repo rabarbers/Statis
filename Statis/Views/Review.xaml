@@ -10,30 +10,32 @@
     </navigation:Page.Resources>
 
     <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ViewModel}}">
-        <TextBlock FontSize="12" FontWeight="Bold" Height="Auto" HorizontalAlignment="Left" Margin="12,12,0,0" MaxWidth="200" Name="label1" Text="Tev jau ir šādas anketas:" TextWrapping="Wrap" VerticalAlignment="Top" Width="Auto" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
         
-        <ListBox Margin="12,40,671,76" ItemsSource="{Binding MyQuestionnaires}" SelectedValue="{Binding SelectedQuestionnaireName, Mode=TwoWay}" BorderThickness="2" BorderBrush="#FF0097FC">
+        
+        <TextBlock FontSize="12" FontWeight="Bold" Height="Auto" HorizontalAlignment="Left" Margin="12,12,0,0" MaxWidth="200" Name="label1" Text="Tev jau ir šādas anketas:" TextWrapping="Wrap" VerticalAlignment="Top" Width="Auto" />
 
-        </ListBox>
+        <ListBox Margin="12,40,12,76" ItemsSource="{Binding MyQuestionnaires}" SelectedValue="{Binding SelectedQuestionnaireName, Mode=TwoWay}" BorderThickness="2" BorderBrush="#FF0097FC" />
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" BorderThickness="0">
-                <ItemsControl HorizontalAlignment="Right" Width="634" Margin="0,0,10,0">
-                    <ItemsControl.Template>
-                        <ControlTemplate>
-                            <Border BorderBrush="#FF0097FC" BorderThickness="4" CornerRadius="15" />
-                        </ControlTemplate>
-                    </ItemsControl.Template>
-                    <StackPanel ScrollViewer.HorizontalScrollBarVisibility="Visible">
-                        
-                    </StackPanel>
-                </ItemsControl>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Stretch">
+            <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" BorderThickness="0">
+                <ListBox Margin="5" ItemsSource="{Binding FilledQuestionnaires}" SelectedValue="{Binding SelectedFilledQuestionnaire, Mode=TwoWay}" BorderThickness="2" BorderBrush="#FF0097FC"
+                         VerticalAlignment="Stretch">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding FillingTime}"></TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </ScrollViewer>
         </StackPanel>
-        <HyperlinkButton Content="Labot" NavigateUri="{Binding QuestionnaireViewUri}" Height="23" HorizontalAlignment="Left" Margin="97,425,0,0" VerticalAlignment="Top" Width="43" />
-        <HyperlinkButton Content="Izsūtīt" Command="{Binding SendQuestionnaireToRespondents}" Height="23" HorizontalAlignment="Left" Margin="272,425,0,0" VerticalAlignment="Top" Width="50" />
-        <HyperlinkButton Content="Analizēt" Height="23" HorizontalAlignment="Right" Margin="0,425,934,0" VerticalAlignment="Top" Width="56" />
-        <HyperlinkButton Content="Likvidēt" Command="{Binding DeleteQuestionnaire}" Height="23" HorizontalAlignment="Left" Margin="146,425,0,0" VerticalAlignment="Top" Width="58" />
+        <HyperlinkButton Content="Labot" NavigateUri="{Binding QuestionnaireViewUri}" Height="23" HorizontalAlignment="Left" Margin="95,425,0,0" VerticalAlignment="Top" Width="43" />
+        <HyperlinkButton Content="Izsūtīt" Command="{Binding SendQuestionnaireToRespondents}" Height="23" HorizontalAlignment="Left" Margin="268,425,0,0" VerticalAlignment="Top" Width="50" />
+        <HyperlinkButton Content="Likvidēt" Command="{Binding DeleteQuestionnaire}" Height="23" HorizontalAlignment="Left" Margin="204,425,0,0" VerticalAlignment="Top" Width="58" />
         <HyperlinkButton Content="Apskatīt" Command="{Binding ViewQuestionnaire}"  Height="23" HorizontalAlignment="Left" Margin="33,425,0,0" VerticalAlignment="Top" Width="50" />
+        <HyperlinkButton Content="Analizēt" Command="{Binding ViewFilledQuestionnaire}" Height="23" HorizontalAlignment="Right" VerticalAlignment="Top" Width="56" Margin="0,425,400,0" />
     </Grid>
 </navigation:Page>

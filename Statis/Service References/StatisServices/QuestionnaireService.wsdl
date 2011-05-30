@@ -65,6 +65,12 @@
   <wsdl:message name="IQuestionnaireService_StoreFilledQuestionnaire_InputMessage">
     <wsdl:part name="parameters" element="tns:StoreFilledQuestionnaire" />
   </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_GetFilledQuestionnaireList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilledQuestionnaireList" />
+  </wsdl:message>
+  <wsdl:message name="IQuestionnaireService_GetFilledQuestionnaireList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilledQuestionnaireListResponse" />
+  </wsdl:message>
   <wsdl:message name="IQuestionnaireService_GetFilledQuestionnaire_InputMessage">
     <wsdl:part name="parameters" element="tns:GetFilledQuestionnaire" />
   </wsdl:message>
@@ -130,6 +136,10 @@
     <wsdl:operation name="StoreFilledQuestionnaire">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/StoreFilledQuestionnaire" message="tns:IQuestionnaireService_StoreFilledQuestionnaire_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetFilledQuestionnaireList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaireList" message="tns:IQuestionnaireService_GetFilledQuestionnaireList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaireListResponse" message="tns:IQuestionnaireService_GetFilledQuestionnaireList_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetFilledQuestionnaire">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaire" message="tns:IQuestionnaireService_GetFilledQuestionnaire_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaireResponse" message="tns:IQuestionnaireService_GetFilledQuestionnaire_OutputMessage" />
@@ -189,6 +199,10 @@
     </wsdl:operation>
     <wsdl:operation name="StoreFilledQuestionnaire">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/StoreFilledQuestionnaire" message="tns:IQuestionnaireService_StoreFilledQuestionnaire_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilledQuestionnaireList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaireList" message="tns:IQuestionnaireService_GetFilledQuestionnaireList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaireListResponse" message="tns:IQuestionnaireService_GetFilledQuestionnaireList_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetFilledQuestionnaire">
       <wsdl:input wsaw:Action="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaire" message="tns:IQuestionnaireService_GetFilledQuestionnaire_InputMessage" />
@@ -300,6 +314,15 @@
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilledQuestionnaireList">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaireList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetFilledQuestionnaire">
       <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaire" style="document" />
@@ -429,6 +452,15 @@
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilledQuestionnaireList">
+      <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaireList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetFilledQuestionnaire">
       <soap:operation soapAction="http://tempuri.org/IQuestionnaireService/GetFilledQuestionnaire" style="document" />

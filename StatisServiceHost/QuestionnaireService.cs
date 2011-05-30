@@ -71,9 +71,14 @@ namespace StatisServiceHost
             HandleDb4o.StoreFilledQuestionnaire(filled);
         }
 
+        public IEnumerable<FilledQuestionnaireRecord> GetFilledQuestionnaireList(string userName, string questionnaireName)
+        {
+            return HandleDb4o.GetFilledQuestionnaireList(userName, questionnaireName);
+        }
+
         public FilledQuestionnaire GetFilledQuestionnaire(string userName, Guid id)
         {
-            return HandleDb4o.GetFilledQuestionnaire(id);
+            return HandleDb4o.GetFilledQuestionnaire(userName, id);
         }
 
         public bool RegisterUser(string userName, string password, string firstName, string lastName, string email)

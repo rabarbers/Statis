@@ -298,10 +298,29 @@ namespace StatisServiceHost
             {
                 Database.Delete(questionnaire);
             }
+            filled.FillingTime = DateTime.Now;
             Database.Store(filled);
         }
 
-        public static FilledQuestionnaire GetFilledQuestionnaire(Guid id)
+        public static IEnumerable<FilledQuestionnaireRecord> GetFilledQuestionnaireList(string userName, string questionnaireName)
+        {
+            var questionnaireQuery =
+                    from FilledQuestionnaire q in Database
+                    where q.QuestionnaireName == questionnaireName
+                    select new FilledQuestionnaireRecord { Id = q.Id, FillingTime = q.FillingTime };
+            return questionnaireQuery.ToList();
+        }
+
+        private static FilledQuestionnaire GetFilledQuestionnaire(Guid id)
+        {
+            var questionnaireQuery =
+                    (from FilledQuestionnaire q in Database
+                     where q.Id == id
+                     select q);
+            return questionnaireQuery.FirstOrDefault();
+        }
+
+        public static FilledQuestionnaire GetFilledQuestionnaire(string userName, Guid id)
         {
             var questionnaireQuery =
                     (from FilledQuestionnaire q in Database
