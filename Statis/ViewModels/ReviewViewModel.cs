@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using Microsoft.Practices.Prism.Commands;
 using Statis.StatisServices;
@@ -14,6 +15,7 @@ namespace Statis.ViewModels
         
         public DelegateCommand DeleteQuestionnaire { get; private set; }
         public DelegateCommand SendQuestionnaireToRespondents { get; private set; }
+        public DelegateCommand ViewQuestionnaire { get; private set; }
 
         public ReviewViewModel()
         {
@@ -55,6 +57,15 @@ namespace Statis.ViewModels
                         SelectedQuestionnaireName);
                 }
             });
+            
+            ViewQuestionnaire = new DelegateCommand(
+                () =>
+                    {
+                        var baseAddress = Application.Current.Host.Source.AbsoluteUri.Replace(Application.Current.Host.Source.LocalPath, "");
+                        var address = baseAddress + "/StatisTestPage.html#/QuestionnaireFillingView/" + SelectedQuestionnaireName;
+                        
+                        System.Windows.Browser.HtmlPage.Window.Navigate(new Uri(address));
+                    });
 
             _service.OpenAsync();
         }
