@@ -8,6 +8,8 @@ namespace StatisServiceContracts
     [KnownType(typeof(ImgChoice))]
     public class Choice
     {
+        [DataMember]
+        public int Index { get; set; }
     }
 
     [DataContract]
@@ -16,9 +18,10 @@ namespace StatisServiceContracts
         [DataMember]
         public string Option { get; set; }
         
-        public TextChoice(string option)
+        public TextChoice(string option, int index)
         {
             Option = option;
+            Index = index;
         }
     }
 
@@ -28,9 +31,10 @@ namespace StatisServiceContracts
         [DataMember]
         public double Option { get; set; }
         
-        public NumberChoice(double option)
+        public NumberChoice(double option, int index)
         {
             Option = option;
+            Index = index;
         }
     }
 
@@ -40,10 +44,11 @@ namespace StatisServiceContracts
         public object Option { get; set; }
         [DataMember]
         public string Description { get; set; }
-        public ImgChoice(string desc, object img)
+        public ImgChoice(string desc, object img, int index)
         {
             Option = img;
             Description = desc;
+            Index = index;
         }
     }
 }

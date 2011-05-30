@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Mail;
 using System.ServiceModel.Activation;
+using System.Text;
 using StatisServiceContracts;
 
 namespace StatisServiceHost
@@ -11,6 +14,11 @@ namespace StatisServiceHost
         public Questionnaire GetQuestionnaire(string questionnaireName)
         {
             return HandleDb4o.GetQuestionnaire(questionnaireName);
+        }
+
+        public Questionnaire GetUserQuestionnaire(string userName, string questionnaireName)
+        {
+            return HandleDb4o.GetUserQuestionnaire(userName, questionnaireName);
         }
 
         public void StoreQuestionnaire(string userName, Questionnaire questionnaire)
@@ -37,12 +45,7 @@ namespace StatisServiceHost
         {
             return HandleDb4o.GetUserRespondents(userName);
         }
-        /*public string GetUserMail(string userName)
         
-        {
-            return HandleDb4o.GetUserMail(userName);
-        }*/
-
         public bool AddAnalyst(string currentUserName, string analystUserName)
         {
             return HandleDb4o.AddAnalyst(currentUserName, analystUserName);
@@ -84,25 +87,34 @@ namespace StatisServiceHost
             return HandleDb4o.AuthenticateUser(userName, password);
         }
 
-        public void SendQuestionnaireToRespondents(string currentUserName, string userMail, string text, string questionnaireName)
+        public void SendQuestionnaireToRespondents(string currentUserName, string text, string questionnaireName)
         {
             var recipients = GetUserRespondents(currentUserName);
-            // var userMail = GetUserMail(currentUserName);
+            var userEmail = HandleDb4o.GetUserEmail(currentUserName);
+            
             foreach (var recipientEmail in recipients)
             {
+                var message = new MailMessage();
+                message.To.Add(recipientEmail);
+                message.From = new MailAddress(userEmail);
+                message.Body = text;
+                message.BodyEncoding = Encoding.UTF8;
+                message.IsBodyHtml = true;
+                message.Priority = MailPriority.Normal;
+                message.Subject = "Aicinājums aizpildīt anketu " + questionnaireName;
+
+                var client = new SmtpClient("smtp.gmail.com", 587);
+
+                client.Credentials = new NetworkCredential("vanags.mikus@gmail.com", "R1j4mdeel1s%");
+                client.EnableSsl = true;
+                
                 try
                 {
-                    System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage();
-                    message.To.Add(recipientEmail);
-                    message.From = new System.Net.Mail.MailAddress(userMail);
-                    message.Body = text;
-                    message.Subject = "Aicinājums aizpildīt anketu " + questionnaireName;
-                    System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com");
-                    smtp.Send(message);
+                    client.Send(message);
                 }
-                catch (Exception ex)
+                catch (SmtpException)
                 {
-                    Console.WriteLine(ex.Message);
+                    //Catch errors...
                 }
             }
         }

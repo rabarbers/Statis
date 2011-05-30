@@ -15,13 +15,13 @@ namespace Statis.ViewModels
 {
     public class ChoiceViewModel : ViewModelBase
     {
-        private Choice _model;
+        private Choice _choiceModel;
 
         
 
-        public ChoiceViewModel(Choice model)
+        public ChoiceViewModel(Choice choiceModel)
         {
-            _model = model;
+            _choiceModel = choiceModel;
         }
 
 

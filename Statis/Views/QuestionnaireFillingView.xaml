@@ -20,7 +20,7 @@
             <TextBlock Text="{Binding Name}"/>
         </StackPanel>
 
-        <ScrollViewer Grid.Row="1" Height="266" Width="427" Margin="54,122,290,216" BorderBrush="Azure" VerticalAlignment="Top">
+        <ScrollViewer Grid.Row="1" Height="266" Width="427" Margin="10" BorderBrush="Azure" VerticalAlignment="Top">
             <ItemsControl ItemsSource="{Binding Questions}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -36,7 +36,7 @@
                                     <Views:TextAnswerView DataContext="{Binding}" />
                                 </DataTemplate>
                                 <DataTemplate x:Key="ImgChoiceAnswerViewModel">
-                                    <Views:ImgChoiceQuestionView DataContext="{Binding}" />
+                                    <Views:ImgChoiceAnswerView DataContext="{Binding}" />
                                 </DataTemplate>
                             </prism:DataTemplateSelector.Resources>
                         </prism:DataTemplateSelector>

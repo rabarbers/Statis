@@ -18,6 +18,8 @@ namespace StatisServiceContracts
     {
         [OperationContract]
         Questionnaire GetQuestionnaire(string questionnaireName);
+        [OperationContract]
+        Questionnaire GetUserQuestionnaire(string userName, string questionnaireName);
         [OperationContract(IsOneWay = true)]
         void StoreQuestionnaire(string userName, Questionnaire questionnaire);
         [OperationContract(IsOneWay = true)]
@@ -45,7 +47,7 @@ namespace StatisServiceContracts
         [OperationContract]
         bool AuthenticateUser(string userName, string password);
         [OperationContract(IsOneWay = true)]
-        void SendQuestionnaireToRespondents(string currentUserName, string userMail, string text, string questionnaireName);
+        void SendQuestionnaireToRespondents(string currentUserName, string text, string questionnaireName);
     }
 
     /// <summary></summary>

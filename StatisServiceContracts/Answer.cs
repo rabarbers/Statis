@@ -7,7 +7,7 @@ using System.Web;
 namespace StatisServiceContracts
 {
     [DataContract]
-    [KnownType(typeof(ChoiceAnswer))]
+    [KnownType(typeof(SingleChoiceAnswer))]
     [KnownType(typeof(TextAnswer))]
     public class Answer
     {
@@ -15,15 +15,10 @@ namespace StatisServiceContracts
     }
 
     [DataContract]
-    public class ChoiceAnswer : Answer
+    public class SingleChoiceAnswer : Answer
     {
         [DataMember]
-        public List<int> AnswerList = new List<int>();
-
-        public ChoiceAnswer(int indexNo)
-        {
-            AnswerList.Add(indexNo);
-        }
+        public int Choice { get; set; }
     }
 
     [DataContract]

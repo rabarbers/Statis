@@ -17,6 +17,8 @@ namespace Statis.ViewModels
 
         public ReviewViewModel()
         {
+            MessageToSend = "Lūdzu aizpildiet anketu <a href=\"<QAddress>\"><QName></a>!";
+            
             _service = new QuestionnaireAdministrativeServiceClient();
             _service.OpenCompleted += delegate
                                           {
@@ -45,9 +47,12 @@ namespace Statis.ViewModels
                 if (user != null && SelectedQuestionnaireName != null)
                 {
                     var message = MessageToSend ?? "";
-                    var questionnarieAddress = @"localhost//StatisTestPage.html#/CreateQuestionnaireView/" + SelectedQuestionnaireName;
-                    
-                    _service.SendQuestionnaireToRespondentsAsync(user, message.Replace("<questionnaire>", questionnarieAddress));
+
+                    var questionnarieAddress = @"http://localhost:4312/StatisTestPage.html#/QuestionnaireFillingView/" + SelectedQuestionnaireName;
+
+                    _service.SendQuestionnaireToRespondentsAsync(user,
+                        message.Replace("<QAddress>", questionnarieAddress).Replace("<QName>", SelectedQuestionnaireName),
+                        SelectedQuestionnaireName);
                 }
             });
 
@@ -56,7 +61,7 @@ namespace Statis.ViewModels
 
         private static void ProxySendQuestionnaireToRespondentsCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            MessageBox.Show("Message send...");
+            MessageBox.Show("Paziņojums nosūtīts!");
         }
         
         private void ProxyGetUserQuestionnaireListCompleted(object sender, GetUserQuestionnaireListCompletedEventArgs1 e)

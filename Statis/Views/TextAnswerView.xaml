@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="0" Text="Jautājums:" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
         <TextBlock Grid.Column="1" Text="{Binding Question}" HorizontalAlignment="Stretch"></TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Atbilde:" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
+        <!--<TextBlock Grid.Row="1" Grid.Column="0" Text="Atbilde:" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>-->
         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Answer, Mode=TwoWay}" HorizontalAlignment="Stretch"></TextBox>
     </Grid>
 </UserControl>

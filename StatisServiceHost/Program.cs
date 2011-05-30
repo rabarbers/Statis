@@ -15,7 +15,7 @@ namespace StatisServiceHost
             var serviceHost = new ServiceHost(typeof(QuestionnaireService));
             serviceHost.Open();
             
-            Console.WriteLine("Started. cds");
+            Console.WriteLine("Started.");
 
             Console.ReadLine();
             Console.WriteLine("Closing...");

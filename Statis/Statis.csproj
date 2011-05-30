@@ -104,6 +104,7 @@
     <Compile Include="ViewModels\ReviewViewModel.cs" />
     <Compile Include="ViewModels\TextAnswerViewModel.cs" />
     <Compile Include="ViewModels\TextChoiceViewModel.cs" />
+    <Compile Include="ViewModels\TextChoiceViewModelForAnswer.cs" />
     <Compile Include="ViewModels\TextQuestionViewModel.cs" />
     <Compile Include="ViewModels\UsersViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />

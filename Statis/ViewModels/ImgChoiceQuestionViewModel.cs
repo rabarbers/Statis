@@ -18,8 +18,7 @@ namespace Statis.ViewModels
         private readonly ImgChoiceQuestion _model;
         private readonly ObservableCollection<ChoiceViewModel> _choices = new ObservableCollection<ChoiceViewModel>();
 
-        public ImgChoiceQuestionViewModel(ImgChoiceQuestion model)
-            : base(model)
+        public ImgChoiceQuestionViewModel(ImgChoiceQuestion model): base(model)
         {
             _model = model;
 

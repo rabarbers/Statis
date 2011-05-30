@@ -25,7 +25,7 @@ namespace Statis.ViewModels
             _model = new Questionnaire {Questions = new ObservableCollection<Question>()};
 
             _service = new QuestionnaireAdministrativeServiceClient();
-            _service.GetQuestionnaireCompleted += ProxyGetQuestionnaireCompleted;
+            _service.GetUserQuestionnaireCompleted += ProxyGetQuestionnaireCompleted;
             _service.OpenAsync();
 
             SaveQuestionnaire = new DelegateCommand(() =>
@@ -38,7 +38,7 @@ namespace Statis.ViewModels
                                                         });
             AddTextQuestion = new DelegateCommand(() =>
                                                       {
-                                                          _model.Questions.Add(new TextQuestion());
+                                                          _model.Questions.Add(new TextQuestion {QuestionId = Guid.NewGuid()});
                                                           Update();
                                                       });
             AddImgSingleChoiceQuestion = new DelegateCommand(() =>
@@ -51,7 +51,7 @@ namespace Statis.ViewModels
                                    };
                 for (var i = 0; i < _imgQuestionNumberOfSingleChoices; i++)
                 {
-                    question.ChoiceList.Add(new TextChoice());
+                    question.ChoiceList.Add(new TextChoice {Index = i + 1});
                 }
                 _model.Questions.Add(question);
                 Update();
@@ -79,7 +79,7 @@ namespace Statis.ViewModels
             OnNotifyPropertyChanged("Questions");
         }
 
-        public void ProxyGetQuestionnaireCompleted(object sender, GetQuestionnaireCompletedEventArgs1 e)
+        public void ProxyGetQuestionnaireCompleted(object sender, GetUserQuestionnaireCompletedEventArgs1 e)
         {
             _model = e.Result;
             Update();
@@ -106,7 +106,7 @@ namespace Statis.ViewModels
             var user = Application.Current.Resources["user"] as string;
             if (user != null)
             {
-                _service.GetQuestionnaireAsync(user, questionnaireName);
+                _service.GetUserQuestionnaireAsync(user, questionnaireName);
             }
         }
 

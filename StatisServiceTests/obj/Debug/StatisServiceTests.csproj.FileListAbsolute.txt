@@ -28,3 +28,5 @@ D:\GitStatisLast\StatisServiceTests\obj\Debug\ResolveAssemblyReference.cache
 D:\GitStatisLast\StatisServiceTests\obj\Debug\StatisServiceTests.dll
 D:\GitStatisLast\StatisServiceTests\obj\Debug\StatisServiceTests.pdb
 D:\GitStatisLast\StatisServiceTests\bin\Debug\StatisServiceHost.pdb
+D:\GitStatisLast\StatisServiceTests\bin\Debug\Db4objects.Db4o.CS.dll
+D:\GitStatisLast\StatisServiceTests\bin\Debug\Db4objects.Db4o.CS.xml

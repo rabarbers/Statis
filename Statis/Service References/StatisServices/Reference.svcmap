@@ -23,9 +23,9 @@
     <MetadataSource Address="http://localhost:8001/StatisServices" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="StatisServices1.xsd" MetadataType="Schema" ID="bbdf0427-3500-4565-88b5-d6fa44a5e173" SourceId="1" SourceUrl="http://localhost:8001/StatisServices?xsd=xsd0" />
-    <MetadataFile FileName="QuestionnaireService.wsdl" MetadataType="Wsdl" ID="d4b9f638-cba8-4323-90c8-6a4405131db6" SourceId="1" SourceUrl="http://localhost:8001/StatisServices?wsdl" />
     <MetadataFile FileName="StatisServices.xsd" MetadataType="Schema" ID="dfe69743-6b4d-47f1-87b0-d3e2a42868f7" SourceId="1" SourceUrl="http://localhost:8001/StatisServices?xsd=xsd3" />
+    <MetadataFile FileName="QuestionnaireService.wsdl" MetadataType="Wsdl" ID="d4b9f638-cba8-4323-90c8-6a4405131db6" SourceId="1" SourceUrl="http://localhost:8001/StatisServices?wsdl" />
+    <MetadataFile FileName="StatisServices1.xsd" MetadataType="Schema" ID="bbdf0427-3500-4565-88b5-d6fa44a5e173" SourceId="1" SourceUrl="http://localhost:8001/StatisServices?xsd=xsd0" />
     <MetadataFile FileName="StatisServices2.xsd" MetadataType="Schema" ID="4250cc7b-a3b0-4d45-8327-60558c94ac09" SourceId="1" SourceUrl="http://localhost:8001/StatisServices?xsd=xsd2" />
     <MetadataFile FileName="StatisServices3.xsd" MetadataType="Schema" ID="b989ee95-19e3-40d5-b1a6-e17fee6142ce" SourceId="1" SourceUrl="http://localhost:8001/StatisServices?xsd=xsd1" />
     <MetadataFile FileName="StatisServices.disco" MetadataType="Disco" ID="67d4b16b-6fe9-4195-95a9-25c552141383" SourceId="1" SourceUrl="http://localhost:8001/StatisServices?disco" />

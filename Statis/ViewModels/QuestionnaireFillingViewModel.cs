@@ -21,24 +21,14 @@ namespace Statis.ViewModels
         {
             _service = new QuestionnaireAdministrativeServiceClient();
             _service.GetQuestionnaireCompleted += ProxyGetQuestionnaireCompleted;
-            _service.StoreFilledQuestionnaireCompleted += ProxyStoreFilledQuestionnaireCompleted;
+            _service.StoreFilledQuestionnaireCompleted += delegate
+                                                              {
+                                                                  System.Windows.Browser.HtmlPage.Window.Navigate(new Uri("/StatisTestPage.html#/Home", UriKind.Relative));
+                                                              };
             _service.OpenAsync();
 
-            SaveFilledQuestionnaire = new DelegateCommand(() =>
-            {
-                var user = Application.Current.Resources["user"] as string;
-                if (user != null)
-                {
-                    _service.StoreFilledQuestionnaireAsync(_filledModel);
-                }
-            });
+            SaveFilledQuestionnaire = new DelegateCommand(() => _service.StoreFilledQuestionnaireAsync(_filledModel));
         }
-
-        private static void ProxyStoreFilledQuestionnaireCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-            System.Windows.Browser.HtmlPage.Window.Navigate(new Uri("/StatisTestPage.html#/Home", UriKind.Relative));
-        }
-
 
         public string Name
         {
@@ -63,10 +53,12 @@ namespace Statis.ViewModels
                         _questions.Add(new TextAnswerViewModel((TextQuestion)question, answer));
                         _filledModel.Answers.Add(answer);
                     }
-                    //if (question is ImgChoiceQuestion)
-                    //{
-                    //    _questions.Add(new ImgChoiceQuestionViewModel((ImgChoiceQuestion)question));
-                    //}
+                    if (question is ImgChoiceQuestion)
+                    {
+                        var answer = new SingleChoiceAnswer();
+                        _questions.Add(new ImgChoiceAnswerViewModel((ImgChoiceQuestion)question, answer));
+                        _filledModel.Answers.Add(answer);
+                    }
                 }
             }
             OnNotifyPropertyChanged("Questions");
@@ -78,19 +70,16 @@ namespace Statis.ViewModels
             _filledModel = new FilledQuestionnaire
                                {
                                    Id = Guid.NewGuid(),
-                                   QuestionnaireName = _model.Name,
+                                   QuestionnaireName = _model != null ? _model.Name : "",
                                    Answers = new ObservableCollection<Answer>()
                                };
             Update();
+            OnNotifyPropertyChanged("Name");
         }
 
         public void EditQuestionnaire(string questionnaireName)
         {
-            var user = Application.Current.Resources["user"] as string;
-            if (user != null)
-            {
-                _service.GetQuestionnaireAsync(user, questionnaireName);
-            }
+            _service.GetQuestionnaireAsync(questionnaireName);
         }
     }
 }

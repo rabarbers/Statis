@@ -54,6 +54,21 @@ namespace StatisServiceHost
             return questionnaire;
         }
 
+        public static Questionnaire GetUserQuestionnaire(string userName, string questionnaireName)
+        {
+            var loggedInUser =
+                (from Analyst user in Database
+                 where user.UserName == userName
+                 select user).FirstOrDefault();
+            
+            var questionnaire =
+                 (from Questionnaire q in Database
+                  where q.Name == questionnaireName
+                  select q).FirstOrDefault();
+
+            return questionnaire;
+        }
+
         public static IEnumerable<string> GetUserQuestionnaireList(string userName)
         {
             var loggedInUser =
@@ -95,6 +110,8 @@ namespace StatisServiceHost
 
             if (loggedInUser != null)
             {
+                var q = GetQuestionnaire(questionnaireToStore.Name);
+                loggedInUser.Questionnaires.Remove(q);
                 DeleteQuestionnaire(db, questionnaireToStore.Name);
                 loggedInUser.Questionnaires.Add(questionnaireToStore);
                 db.Store(loggedInUser);
@@ -119,6 +136,15 @@ namespace StatisServiceHost
             var db = Database;
             DeleteQuestionnaire(db, questionnaireName);
             db.Commit();
+        }
+
+        public static string GetUserEmail(string userName)
+        {
+            var loggedInUser =
+                (from Analyst user in Database
+                 where user.UserName == userName
+                 select user.Email).FirstOrDefault();
+            return loggedInUser;
         }
 
         public static IEnumerable<string> GetUserAnalysts(string userName)
@@ -329,9 +355,9 @@ namespace StatisServiceHost
         {
             var questionnaire1 = new Questionnaire("Q1", "Test questionnaire");
             
-            var choiceOpt1 = new TextChoice("Yes");
-            var choiceOpt2 = new TextChoice("No");
-            var choiceOpt3 = new TextChoice("Maybe");
+            var choiceOpt1 = new TextChoice("Yes", 1);
+            var choiceOpt2 = new TextChoice("No", 2);
+            var choiceOpt3 = new TextChoice("Maybe", 3);
             var choiceList1 = new List<Choice>();
             choiceList1.Add(choiceOpt1);
             choiceList1.Add(choiceOpt2);
@@ -342,9 +368,9 @@ namespace StatisServiceHost
             
             questionnaire1.Questions.Add(question1);
 
-            var choiceOpt4 = new NumberChoice(1);
-            var choiceOpt5 = new NumberChoice(2);
-            var choiceOpt6 = new NumberChoice(100);
+            var choiceOpt4 = new NumberChoice(1, 1);
+            var choiceOpt5 = new NumberChoice(2, 2);
+            var choiceOpt6 = new NumberChoice(100, 3);
 
             var choiceList2 = new List<Choice>();
             choiceList2.Add(choiceOpt4);
@@ -368,9 +394,9 @@ namespace StatisServiceHost
             var img = new object();
             img = null;
             
-            var choiceOpt7 = new TextChoice("Yes, why not");
-            var choiceOpt8 = new TextChoice("I don't care");
-            var choiceOpt9 = new TextChoice("No, it looks ugly");
+            var choiceOpt7 = new TextChoice("Yes, why not", 1);
+            var choiceOpt8 = new TextChoice("I don't care", 2);
+            var choiceOpt9 = new TextChoice("No, it looks ugly", 3);
 
             var choiceList3 = new List<Choice>();
             choiceList3.Add(choiceOpt7);
@@ -383,15 +409,24 @@ namespace StatisServiceHost
             questionnaire2.Questions.Add(question5);
 
             var filledQuestionnaire1 = new FilledQuestionnaire(questionnaire1);
-            var answer1 = new ChoiceAnswer(0);
-            var answer2 = new ChoiceAnswer(2);
+            var answer1 = new SingleChoiceAnswer
+                              {
+                                  Choice = 1
+                              };
+            var answer2 = new SingleChoiceAnswer
+                              {
+                                  Choice = 3
+                              };
             filledQuestionnaire1.Answers.Add(answer1);
             filledQuestionnaire1.Answers.Add(answer2);
 
             var filledQuestionnaire2 = new FilledQuestionnaire(questionnaire2);
             var answer3 = new TextAnswer("I love testing");
             var answer4 = new TextAnswer("Definitely");
-            var answer5 = new ChoiceAnswer(2);
+            var answer5 = new SingleChoiceAnswer
+                              {
+                                  Choice = 3
+                              };
 
             filledQuestionnaire2.Answers.Add(answer3);
             filledQuestionnaire2.Answers.Add(answer4);
@@ -411,7 +446,7 @@ namespace StatisServiceHost
 
             admin.Respondents = new List<User>();
             
-            IObjectContainer db = GetDb(dbFileName);
+            var db = GetDb(dbFileName);
             db.Store(admin);
             db.Store(user2);
             //db.Store(questionnaire1);
